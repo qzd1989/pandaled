@@ -8,8 +8,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
+import android.os.LocaleList
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.pandaled.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,24 +33,24 @@ fun SettingsScreen(onBack: () -> Unit) {
     var colorExpanded by remember { mutableStateOf(false) }
 
     val langOptions = mapOf(
-        "system" to "随系统",
-        "zh" to "中文",
-        "en" to "English"
+        "system" to stringResource(R.string.settings_lang_system),
+        "zh" to stringResource(R.string.settings_lang_zh),
+        "en" to stringResource(R.string.settings_lang_en)
     )
     val colorModeOptions = mapOf(
-        "system" to "随系统",
-        "light" to "浅色",
-        "dark" to "深色"
+        "system" to stringResource(R.string.settings_theme_system),
+        "light" to stringResource(R.string.settings_theme_light),
+        "dark" to stringResource(R.string.settings_theme_dark)
     )
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             TopAppBar(
-                title = { Text("设置") },
+                title = { Text(stringResource(R.string.settings_title)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "返回")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.settings_back))
                     }
                 }
             )
@@ -56,14 +61,14 @@ fun SettingsScreen(onBack: () -> Unit) {
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             // ─── Language ────────────────────────────────
-            Text("语种", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.settings_language), style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
 
             ExposedDropdownMenuBox(
                 expanded = langExpanded,
                 onExpandedChange = { langExpanded = it }
             ) {
                 OutlinedTextField(
-                    value = langOptions[selectedLang.ifEmpty { "system" }] ?: "随系统",
+                    value = langOptions[selectedLang.ifEmpty { "system" }] ?: stringResource(R.string.settings_lang_system),
                     onValueChange = {},
                     readOnly = true,
                     trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = langExpanded) },
@@ -82,6 +87,17 @@ fun SettingsScreen(onBack: () -> Unit) {
                                 val value = if (key == "system") "" else key
                                 selectedLang = value
                                 prefs.edit().putString("language", value).apply()
+                                // Apply locale via AppCompatDelegate then recreate
+                                val locale = when (value) {
+                                    "zh" -> java.util.Locale("zh")
+                                    "en" -> java.util.Locale("en")
+                                    else -> {
+                                        val sys = java.util.Locale.getDefault()
+                                        if (sys.language.startsWith("zh")) java.util.Locale("zh") else java.util.Locale("en")
+                                    }
+                                }
+                                AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(LocaleList(locale)))
+                                (context as? android.app.Activity)?.recreate()
                             }
                         )
                     }
@@ -89,14 +105,14 @@ fun SettingsScreen(onBack: () -> Unit) {
             }
 
             // ─── Theme ───────────────────────────────────
-            Text("主题", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.settings_theme), style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
 
             ExposedDropdownMenuBox(
                 expanded = colorExpanded,
                 onExpandedChange = { colorExpanded = it }
             ) {
                 OutlinedTextField(
-                    value = colorModeOptions[selectedColorMode] ?: "随系统",
+                    value = colorModeOptions[selectedColorMode] ?: stringResource(R.string.settings_theme_system),
                     onValueChange = {},
                     readOnly = true,
                     trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = colorExpanded) },
@@ -121,7 +137,7 @@ fun SettingsScreen(onBack: () -> Unit) {
             }
 
             // ─── Cache ───────────────────────────────────
-            Text("缓存", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.settings_cache), style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
 
             val cacheSize = remember { calculateCacheSize(context) }
             var cacheText by remember { mutableStateOf("计算中...") }
@@ -135,7 +151,7 @@ fun SettingsScreen(onBack: () -> Unit) {
             }
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    "未使用缓存: $cacheText",
+                    stringResource(R.string.settings_cache_unused) + ": $cacheText",
                     style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.weight(1f)
                 )
@@ -143,7 +159,7 @@ fun SettingsScreen(onBack: () -> Unit) {
                     clearUnusedCache(context)
                     cacheText = "0 B"
                 }) {
-                    Text("清理缓存")
+                    Text(stringResource(R.string.settings_cache_clear))
                 }
             }
         }

@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.pandaled.data.model.Project
+import androidx.compose.ui.res.stringResource
+import com.pandaled.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
@@ -65,7 +67,7 @@ fun ProjectInfoColumn(
             },
             dismissButton = {
                 TextButton(onClick = { showDatePicker = false }) {
-                    Text("取消")
+                    Text(stringResource(R.string.home_cancel))
                 }
             }
         ) {
@@ -77,7 +79,7 @@ fun ProjectInfoColumn(
     if (showTimePicker) {
         AlertDialog(
             onDismissRequest = { showTimePicker = false },
-            title = { Text("选择时间") },
+            title = { Text(stringResource(R.string.pick_time)) },
             text = {
                 Box(modifier = Modifier.fillMaxWidth()) {
                     TimePicker(state = timePickerState)
@@ -92,12 +94,12 @@ fun ProjectInfoColumn(
                     onUpdate(editName, editStartTime)
                     showTimePicker = false
                 }) {
-                    Text("确定")
+                    Text(stringResource(R.string.home_confirm))
                 }
             },
             dismissButton = {
                 TextButton(onClick = { showTimePicker = false }) {
-                    Text("取消")
+                    Text(stringResource(R.string.home_cancel))
                 }
             }
         )
@@ -117,7 +119,7 @@ fun ProjectInfoColumn(
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Text(
-                "项目信息",
+                stringResource(R.string.detail_tab_info),
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold
             )
@@ -128,7 +130,7 @@ fun ProjectInfoColumn(
                     editName = newName
                     onUpdate(newName, editStartTime)
                 },
-                label = { Text("项目名称") },
+                label = { Text(stringResource(R.string.detail_project_name)) },
                 modifier = Modifier.fillMaxWidth(),
                 singleLine = true
             )
@@ -137,7 +139,7 @@ fun ProjectInfoColumn(
                 value = editStartTime,
                 onValueChange = {},
                 readOnly = true,
-                label = { Text("开始时间") },
+                label = { Text(stringResource(R.string.detail_start_time)) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable { showDatePicker = true },

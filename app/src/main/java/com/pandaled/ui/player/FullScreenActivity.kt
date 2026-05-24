@@ -1,10 +1,14 @@
 package com.pandaled.ui.player
 
 import android.os.Bundle
+import android.os.LocaleList
+import android.view.OrientationEventListener
 import android.view.View
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
@@ -22,11 +26,12 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import com.pandaled.PandaLedApp
 import com.pandaled.data.model.*
 import com.pandaled.ui.detail.components.IdleSceneRenderer
 import com.pandaled.ui.detail.components.SceneRenderer
 import com.pandaled.ui.detail.components.TransitionOverlay
+import androidx.compose.ui.res.stringResource
+import com.pandaled.R
 import com.pandaled.ui.theme.PandaLedTheme
 import kotlinx.coroutines.delay
 
@@ -38,6 +43,20 @@ class FullScreenActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Apply saved locale
+        val prefs = getSharedPreferences("pandaled_prefs", MODE_PRIVATE)
+        val language = prefs.getString("language", "") ?: ""
+        val locale = when {
+            language == "zh" -> java.util.Locale("zh")
+            language == "en" -> java.util.Locale("en")
+            else -> {
+                val sys = java.util.Locale.getDefault()
+                if (sys.language.startsWith("zh")) java.util.Locale("zh") else java.util.Locale("en")
+            }
+        }
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(LocaleList(locale)))
+
         hideSystemUi()
 
         val projectId = intent.getStringExtra(EXTRA_PROJECT_ID) ?: run {
@@ -91,7 +110,7 @@ fun FullScreenPlayer(
             modifier = Modifier.fillMaxSize().background(Color.Black),
             contentAlignment = Alignment.Center
         ) {
-            Text("加载中...", color = Color.White)
+            Text(stringResource(R.string.fullscreen_loading), color = Color.White)
         }
         return
     }
@@ -223,7 +242,7 @@ fun FullScreenContent(
             ) {
                 Icon(
                     imageVector = Icons.Default.Lock,
-                    contentDescription = "锁定",
+                    contentDescription = stringResource(R.string.fullscreen_lock),
                     tint = Color.White.copy(alpha = lockAlpha),
                     modifier = Modifier
                         .size(44.dp)

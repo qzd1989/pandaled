@@ -5,6 +5,8 @@ import androidx.compose.foundation.gestures.*
 import androidx.compose.runtime.key
 import androidx.compose.foundation.layout.*
 import kotlinx.coroutines.launch
+import androidx.compose.ui.res.stringResource
+import com.pandaled.R
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -151,7 +153,7 @@ fun ColorPickerDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("选择颜色") },
+        title = { Text(stringResource(R.string.color_picker_title)) },
         text = {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 // ─── Row 1: Hue slider (rainbow) ──────────
@@ -216,7 +218,7 @@ fun ColorPickerDialog(
                             } else hexError = upper.isNotEmpty()
                         },
                         isError = hexError,
-                        supportingText = if (hexError) {{ Text("无效", color = MaterialTheme.colorScheme.error, fontSize = 10.sp) }} else null,
+                        supportingText = if (hexError) {{ Text(stringResource(R.string.invalid_hex), color = MaterialTheme.colorScheme.error, fontSize = 10.sp) }} else null,
                         label = { Text("hex") },
                         singleLine = true,
                         modifier = Modifier.width(120.dp),
@@ -229,12 +231,12 @@ fun ColorPickerDialog(
         },
         confirmButton = {
             TextButton(onClick = { onSelect(colorToHex(pickedColor)) }) {
-                Text("确定")
+                Text(stringResource(R.string.home_confirm))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("取消")
+                Text(stringResource(R.string.home_cancel))
             }
         }
     )

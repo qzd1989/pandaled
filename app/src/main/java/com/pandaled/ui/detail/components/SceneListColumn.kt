@@ -14,6 +14,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -75,7 +76,7 @@ fun SceneListColumn(
                 Spacer(Modifier.width(6.dp))
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        "等待场景",
+                        stringResource(com.pandaled.R.string.scene_waiting),
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Medium,
                         maxLines = 1,
@@ -98,22 +99,22 @@ fun SceneListColumn(
                 // Add scene button (inline with idle scene row)
                 Box {
                     IconButton(onClick = { addMenuExpanded = true }) {
-                        Icon(Icons.Default.Add, contentDescription = "添加场景", modifier = Modifier.size(20.dp))
+                        Icon(Icons.Default.Add, contentDescription = stringResource(com.pandaled.R.string.scene_add), modifier = Modifier.size(20.dp))
                     }
                     DropdownMenu(
                         expanded = addMenuExpanded,
                         onDismissRequest = { addMenuExpanded = false }
                     ) {
                         DropdownMenuItem(
-                            text = { Text("文字") },
+                            text = { Text(stringResource(com.pandaled.R.string.scene_text)) },
                             onClick = { addMenuExpanded = false; onAddScene(SceneType.TEXT) }
                         )
                         DropdownMenuItem(
-                            text = { Text("图片") },
+                            text = { Text(stringResource(com.pandaled.R.string.scene_image)) },
                             onClick = { addMenuExpanded = false; onAddScene(SceneType.IMAGE) }
                         )
                         DropdownMenuItem(
-                            text = { Text("视频") },
+                            text = { Text(stringResource(com.pandaled.R.string.scene_video)) },
                             onClick = { addMenuExpanded = false; onAddScene(SceneType.VIDEO) }
                         )
                     }
@@ -192,7 +193,7 @@ fun SceneListColumn(
                                 overflow = TextOverflow.Ellipsis
                             )
                             Text(
-                                "${sceneTypeLabel(scene.type)} · ${scene.duration}s",
+                                "${sceneTypeLabel(scene.type)} · ${scene.duration}${stringResource(com.pandaled.R.string.duration_unit)}",
                                 style = MaterialTheme.typography.labelSmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -216,7 +217,7 @@ fun SceneListColumn(
                         ) {
                             Icon(
                                 Icons.Default.KeyboardArrowUp,
-                                contentDescription = "上移",
+                                contentDescription = stringResource(com.pandaled.R.string.scene_move_up),
                                 modifier = Modifier.size(18.dp),
                                 tint = if (isFirst) MaterialTheme.colorScheme.onSurface.copy(alpha = 0.25f)
                                        else MaterialTheme.colorScheme.onSurfaceVariant
@@ -231,7 +232,7 @@ fun SceneListColumn(
                         ) {
                             Icon(
                                 Icons.Default.KeyboardArrowDown,
-                                contentDescription = "下移",
+                                contentDescription = stringResource(com.pandaled.R.string.scene_move_down),
                                 modifier = Modifier.size(18.dp),
                                 tint = if (isLast) MaterialTheme.colorScheme.onSurface.copy(alpha = 0.25f)
                                        else MaterialTheme.colorScheme.onSurfaceVariant
@@ -245,7 +246,7 @@ fun SceneListColumn(
                         ) {
                             Icon(
                                 Icons.Default.Close,
-                                contentDescription = "删除",
+                                contentDescription = stringResource(com.pandaled.R.string.scene_delete),
                                 modifier = Modifier.size(14.dp),
                                 tint = MaterialTheme.colorScheme.error
                             )
@@ -258,15 +259,17 @@ fun SceneListColumn(
     }
 }
 
+@Composable
 private fun idleSceneTypeLabel(type: IdleSceneType): String = when (type) {
-    IdleSceneType.NONE -> "黑屏"
-    IdleSceneType.CLOCK -> "时钟"
-    IdleSceneType.COUNTDOWN -> "倒计时"
-    IdleSceneType.IMAGE -> "图片"
+    IdleSceneType.NONE -> stringResource(com.pandaled.R.string.idle_none)
+    IdleSceneType.CLOCK -> stringResource(com.pandaled.R.string.idle_clock)
+    IdleSceneType.COUNTDOWN -> stringResource(com.pandaled.R.string.idle_countdown)
+    IdleSceneType.IMAGE -> stringResource(com.pandaled.R.string.idle_image)
 }
 
+@Composable
 private fun sceneTypeLabel(type: SceneType): String = when (type) {
-    SceneType.TEXT -> "文字"
-    SceneType.IMAGE -> "图片"
-    SceneType.VIDEO -> "视频"
+    SceneType.TEXT -> stringResource(com.pandaled.R.string.scene_text)
+    SceneType.IMAGE -> stringResource(com.pandaled.R.string.scene_image)
+    SceneType.VIDEO -> stringResource(com.pandaled.R.string.scene_video)
 }

@@ -49,6 +49,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
 import com.pandaled.data.model.ProjectIndex
+import androidx.compose.ui.res.stringResource
+import com.pandaled.R
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -102,9 +104,9 @@ fun HomeScreen(
             TopAppBar(
                 title = {
                     Column {
-                        Text("PandaLed", fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.app_name), fontWeight = FontWeight.Bold)
                         Text(
-                            "LED 项目控制台",
+                            stringResource(R.string.app_subtitle),
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -117,7 +119,7 @@ fun HomeScreen(
                 ),
                 actions = {
                     IconButton(onClick = { showSettings = true }) {
-                        Icon(Icons.Default.Settings, contentDescription = "设置")
+                        Icon(Icons.Default.Settings, contentDescription = stringResource(R.string.home_settings))
                     }
                 }
             )
@@ -139,7 +141,7 @@ fun HomeScreen(
                             containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
                             contentColor = MaterialTheme.colorScheme.primary
                         ) {
-                            Icon(Icons.Default.Add, contentDescription = "新建项目")
+                            Icon(Icons.Default.Add, contentDescription = stringResource(R.string.home_new_project))
                         }
                         Spacer(Modifier.height(12.dp))
                         // Scan QR button
@@ -152,7 +154,7 @@ fun HomeScreen(
                             containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
                             contentColor = MaterialTheme.colorScheme.secondary
                         ) {
-                            Icon(Icons.Default.QrCodeScanner, contentDescription = "扫码导入")
+                            Icon(Icons.Default.QrCodeScanner, contentDescription = stringResource(R.string.home_scan_import))
                         }
                     }
                 }
@@ -190,13 +192,13 @@ fun HomeScreen(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        "暂无项目",
+                        stringResource(R.string.home_no_projects),
                         style = MaterialTheme.typography.headlineSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        "点击右下角扫码导入项目",
+                        stringResource(R.string.home_scan_hint),
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -254,11 +256,11 @@ fun HomeScreen(
     importError?.let { error ->
         AlertDialog(
             onDismissRequest = { viewModel.clearImportError() },
-            title = { Text("导入失败") },
+            title = { Text(stringResource(R.string.qr_import_error)) },
             text = { Text(error) },
             confirmButton = {
                 TextButton(onClick = { viewModel.clearImportError() }) {
-                    Text("确定")
+                    Text(stringResource(R.string.home_confirm))
                 }
             }
         )
@@ -305,7 +307,7 @@ fun ProjectCard(
             Spacer(Modifier.width(12.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = project.name.ifBlank { "未命名项目" },
+                    text = project.name.ifBlank { stringResource(R.string.untitled_project) },
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,
@@ -344,7 +346,7 @@ fun ProjectCard(
                 IconButton(onClick = onDelete, modifier = Modifier.size(24.dp)) {
                     Icon(
                         Icons.Default.Close,
-                        contentDescription = "删除",
+                        contentDescription = stringResource(R.string.home_delete),
                         tint = MaterialTheme.colorScheme.error
                     )
                 }

@@ -3,6 +3,8 @@ package com.pandaled.ui.detail
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.res.stringResource
+import com.pandaled.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
@@ -77,7 +79,7 @@ fun DetailScreen(
                 actions = {
                     // Play button → fullscreen
                     IconButton(onClick = { viewModel.launchFullScreen(context) }) {
-                        Icon(Icons.Default.PlayArrow, contentDescription = "全屏播放")
+                        Icon(Icons.Default.PlayArrow, contentDescription = stringResource(R.string.detail_fullscreen))
                     }
                     // Three-dot menu
                     Box {
@@ -157,7 +159,7 @@ fun DetailScreen(
             HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
 
             // ─── Tab bar ─────────────────────────────────
-            val tabTitles = listOf("项目信息", "场景列表", "场景编辑")
+            val tabTitles = listOf(stringResource(R.string.detail_tab_info), stringResource(R.string.detail_tab_scenes), stringResource(R.string.detail_tab_editor))
             var selectedTab by remember { mutableIntStateOf(2) }
 
 

@@ -45,6 +45,9 @@ android {
 }
 
 dependencies {
+    // AppCompat for locale management
+    implementation("androidx.appcompat:appcompat:1.6.1")
+
     // Compose BOM
     val composeBom = platform("androidx.compose:compose-bom:2024.04.00")
     implementation(composeBom)

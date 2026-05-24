@@ -3,6 +3,7 @@ package com.pandaled.ui.detail.components
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
@@ -31,7 +32,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.pandaled.R
 import com.pandaled.data.model.*
 import kotlinx.coroutines.delay
 
@@ -169,7 +169,7 @@ fun IdleSceneRenderer(idleScene: IdleScene, startTime: String) {
                         .data(source)
                         .crossfade(true)
                         .build(),
-                    contentDescription = "闲置图片",
+                    contentDescription = stringResource(com.pandaled.R.string.idle_image),
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Fit
                 )
@@ -179,7 +179,7 @@ fun IdleSceneRenderer(idleScene: IdleScene, startTime: String) {
                     modifier = Modifier.fillMaxSize().background(Color.DarkGray),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text("图片待补充", color = Color.Red, fontSize = 14.sp)
+                    Text(stringResource(com.pandaled.R.string.editor_missing_image), color = Color.Red, fontSize = 14.sp)
                 }
             }
         }
@@ -507,7 +507,7 @@ fun ImageSceneRenderer(scene: Scene) {
                     .data(source)
                     .crossfade(true)
                     .build(),
-                contentDescription = "场景图片",
+                contentDescription = stringResource(com.pandaled.R.string.scene_image),
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
@@ -516,7 +516,7 @@ fun ImageSceneRenderer(scene: Scene) {
                 modifier = Modifier.fillMaxSize().background(Color.DarkGray),
                 contentAlignment = Alignment.Center
             ) {
-                Text("图片待补充", color = Color.Red, fontSize = 14.sp)
+                Text(stringResource(com.pandaled.R.string.editor_missing_image), color = Color.Red, fontSize = 14.sp)
             }
         }
 
@@ -649,7 +649,7 @@ fun VideoSceneRenderer(scene: Scene) {
                 modifier = Modifier.fillMaxSize().graphicsLayer(alpha = blinkAlpha),
                 factory = {
                     (android.view.LayoutInflater.from(context)
-                        .inflate(R.layout.view_video_player_texture, null) as PlayerView).apply {
+                        .inflate(com.pandaled.R.layout.view_video_player_texture, null) as PlayerView).apply {
                         this.player = player
                         useController = false
                         resizeMode = androidx.media3.ui.AspectRatioFrameLayout.RESIZE_MODE_ZOOM
@@ -664,7 +664,7 @@ fun VideoSceneRenderer(scene: Scene) {
                 modifier = Modifier.fillMaxSize().background(Color.DarkGray),
                 contentAlignment = Alignment.Center
             ) {
-                Text("视频待补充", color = Color.Red, fontSize = 14.sp)
+                Text(stringResource(com.pandaled.R.string.fullscreen_video_missing), color = Color.Red, fontSize = 14.sp)
             }
         }
 

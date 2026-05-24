@@ -15,6 +15,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.pandaled.data.model.*
 import com.pandaled.ui.detail.EditorTarget
+import androidx.compose.ui.res.stringResource
+import com.pandaled.R
 
 /**
  * Right column: detailed editor for the currently selected idleScene or scene.
@@ -35,9 +37,9 @@ fun SceneEditorColumn(
     ) {
         when (selectedTarget) {
             is EditorTarget.None -> {
-                EditorSection(title = "场景编辑") {
+                EditorSection(title = stringResource(R.string.detail_tab_editor)) {
                     Text(
-                        "从场景列表选择一个场景",
+                        stringResource(R.string.editor_select_scene),
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         style = MaterialTheme.typography.bodyMedium
                     )
@@ -59,7 +61,7 @@ fun SceneEditorColumn(
                         onUpdate = { updated -> onUpdateScene(selectedTarget.index, updated) }
                     )
                 } else {
-                    Text("场景不存在", color = MaterialTheme.colorScheme.error)
+                    Text(stringResource(R.string.editor_scene_not_found), color = MaterialTheme.colorScheme.error)
                 }
             }
         }
@@ -114,8 +116,8 @@ fun IdleSceneEditor(
 ) {
     var type by remember(idleScene) { mutableStateOf(idleScene.type) }
 
-    EditorSection("等待场景") {
-        FieldLabel("类型")
+    EditorSection(stringResource(R.string.scene_waiting)) {
+        FieldLabel(stringResource(R.string.editor_color_mode))
         TypeSelector(
             options = IdleSceneType.entries.map { it.name to idleSceneTypeLabel(it) },
             selected = type.name,
@@ -129,7 +131,7 @@ fun IdleSceneEditor(
         when (type) {
             IdleSceneType.NONE -> {
                 Text(
-                    "黑屏模式 - 无额外配置",
+                    stringResource(R.string.idle_black_hint),
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     style = MaterialTheme.typography.bodyMedium
                 )
@@ -187,7 +189,7 @@ fun IdleClockCountdownEditor(
     OutlinedTextField(
         value = format,
         onValueChange = { format = it; emit() },
-        label = { Text("格式") },
+        label = { Text(stringResource(R.string.editor_format)) },
         placeholder = { Text("{hours}:{minutes}:{seconds}") },
         modifier = Modifier.fillMaxWidth(),
         singleLine = true
@@ -228,10 +230,10 @@ fun IdleImageEditor(
     val source = current.source
 
     Button(onClick = { picker.launch("image/*") }, modifier = Modifier.fillMaxWidth()) {
-        Text(if (source.isNullOrBlank()) "选择图片" else "更换图片")
+        Text(if (source.isNullOrBlank()) stringResource(R.string.editor_select_image) else stringResource(R.string.editor_replace_image))
     }
     if (source.isNullOrBlank()) {
-        Text("⚠ 待补充图片", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        Text(stringResource(R.string.editor_missing_image), color = Color.Red, style = MaterialTheme.typography.bodySmall)
     }
 }
 
@@ -249,20 +251,20 @@ fun SceneEditor(
     var durationSec by remember(scene) { mutableIntStateOf(scene.duration.coerceIn(1, 300)) }
     var playMode by remember(scene) { mutableStateOf(scene.playMode) }
 
-    EditorSection("基础设置") {
+    EditorSection(stringResource(R.string.editor_basic)) {
         OutlinedTextField(
             value = name,
             onValueChange = {
                 name = it
                 onUpdate(scene.copy(name = it))
             },
-            label = { Text("场景名称") },
+            label = { Text(stringResource(R.string.editor_scene_name)) },
             modifier = Modifier.fillMaxWidth(),
             singleLine = true
         )
 
         NumberStepper(
-            label = "持续时间 (秒)",
+            label = stringResource(R.string.editor_duration),
             value = durationSec.toString(),
             min = 1,
             max = 300,
@@ -277,10 +279,10 @@ fun SceneEditor(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            FieldLabel("播放模式")
+            FieldLabel(stringResource(R.string.editor_play_mode))
             Spacer(Modifier.weight(1f))
             Text(
-                if (isLoop) "循环" else "单次",
+                if (isLoop) stringResource(R.string.editor_loop) else stringResource(R.string.editor_once),
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -297,7 +299,7 @@ fun SceneEditor(
 
     val content = scene.content
 
-    EditorSection("内容") {
+    EditorSection(stringResource(R.string.editor_content)) {
         when (type) {
             SceneType.TEXT -> TextContentEditor(content) { onUpdate(scene.copy(content = it)) }
             SceneType.IMAGE -> ImageContentEditor(content) { onUpdate(scene.copy(content = it)) }
@@ -307,11 +309,11 @@ fun SceneEditor(
 
     // ─── Transition section (hide for TEXT) ─────────────
     if (type != SceneType.TEXT) {
-        EditorSection("转场动画") {
+        EditorSection(stringResource(R.string.editor_transition)) {
             val transition = scene.transition
             val enter = transition.enter
 
-            FieldLabel("进入动画")
+            FieldLabel(stringResource(R.string.editor_enter_anim))
             TypeSelector(
                 options = TransitionType.entries.map { it.name to transitionTypeLabel(it) },
                 selected = enter.type.name,
@@ -334,7 +336,7 @@ fun SceneEditor(
             if (enter.type != TransitionType.NONE) {
                 var enterSeconds by remember(enter) { mutableIntStateOf(enter.duration.toInt().coerceIn(0, 30)) }
                 NumberStepper(
-                    label = "动画时长 (秒)",
+                    label = stringResource(R.string.editor_anim_duration),
                     value = enterSeconds.toString(),
                     min = 0,
                     max = 30,
@@ -353,7 +355,7 @@ fun SceneEditor(
         }
     }
 
-    EditorSection("外观") {
+    EditorSection(stringResource(R.string.editor_appearance)) {
         AppearanceEditor(
             appearance = scene.appearance,
             sceneType = type,
@@ -417,7 +419,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
             source = it
             onUpdate(content.copy(source = it))
         },
-        label = { Text("文字内容") },
+        label = { Text(stringResource(R.string.editor_text_content)) },
         modifier = Modifier.fillMaxWidth(),
         singleLine = false,
         maxLines = 3,
@@ -460,7 +462,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
     // Motion — scroll
     var hasScroll by remember(content) { mutableStateOf(content.motion?.scroll != null) }
     Row(verticalAlignment = Alignment.CenterVertically) {
-        FieldLabel("滚动")
+        FieldLabel(stringResource(R.string.editor_scroll))
         Spacer(Modifier.weight(1f))
         Switch(
             checked = hasScroll,
@@ -502,7 +504,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
     // Transform — mirror
     var mirror by remember(content) { mutableStateOf(content.transform?.mirror ?: false) }
     Row(verticalAlignment = Alignment.CenterVertically) {
-        FieldLabel("镜像")
+        FieldLabel(stringResource(R.string.editor_mirror))
         Spacer(Modifier.weight(1f))
         Switch(
             checked = mirror,
@@ -550,10 +552,10 @@ fun ImageContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) 
     val source = content.source
 
     Button(onClick = { picker.launch("image/*") }, modifier = Modifier.fillMaxWidth()) {
-        Text(if (source.isNullOrBlank()) "选择图片" else "更换图片")
+        Text(if (source.isNullOrBlank()) stringResource(R.string.editor_select_image) else stringResource(R.string.editor_replace_image))
     }
     if (source.isNullOrBlank()) {
-        Text("⚠ 待补充图片", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        Text(stringResource(R.string.editor_missing_image), color = Color.Red, style = MaterialTheme.typography.bodySmall)
     }
 
     // Blink — slider 0-10, 0=off
@@ -592,10 +594,10 @@ fun VideoContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) 
     val source = content.source
 
     Button(onClick = { picker.launch("video/*") }, modifier = Modifier.fillMaxWidth()) {
-        Text(if (source.isNullOrBlank()) "选择视频" else "更换视频")
+        Text(if (source.isNullOrBlank()) stringResource(R.string.editor_select_video) else stringResource(R.string.editor_replace_video))
     }
     if (source.isNullOrBlank()) {
-        Text("⚠ 待补充视频", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+        Text(stringResource(R.string.editor_missing_video), color = Color.Red, style = MaterialTheme.typography.bodySmall)
     } else {
         // Show video duration for reference
         var videoDurationSec by remember { mutableStateOf<Int?>(null) }
@@ -613,7 +615,7 @@ fun VideoContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) 
             }
         }
         Text(
-            "视频时长: ${videoDurationSec?.let { "${it}s" } ?: "未知"}",
+            "${stringResource(R.string.editor_video_duration)}: ${videoDurationSec?.let { "${it}s" } ?: stringResource(R.string.editor_video_unknown)}",
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             modifier = Modifier.fillMaxWidth(),
@@ -654,9 +656,9 @@ fun ColorConfigEditor(
     FieldLabel("颜色模式")
     TypeSelector(
         options = listOf(
-            "STATIC" to "静态",
-            "TOGGLE" to "交替",
-            "GRADIENT" to "渐变"
+            "STATIC" to stringResource(R.string.editor_color_static),
+            "TOGGLE" to stringResource(R.string.editor_color_toggle),
+            "GRADIENT" to stringResource(R.string.editor_color_gradient)
         ),
         selected = mode.name,
         onSelect = { selected ->
@@ -683,7 +685,7 @@ fun ColorConfigEditor(
             var freq by remember(current) { mutableStateOf(current.frequency?.toString() ?: "5") }
 
             ColorField(
-                label = "颜色 A",
+                label = stringResource(R.string.color_a),
                 selectedHex = from,
                 onSelect = {
                     from = it
@@ -692,7 +694,7 @@ fun ColorConfigEditor(
             )
             Spacer(Modifier.height(8.dp))
             ColorField(
-                label = "颜色 B",
+                label = stringResource(R.string.color_b),
                 selectedHex = to,
                 onSelect = {
                     to = it
@@ -700,7 +702,7 @@ fun ColorConfigEditor(
                 }
             )
             LabeledSlider(
-                label = "频率",
+                label = stringResource(R.string.editor_frequency),
                 sliderKey = "colorToggleFreq",
                 value = freq.toIntOrNull() ?: 5,
                 onValueChange = {
@@ -730,7 +732,7 @@ fun ColorConfigEditor(
             ) }
 
             ColorField(
-                label = "起始颜色",
+                label = stringResource(R.string.editor_start_color),
                 selectedHex = from,
                 onSelect = {
                     from = it
@@ -739,7 +741,7 @@ fun ColorConfigEditor(
             )
             Spacer(Modifier.height(8.dp))
             ColorField(
-                label = "结束颜色",
+                label = stringResource(R.string.editor_end_color),
                 selectedHex = to,
                 onSelect = {
                     to = it
@@ -776,9 +778,9 @@ fun BackgroundColorEditor(
         FieldLabel("背景颜色模式")
         TypeSelector(
             options = modes.map { it.name to when (it) {
-                ColorType.STATIC -> "静态"
-                ColorType.TOGGLE -> "交替"
-                ColorType.GRADIENT -> "渐变"
+                ColorType.STATIC -> stringResource(R.string.editor_color_static)
+                ColorType.TOGGLE -> stringResource(R.string.editor_color_toggle)
+                ColorType.GRADIENT -> stringResource(R.string.editor_color_gradient)
             }},
             selected = bgMode.name,
             onSelect = {
@@ -792,7 +794,7 @@ fun BackgroundColorEditor(
         ColorType.STATIC -> {
             var bgValue by remember(bg) { mutableStateOf(bg.value ?: "#000000") }
             ColorField(
-                label = "背景色",
+                label = stringResource(R.string.editor_bg_color),
                 selectedHex = bgValue,
                 onSelect = {
                     bgValue = it
@@ -806,7 +808,7 @@ fun BackgroundColorEditor(
             var freq by remember(bg) { mutableStateOf(bg.frequency ?: 5) }
 
             ColorField(
-                label = "背景色 A",
+                label = stringResource(R.string.editor_bg_color_a),
                 selectedHex = from,
                 onSelect = {
                     from = it
@@ -815,7 +817,7 @@ fun BackgroundColorEditor(
             )
             Spacer(Modifier.height(8.dp))
             ColorField(
-                label = "背景色 B",
+                label = stringResource(R.string.editor_bg_color_b),
                 selectedHex = to,
                 onSelect = {
                     to = it
@@ -823,7 +825,7 @@ fun BackgroundColorEditor(
                 }
             )
             LabeledSlider(
-                label = "频率",
+                label = stringResource(R.string.editor_frequency),
                 sliderKey = "bgToggleFreq",
                 value = freq,
                 onValueChange = {
@@ -912,7 +914,7 @@ fun DotMaskEditor(
     val overlay = overlays?.firstOrNull { it.type == OverlayType.DOT_MASK }
     var hasOverlay by remember(overlays) { mutableStateOf(overlay != null) }
     Row(verticalAlignment = Alignment.CenterVertically) {
-        FieldLabel("点阵遮罩")
+        FieldLabel(stringResource(R.string.editor_dot_mask))
         Spacer(Modifier.weight(1f))
         Switch(
             checked = hasOverlay,
@@ -927,9 +929,9 @@ fun DotMaskEditor(
         var dotSize by remember(dot) { mutableStateOf(dot.size.coerceIn(1, 10)) }
         var dotStyle by remember(dot) { mutableStateOf(dot.style) }
 
-        FieldLabel("遮罩样式")
+        FieldLabel(stringResource(R.string.editor_mask_style))
         TypeSelector(
-            options = listOf("round" to "圆形", "square" to "正方形", "heart" to "爱心形"),
+            options = listOf("round" to stringResource(R.string.editor_mask_round), "square" to stringResource(R.string.editor_mask_square), "heart" to stringResource(R.string.editor_mask_heart)),
             selected = dotStyle,
             onSelect = {
                 dotStyle = it
@@ -937,7 +939,7 @@ fun DotMaskEditor(
             }
         )
         LabeledSlider(
-            label = "点阵大小",
+            label = stringResource(R.string.editor_dot_size),
             sliderKey = "dotSize",
             value = dotSize,
             range = 1..10,
@@ -951,17 +953,19 @@ fun DotMaskEditor(
 
 // ─── Labels ──────────────────────────────────────────────
 
+@Composable
 private fun idleSceneTypeLabel(type: IdleSceneType): String = when (type) {
-    IdleSceneType.NONE -> "黑屏"
-    IdleSceneType.CLOCK -> "时钟"
-    IdleSceneType.COUNTDOWN -> "倒计时"
-    IdleSceneType.IMAGE -> "图片"
+    IdleSceneType.NONE -> stringResource(R.string.idle_none)
+    IdleSceneType.CLOCK -> stringResource(R.string.idle_clock)
+    IdleSceneType.COUNTDOWN -> stringResource(R.string.idle_countdown)
+    IdleSceneType.IMAGE -> stringResource(R.string.idle_image)
 }
 
+@Composable
 private fun sceneTypeLabel(type: SceneType): String = when (type) {
-    SceneType.TEXT -> "文字"
-    SceneType.IMAGE -> "图片"
-    SceneType.VIDEO -> "视频"
+    SceneType.TEXT -> stringResource(R.string.scene_text)
+    SceneType.IMAGE -> stringResource(R.string.scene_image)
+    SceneType.VIDEO -> stringResource(R.string.scene_video)
 }
 
 private fun copyToAppStorage(context: android.content.Context, uri: android.net.Uri, prefix: String): String {
@@ -981,18 +985,20 @@ private fun copyToAppStorage(context: android.content.Context, uri: android.net.
     return dest.absolutePath
 }
 
+@Composable
 private fun transitionTypeLabel(type: TransitionType): String = when (type) {
-    TransitionType.NONE -> "无"
-    TransitionType.FADE_IN -> "淡入"
-    TransitionType.SLIDE_IN_FROM_LEFT -> "从左滑入"
-    TransitionType.SLIDE_IN_FROM_RIGHT -> "从右滑入"
-    TransitionType.SLIDE_IN_FROM_TOP -> "从上滑入"
-    TransitionType.SLIDE_IN_FROM_BOTTOM -> "从下滑入"
+    TransitionType.NONE -> stringResource(R.string.transition_none)
+    TransitionType.FADE_IN -> stringResource(R.string.transition_fade_in)
+    TransitionType.SLIDE_IN_FROM_LEFT -> stringResource(R.string.transition_slide_left)
+    TransitionType.SLIDE_IN_FROM_RIGHT -> stringResource(R.string.transition_slide_right)
+    TransitionType.SLIDE_IN_FROM_TOP -> stringResource(R.string.transition_slide_top)
+    TransitionType.SLIDE_IN_FROM_BOTTOM -> stringResource(R.string.transition_slide_bottom)
 }
 
+@Composable
 private fun scrollDirectionLabel(dir: ScrollDirection): String = when (dir) {
-    ScrollDirection.LEFT_TO_RIGHT -> "左→右"
-    ScrollDirection.RIGHT_TO_LEFT -> "右→左"
-    ScrollDirection.TOP_TO_BOTTOM -> "上→下"
-    ScrollDirection.BOTTOM_TO_TOP -> "下→上"
+    ScrollDirection.LEFT_TO_RIGHT -> stringResource(R.string.scroll_ltr)
+    ScrollDirection.RIGHT_TO_LEFT -> stringResource(R.string.scroll_rtl)
+    ScrollDirection.TOP_TO_BOTTOM -> stringResource(R.string.scroll_ttb)
+    ScrollDirection.BOTTOM_TO_TOP -> stringResource(R.string.scroll_btt)
 }

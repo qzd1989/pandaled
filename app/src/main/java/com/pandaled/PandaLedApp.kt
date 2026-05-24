@@ -4,6 +4,7 @@ import android.app.Application
 import com.pandaled.data.local.AppDatabase
 import com.pandaled.data.local.JsonFileManager
 import com.pandaled.data.repository.ProjectRepository
+import java.util.Locale
 
 class PandaLedApp : Application() {
 
