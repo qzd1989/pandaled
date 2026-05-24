@@ -2296,7 +2296,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.PandaLed" parent="android:Theme.Material.Light.NoActionBar"/>
+    <style name="Theme.PandaLed" parent="android:Theme.Material.NoActionBar"/>
     <style name="Theme.PandaLed.FullScreen" parent="android:Theme.Material.NoActionBar.Fullscreen"/>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>

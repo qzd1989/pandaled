@@ -31,6 +31,7 @@ data class DetailUiState(
     val isLoading: Boolean = true,
     val selectedTarget: EditorTarget = EditorTarget.None,
     val isPreviewPlaying: Boolean = false,
+    val previewReplayKey: Int = 0,
     val previewCurrentIndex: Int = 0,     // which scene index is currently playing in preview
     val previewTotalCount: Int = 0,
     val qrCodeBitmap: android.graphics.Bitmap? = null,
@@ -235,7 +236,9 @@ class DetailViewModel : ViewModel() {
     /** Re-show scene in preview on update. */
     fun triggerScenePreview(sceneIndex: Int) {
         _uiState.value = _uiState.value.copy(
-            selectedTarget = EditorTarget.Scene(sceneIndex)
+            selectedTarget = EditorTarget.Scene(sceneIndex),
+            isPreviewPlaying = true,
+            previewReplayKey = _uiState.value.previewReplayKey + 1
         )
     }
 

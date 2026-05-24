@@ -176,23 +176,22 @@ data class SceneContent(
 
 /**
  * Map 0-10 frequency to interval in milliseconds.
- * 0→0, 1→100, 2→200, 3→400, 4→600, 5→800, 6→1000, 7→2000, 8→3000, 9→4000, 10→5000.
  */
 fun frequencyToMs(frequency: Int): Long {
     val f = frequency.coerceIn(0, 10)
     return when (f) {
         0 -> 0L
-        1 -> 1580L
-        2 -> 1415L
-        3 -> 1250L
-        4 -> 1085L
-        5 -> 920L
-        6 -> 760L
-        7 -> 595L
-        8 -> 430L
-        9 -> 265L
-        10 -> 100L
-        else -> 1000L
+        1 -> 1000L
+        2 -> 700L
+        3 -> 600L
+        4 -> 500L
+        5 -> 400L
+        6 -> 300L
+        7 -> 200L
+        8 -> 150L
+        9 -> 100L
+        10 -> 50L
+        else -> 50L
     }
 }
 

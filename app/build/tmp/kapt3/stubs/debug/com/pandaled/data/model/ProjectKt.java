@@ -5,7 +5,6 @@ public final class ProjectKt {
     
     /**
      * Map 0-10 frequency to interval in milliseconds.
-     * 0→0, 1→100, 2→200, 3→400, 4→600, 5→800, 6→1000, 7→2000, 8→3000, 9→4000, 10→5000.
      */
     public static final long frequencyToMs(int frequency) {
         return 0L;

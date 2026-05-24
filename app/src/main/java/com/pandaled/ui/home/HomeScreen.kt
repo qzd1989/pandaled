@@ -15,6 +15,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -22,12 +23,14 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.QrCodeScanner
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -38,7 +41,6 @@ import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
@@ -89,58 +91,33 @@ fun HomeScreen(
     var fabExpanded by remember { mutableStateOf(false) }
     var showSettings by remember { mutableStateOf(false) }
 
-    val prefs = remember { context.getSharedPreferences("pandaled_prefs", android.content.Context.MODE_PRIVATE) }
-    var language by remember { mutableStateOf(prefs.getString("language", "") ?: "") }
-
     if (showSettings) {
-        val systemLang = java.util.Locale.getDefault().language
-        val resolved = language.ifEmpty {
-            if (systemLang.startsWith("zh")) "zh" else "en"
-        }
-        AlertDialog(
-            onDismissRequest = { showSettings = false },
-            title = { Text("Settings") },
-            text = {
-                Column {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.clickable {
-                            language = "zh"; prefs.edit().putString("language", "zh").apply()
-                        }.padding(4.dp)
-                    ) {
-                        RadioButton(selected = resolved == "zh", onClick = {
-                            language = "zh"; prefs.edit().putString("language", "zh").apply()
-                        })
-                        Spacer(Modifier.width(8.dp))
-                        Text("中文")
-                    }
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier.clickable {
-                            language = "en"; prefs.edit().putString("language", "en").apply()
-                        }.padding(4.dp)
-                    ) {
-                        RadioButton(selected = resolved == "en", onClick = {
-                            language = "en"; prefs.edit().putString("language", "en").apply()
-                        })
-                        Spacer(Modifier.width(8.dp))
-                        Text("English")
-                    }
-                }
-            },
-            confirmButton = {
-                TextButton(onClick = { showSettings = false }) { Text("OK") }
-            }
-        )
+        SettingsScreen(onBack = { showSettings = false })
+        return
     }
 
     Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             TopAppBar(
-                title = { Text("PandaLed") },
+                title = {
+                    Column {
+                        Text("PandaLed", fontWeight = FontWeight.Bold)
+                        Text(
+                            "LED 项目控制台",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface,
+                    actionIconContentColor = MaterialTheme.colorScheme.onSurfaceVariant
+                ),
                 actions = {
                     IconButton(onClick = { showSettings = true }) {
-                        Text("⚙", fontSize = 22.sp)
+                        Icon(Icons.Default.Settings, contentDescription = "设置")
                     }
                 }
             )
@@ -159,7 +136,8 @@ fun HomeScreen(
                                 fabExpanded = false
                                 viewModel.createNewProject { id -> onProjectClick(id) }
                             },
-                            containerColor = MaterialTheme.colorScheme.secondaryContainer
+                            containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                            contentColor = MaterialTheme.colorScheme.primary
                         ) {
                             Icon(Icons.Default.Add, contentDescription = "新建项目")
                         }
@@ -171,7 +149,8 @@ fun HomeScreen(
                                 if (hasCameraPermission) viewModel.startScanning()
                                 else permissionLauncher.launch(Manifest.permission.CAMERA)
                             },
-                            containerColor = MaterialTheme.colorScheme.secondaryContainer
+                            containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                            contentColor = MaterialTheme.colorScheme.secondary
                         ) {
                             Icon(Icons.Default.QrCodeScanner, contentDescription = "扫码导入")
                         }
@@ -181,7 +160,9 @@ fun HomeScreen(
                 // Main FAB
                 FloatingActionButton(
                     onClick = { fabExpanded = !fabExpanded },
-                    shape = CircleShape
+                    shape = CircleShape,
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
                 ) {
                     Icon(
                         if (fabExpanded) Icons.Default.Close else Icons.Default.Add,
@@ -196,10 +177,18 @@ fun HomeScreen(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(padding),
+                    .padding(padding)
+                    .background(MaterialTheme.colorScheme.background),
                 contentAlignment = Alignment.Center
             ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Column(
+                    modifier = Modifier
+                        .padding(24.dp)
+                        .clip(MaterialTheme.shapes.large)
+                        .background(MaterialTheme.colorScheme.surfaceContainer)
+                        .padding(horizontal = 28.dp, vertical = 32.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Text(
                         "暂无项目",
                         style = MaterialTheme.typography.headlineSmall,
@@ -217,7 +206,8 @@ fun HomeScreen(
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(padding),
+                    .padding(padding)
+                    .background(MaterialTheme.colorScheme.background),
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
@@ -291,15 +281,28 @@ fun ProjectCard(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+        shape = RoundedCornerShape(8.dp)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
+                .padding(14.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
+            Box(
+                modifier = Modifier
+                    .width(4.dp)
+                    .height(44.dp)
+                    .clip(RoundedCornerShape(4.dp))
+                    .background(MaterialTheme.colorScheme.primary)
+            )
+            Spacer(Modifier.width(12.dp))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = project.name.ifBlank { "未命名项目" },

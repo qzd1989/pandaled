@@ -1,7 +1,9 @@
 package com.pandaled.ui.detail.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -101,46 +103,51 @@ fun ProjectInfoColumn(
         )
     }
 
-    Column(
+    Card(
         modifier = modifier.padding(12.dp),
-        verticalArrangement = Arrangement.spacedBy(12.dp)
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        shape = RoundedCornerShape(8.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
-        Text(
-            "项目信息",
-            style = MaterialTheme.typography.titleSmall,
-            fontWeight = FontWeight.Bold
-        )
+        Column(
+            modifier = Modifier.padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Text(
+                "项目信息",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold
+            )
 
-        // Version (read-only)
-        // Name
-        OutlinedTextField(
-            value = editName,
-            onValueChange = { newName ->
-                editName = newName
-                onUpdate(newName, editStartTime)
-            },
-            label = { Text("项目名称") },
-            modifier = Modifier.fillMaxWidth(),
-            singleLine = true
-        )
+            OutlinedTextField(
+                value = editName,
+                onValueChange = { newName ->
+                    editName = newName
+                    onUpdate(newName, editStartTime)
+                },
+                label = { Text("项目名称") },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
 
-        // Start time — click to pick
-        OutlinedTextField(
-            value = editStartTime,
-            onValueChange = {},
-            readOnly = true,
-            label = { Text("开始时间") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable { showDatePicker = true },
-            singleLine = true,
-            trailingIcon = {
-                IconButton(onClick = { showDatePicker = true }) {
-                    Text("📅", style = MaterialTheme.typography.bodyLarge)
+            OutlinedTextField(
+                value = editStartTime,
+                onValueChange = {},
+                readOnly = true,
+                label = { Text("开始时间") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { showDatePicker = true },
+                singleLine = true,
+                trailingIcon = {
+                    IconButton(onClick = { showDatePicker = true }) {
+                        Text("📅", style = MaterialTheme.typography.bodyLarge)
+                    }
                 }
-            }
-        )
-
-
+            )
+        }
     }
 }

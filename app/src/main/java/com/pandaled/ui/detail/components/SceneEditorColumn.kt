@@ -1,18 +1,17 @@
 package com.pandaled.ui.detail.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.pandaled.data.model.*
 import com.pandaled.ui.detail.EditorTarget
@@ -32,11 +31,17 @@ fun SceneEditorColumn(
 ) {
     Column(
         modifier = modifier,
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         when (selectedTarget) {
             is EditorTarget.None -> {
-                Text("从场景列表选择一个场景", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                EditorSection(title = "场景编辑") {
+                    Text(
+                        "从场景列表选择一个场景",
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
             }
             is EditorTarget.IdleScene -> {
                 IdleSceneEditor(
@@ -61,6 +66,45 @@ fun SceneEditorColumn(
     }
 }
 
+@Composable
+private fun EditorSection(
+    title: String,
+    content: @Composable ColumnScope.() -> Unit
+) {
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainer
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+        shape = RoundedCornerShape(8.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier.padding(14.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Text(
+                title,
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            content()
+        }
+    }
+}
+
+@Composable
+private fun FieldLabel(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.labelLarge,
+        fontWeight = FontWeight.Medium,
+        color = MaterialTheme.colorScheme.onSurfaceVariant
+    )
+}
+
 // ─── Idle Scene Editor ───────────────────────────────────
 
 @Composable
@@ -70,43 +114,46 @@ fun IdleSceneEditor(
 ) {
     var type by remember(idleScene) { mutableStateOf(idleScene.type) }
 
-    Text("等待场景编辑", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+    EditorSection("等待场景") {
+        FieldLabel("类型")
+        TypeSelector(
+            options = IdleSceneType.entries.map { it.name to idleSceneTypeLabel(it) },
+            selected = type.name,
+            onSelect = { selectedName ->
+                val newType = IdleSceneType.valueOf(selectedName)
+                type = newType
+                onUpdate(idleScene.copy(type = newType, content = IdleSceneContent()))
+            }
+        )
 
-    // Type selector
-    Text("类型", style = MaterialTheme.typography.labelSmall)
-    TypeSelector(
-        options = IdleSceneType.entries.map { it.name to idleSceneTypeLabel(it) },
-        selected = type.name,
-        onSelect = { selectedName ->
-            val newType = IdleSceneType.valueOf(selectedName)
-            type = newType
-            onUpdate(idleScene.copy(type = newType, content = IdleSceneContent()))
-        }
-    )
-
-    when (type) {
-        IdleSceneType.NONE -> {
-            Text("黑屏模式 — 无额外配置", color = MaterialTheme.colorScheme.onSurfaceVariant)
-        }
-        IdleSceneType.CLOCK -> {
-            IdleClockCountdownEditor(
-                content = idleScene.content,
-                isClock = true,
-                onUpdate = { c -> onUpdate(idleScene.copy(content = c)) }
-            )
-        }
-        IdleSceneType.COUNTDOWN -> {
-            IdleClockCountdownEditor(
-                content = idleScene.content,
-                isClock = false,
-                onUpdate = { c -> onUpdate(idleScene.copy(content = c)) }
-            )
-        }
-        IdleSceneType.IMAGE -> {
-            IdleImageEditor(
-                content = idleScene.content,
-                onUpdate = { c -> onUpdate(idleScene.copy(content = c)) }
-            )
+        when (type) {
+            IdleSceneType.NONE -> {
+                Text(
+                    "黑屏模式 - 无额外配置",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+            IdleSceneType.CLOCK -> {
+                IdleClockCountdownEditor(
+                    content = idleScene.content,
+                    isClock = true,
+                    onUpdate = { c -> onUpdate(idleScene.copy(content = c)) }
+                )
+            }
+            IdleSceneType.COUNTDOWN -> {
+                IdleClockCountdownEditor(
+                    content = idleScene.content,
+                    isClock = false,
+                    onUpdate = { c -> onUpdate(idleScene.copy(content = c)) }
+                )
+            }
+            IdleSceneType.IMAGE -> {
+                IdleImageEditor(
+                    content = idleScene.content,
+                    onUpdate = { c -> onUpdate(idleScene.copy(content = c)) }
+                )
+            }
         }
     }
 }
@@ -145,7 +192,7 @@ fun IdleClockCountdownEditor(
         modifier = Modifier.fillMaxWidth(),
         singleLine = true
     )
-    Text("字体", style = MaterialTheme.typography.labelMedium)
+    FieldLabel("字体")
     FontFamilySelector(
         selectedKey = fontFamily,
         onSelect = { fontFamily = it; emit() },
@@ -169,26 +216,22 @@ fun IdleImageEditor(
     onUpdate: (IdleSceneContent) -> Unit
 ) {
     val current = content ?: IdleSceneContent()
-    var source by remember(current) { mutableStateOf(current.source ?: "") }
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val picker = rememberLauncherForActivityResult(
+        androidx.activity.result.contract.ActivityResultContracts.GetContent()
+    ) { uri ->
+        if (uri != null) {
+            val path = copyToAppStorage(context, uri, "img")
+            onUpdate(current.copy(source = path))
+        }
+    }
+    val source = current.source
 
-    OutlinedTextField(
-        value = source,
-        onValueChange = {
-            source = it
-            onUpdate(current.copy(source = it.ifBlank { null }))
-        },
-        label = { Text("图片路径") },
-        placeholder = { Text("localpath/to/idle_bg.jpg") },
-        modifier = Modifier.fillMaxWidth(),
-        singleLine = true
-    )
-
-    if (source.isBlank()) {
-        Text(
-            "⚠ 待补充图片",
-            color = Color.Red,
-            style = MaterialTheme.typography.bodySmall
-        )
+    Button(onClick = { picker.launch("image/*") }, modifier = Modifier.fillMaxWidth()) {
+        Text(if (source.isNullOrBlank()) "选择图片" else "更换图片")
+    }
+    if (source.isNullOrBlank()) {
+        Text("⚠ 待补充图片", color = Color.Red, style = MaterialTheme.typography.bodySmall)
     }
 }
 
@@ -206,118 +249,117 @@ fun SceneEditor(
     var durationSec by remember(scene) { mutableIntStateOf(scene.duration.coerceIn(1, 300)) }
     var playMode by remember(scene) { mutableStateOf(scene.playMode) }
 
-    // Name
-    OutlinedTextField(
-        value = name,
-        onValueChange = {
-            name = it
-            onUpdate(scene.copy(name = it))
-        },
-        label = { Text("场景名称") },
-        modifier = Modifier.fillMaxWidth(),
-        singleLine = true
-    )
+    EditorSection("基础设置") {
+        OutlinedTextField(
+            value = name,
+            onValueChange = {
+                name = it
+                onUpdate(scene.copy(name = it))
+            },
+            label = { Text("场景名称") },
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true
+        )
 
-    // Duration
-    NumberStepper(
-        label = "持续时间 (秒)",
-        value = durationSec.toString(),
-        min = 1,
-        max = 300,
-        onValueChange = {
-            durationSec = it.toIntOrNull() ?: 5
-            onUpdate(scene.copy(duration = durationSec))
-        }
-    )
-
-    // PlayMode
-    val isLoop = playMode == PlayMode.LOOP
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        Text("播放模式", modifier = Modifier.weight(1f), style = MaterialTheme.typography.labelMedium)
-        Text(if (isLoop) "循环" else "单次", style = MaterialTheme.typography.labelSmall)
-        Spacer(Modifier.width(8.dp))
-        Switch(
-            checked = isLoop,
-            onCheckedChange = {
-                playMode = if (it) PlayMode.LOOP else PlayMode.ONCE
-                onUpdate(scene.copy(playMode = playMode))
+        NumberStepper(
+            label = "持续时间 (秒)",
+            value = durationSec.toString(),
+            min = 1,
+            max = 300,
+            onValueChange = {
+                durationSec = it.toIntOrNull() ?: 5
+                onUpdate(scene.copy(duration = durationSec))
             }
         )
+
+        val isLoop = playMode == PlayMode.LOOP
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            FieldLabel("播放模式")
+            Spacer(Modifier.weight(1f))
+            Text(
+                if (isLoop) "循环" else "单次",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(Modifier.width(8.dp))
+            Switch(
+                checked = isLoop,
+                onCheckedChange = {
+                    playMode = if (it) PlayMode.LOOP else PlayMode.ONCE
+                    onUpdate(scene.copy(playMode = playMode))
+                }
+            )
+        }
     }
-
-    HorizontalDivider()
-
-    // ─── Content section (varies by type) ────────────────
-    Text("内容", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Medium)
-    Spacer(Modifier.height(4.dp))
 
     val content = scene.content
 
-    when (type) {
-        SceneType.TEXT -> TextContentEditor(content) { onUpdate(scene.copy(content = it)) }
-        SceneType.IMAGE -> ImageContentEditor(content) { onUpdate(scene.copy(content = it)) }
-        SceneType.VIDEO -> VideoContentEditor(content) { onUpdate(scene.copy(content = it)) }
+    EditorSection("内容") {
+        when (type) {
+            SceneType.TEXT -> TextContentEditor(content) { onUpdate(scene.copy(content = it)) }
+            SceneType.IMAGE -> ImageContentEditor(content) { onUpdate(scene.copy(content = it)) }
+            SceneType.VIDEO -> VideoContentEditor(content) { onUpdate(scene.copy(content = it)) }
+        }
     }
 
     // ─── Transition section (hide for TEXT) ─────────────
     if (type != SceneType.TEXT) {
-        HorizontalDivider()
+        EditorSection("转场动画") {
+            val transition = scene.transition
+            val enter = transition.enter
 
-        Text("转场动画", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Medium)
-        Spacer(Modifier.height(4.dp))
-
-        val transition = scene.transition
-        val enter = transition.enter
-
-        Text("进入动画", style = MaterialTheme.typography.labelSmall)
-        TypeSelector(
-            options = TransitionType.entries.map { it.name to transitionTypeLabel(it) },
-            selected = enter.type.name,
-            onSelect = { selected ->
-                val tt = TransitionType.valueOf(selected)
-                onUpdate(
-                    scene.copy(
-                        transition = transition.copy(
-                            enter = enter.copy(type = tt)
+            FieldLabel("进入动画")
+            TypeSelector(
+                options = TransitionType.entries.map { it.name to transitionTypeLabel(it) },
+                selected = enter.type.name,
+                onSelect = { selected ->
+                    val tt = TransitionType.valueOf(selected)
+                    val wasNone = enter.type == TransitionType.NONE
+                    onUpdate(
+                        scene.copy(
+                            transition = transition.copy(
+                                enter = enter.copy(
+                                    type = tt,
+                                    duration = if (wasNone && tt != TransitionType.NONE) 2f else enter.duration
+                                )
+                            )
                         )
                     )
-                )
-            }
-        )
+                }
+            )
 
-        var enterSeconds by remember(enter) { mutableIntStateOf(enter.duration.toInt().coerceIn(0, 30)) }
-        NumberStepper(
-            label = "动画时长 (秒)",
-            value = enterSeconds.toString(),
-            min = 0,
-            max = 30,
-            onValueChange = {
-                enterSeconds = it.toIntOrNull() ?: 1
-                onUpdate(
-                    scene.copy(
-                        transition = transition.copy(
-                            enter = enter.copy(duration = enterSeconds.toFloat())
+            if (enter.type != TransitionType.NONE) {
+                var enterSeconds by remember(enter) { mutableIntStateOf(enter.duration.toInt().coerceIn(0, 30)) }
+                NumberStepper(
+                    label = "动画时长 (秒)",
+                    value = enterSeconds.toString(),
+                    min = 0,
+                    max = 30,
+                    onValueChange = {
+                        enterSeconds = it.toIntOrNull() ?: 1
+                        onUpdate(
+                            scene.copy(
+                                transition = transition.copy(
+                                    enter = enter.copy(duration = enterSeconds.toFloat())
+                                )
+                            )
                         )
-                    )
+                    }
                 )
             }
-        )
+        }
     }
 
-    HorizontalDivider()
-
-    // ─── Appearance section ──────────────────────────────
-    Text("外观", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Medium)
-    Spacer(Modifier.height(4.dp))
-
-    AppearanceEditor(
-        appearance = scene.appearance,
-        sceneType = type,
-        onUpdate = { onUpdate(scene.copy(appearance = it)) }
-    )
+    EditorSection("外观") {
+        AppearanceEditor(
+            appearance = scene.appearance,
+            sceneType = type,
+            onUpdate = { onUpdate(scene.copy(appearance = it)) }
+        )
+    }
 }
 
 // ─── Type Selector (dropdown-style for multi-mode keys) ──
@@ -399,7 +441,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
             onUpdate(content.copy(style = (content.style ?: ContentStyle()).copy(size = it.toIntOrNull() ?: 40)))
         }
     )
-    Text("字体", style = MaterialTheme.typography.labelMedium)
+    FieldLabel("字体")
     FontFamilySelector(
         selectedKey = fontFamily,
         onSelect = {
@@ -418,7 +460,8 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
     // Motion — scroll
     var hasScroll by remember(content) { mutableStateOf(content.motion?.scroll != null) }
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Text("滚动", modifier = Modifier.weight(1f))
+        FieldLabel("滚动")
+        Spacer(Modifier.weight(1f))
         Switch(
             checked = hasScroll,
             onCheckedChange = {
@@ -459,7 +502,8 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
     // Transform — mirror
     var mirror by remember(content) { mutableStateOf(content.transform?.mirror ?: false) }
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Text("镜像", modifier = Modifier.weight(1f))
+        FieldLabel("镜像")
+        Spacer(Modifier.weight(1f))
         Switch(
             checked = mirror,
             onCheckedChange = {
@@ -494,20 +538,21 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
 
 @Composable
 fun ImageContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
-    var source by remember(content) { mutableStateOf(content.source ?: "") }
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val picker = rememberLauncherForActivityResult(
+        androidx.activity.result.contract.ActivityResultContracts.GetContent()
+    ) { uri ->
+        if (uri != null) {
+            val path = copyToAppStorage(context, uri, "img")
+            onUpdate(content.copy(source = path))
+        }
+    }
+    val source = content.source
 
-    OutlinedTextField(
-        value = source,
-        onValueChange = {
-            source = it
-            onUpdate(content.copy(source = it.ifBlank { null }))
-        },
-        label = { Text("图片路径") },
-        placeholder = { Text("localpath/to/image.jpg") },
-        modifier = Modifier.fillMaxWidth(),
-        singleLine = true
-    )
-    if (source.isBlank()) {
+    Button(onClick = { picker.launch("image/*") }, modifier = Modifier.fillMaxWidth()) {
+        Text(if (source.isNullOrBlank()) "选择图片" else "更换图片")
+    }
+    if (source.isNullOrBlank()) {
         Text("⚠ 待补充图片", color = Color.Red, style = MaterialTheme.typography.bodySmall)
     }
 
@@ -535,21 +580,45 @@ fun ImageContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) 
 
 @Composable
 fun VideoContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
-    var source by remember(content) { mutableStateOf(content.source ?: "") }
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val picker = rememberLauncherForActivityResult(
+        androidx.activity.result.contract.ActivityResultContracts.GetContent()
+    ) { uri ->
+        if (uri != null) {
+            val path = copyToAppStorage(context, uri, "video")
+            onUpdate(content.copy(source = path))
+        }
+    }
+    val source = content.source
 
-    OutlinedTextField(
-        value = source,
-        onValueChange = {
-            source = it
-            onUpdate(content.copy(source = it.ifBlank { null }))
-        },
-        label = { Text("视频路径") },
-        placeholder = { Text("localpath/to/video.mp4") },
-        modifier = Modifier.fillMaxWidth(),
-        singleLine = true
-    )
-    if (source.isBlank()) {
+    Button(onClick = { picker.launch("video/*") }, modifier = Modifier.fillMaxWidth()) {
+        Text(if (source.isNullOrBlank()) "选择视频" else "更换视频")
+    }
+    if (source.isNullOrBlank()) {
         Text("⚠ 待补充视频", color = Color.Red, style = MaterialTheme.typography.bodySmall)
+    } else {
+        // Show video duration for reference
+        var videoDurationSec by remember { mutableStateOf<Int?>(null) }
+        LaunchedEffect(source) {
+            val retriever = android.media.MediaMetadataRetriever()
+            try {
+                retriever.setDataSource(source)
+                val durMs = retriever.extractMetadata(android.media.MediaMetadataRetriever.METADATA_KEY_DURATION)
+                    ?.toLongOrNull() ?: 0L
+                videoDurationSec = (durMs / 1000).toInt()
+            } catch (_: Exception) {
+                videoDurationSec = null
+            } finally {
+                retriever.release()
+            }
+        }
+        Text(
+            "视频时长: ${videoDurationSec?.let { "${it}s" } ?: "未知"}",
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
     }
 
     // Blink — slider 0-10, 0=off
@@ -582,7 +651,7 @@ fun ColorConfigEditor(
     val current = colorConfig ?: ColorConfig()
     var mode by remember(current) { mutableStateOf(current.type) }
 
-    Text("颜色模式", style = MaterialTheme.typography.labelSmall)
+    FieldLabel("颜色模式")
     TypeSelector(
         options = listOf(
             "STATIC" to "静态",
@@ -704,7 +773,7 @@ fun BackgroundColorEditor(
     var bgMode by remember(bg) { mutableStateOf(if (bg.type in modes) bg.type else modes.first()) }
 
     if (!singleMode) {
-        Text("背景颜色模式", style = MaterialTheme.typography.labelSmall)
+        FieldLabel("背景颜色模式")
         TypeSelector(
             options = modes.map { it.name to when (it) {
                 ColorType.STATIC -> "静态"
@@ -768,6 +837,7 @@ fun BackgroundColorEditor(
             var to by remember(bg) { mutableStateOf(bg.to ?: "#FF0000") }
             var freq by remember(bg) { mutableStateOf(
                 when {
+                    bg.duration == null -> 5
                     (bg.duration ?: 920) >= 1498L -> 1
                     (bg.duration ?: 920) >= 1333L -> 2
                     (bg.duration ?: 920) >= 1168L -> 3
@@ -842,7 +912,8 @@ fun DotMaskEditor(
     val overlay = overlays?.firstOrNull { it.type == OverlayType.DOT_MASK }
     var hasOverlay by remember(overlays) { mutableStateOf(overlay != null) }
     Row(verticalAlignment = Alignment.CenterVertically) {
-        Text("点阵遮罩", modifier = Modifier.weight(1f))
+        FieldLabel("点阵遮罩")
+        Spacer(Modifier.weight(1f))
         Switch(
             checked = hasOverlay,
             onCheckedChange = {
@@ -856,7 +927,7 @@ fun DotMaskEditor(
         var dotSize by remember(dot) { mutableStateOf(dot.size.coerceIn(1, 10)) }
         var dotStyle by remember(dot) { mutableStateOf(dot.style) }
 
-        Text("遮罩样式", style = MaterialTheme.typography.labelSmall)
+        FieldLabel("遮罩样式")
         TypeSelector(
             options = listOf("round" to "圆形", "square" to "正方形", "heart" to "爱心形"),
             selected = dotStyle,
@@ -891,6 +962,23 @@ private fun sceneTypeLabel(type: SceneType): String = when (type) {
     SceneType.TEXT -> "文字"
     SceneType.IMAGE -> "图片"
     SceneType.VIDEO -> "视频"
+}
+
+private fun copyToAppStorage(context: android.content.Context, uri: android.net.Uri, prefix: String): String {
+    val ext = context.contentResolver.getType(uri)?.let { mime ->
+        when {
+            mime.startsWith("image/") -> mime.substringAfter("/").let { if (it == "jpeg") "jpg" else it }
+            mime.startsWith("video/") -> mime.substringAfter("/")
+            else -> null
+        }
+    } ?: "bin"
+    val name = "${prefix}_${System.currentTimeMillis()}.$ext"
+    val dest = java.io.File(context.filesDir, "media/$name")
+    dest.parentFile?.mkdirs()
+    context.contentResolver.openInputStream(uri)?.use { input ->
+        dest.outputStream().use { output -> input.copyTo(output) }
+    }
+    return dest.absolutePath
 }
 
 private fun transitionTypeLabel(type: TransitionType): String = when (type) {

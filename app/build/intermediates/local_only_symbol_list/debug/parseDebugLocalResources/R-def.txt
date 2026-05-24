@@ -1,5 +1,7 @@
 R_DEF: Internal format may change without notice
 local
+id video_player_view
+layout view_video_player_texture
 string app_name
 style Theme.PandaLed
 style Theme.PandaLed.FullScreen

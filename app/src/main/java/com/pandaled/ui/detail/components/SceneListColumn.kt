@@ -1,5 +1,6 @@
 package com.pandaled.ui.detail.components
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -38,22 +39,31 @@ fun SceneListColumn(
     modifier: Modifier = Modifier
 ) {
     var addMenuExpanded by remember { mutableStateOf(false) }
-    Column(modifier = modifier.fillMaxSize()) {
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
+    ) {
 
-        HorizontalDivider()
+        HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
 
         // waiting scene — fixed, non-draggable
         val isIdleSelected = selectedTarget is EditorTarget.IdleScene
         Surface(
             modifier = Modifier
                 .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 8.dp)
                 .clickable(onClick = onSelectIdle),
-            color = if (isIdleSelected) MaterialTheme.colorScheme.primaryContainer
-                    else MaterialTheme.colorScheme.surface,
-            shape = RoundedCornerShape(0.dp)
+            color = if (isIdleSelected) MaterialTheme.colorScheme.surfaceContainerHighest
+                    else MaterialTheme.colorScheme.surfaceContainer,
+            shape = RoundedCornerShape(8.dp),
+            border = BorderStroke(
+                1.dp,
+                if (isIdleSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant
+            )
         ) {
             Row(
-                modifier = Modifier.padding(start = 8.dp, top = 4.dp, bottom = 4.dp, end = 4.dp),
+                modifier = Modifier.padding(start = 12.dp, top = 8.dp, bottom = 8.dp, end = 6.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
@@ -66,7 +76,7 @@ fun SceneListColumn(
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
                         "等待场景",
-                        style = MaterialTheme.typography.bodySmall,
+                        style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Medium,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
@@ -111,7 +121,7 @@ fun SceneListColumn(
             }
         }
 
-        HorizontalDivider()
+        HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
 
         // Scenes list
         LazyColumn(
@@ -134,22 +144,28 @@ fun SceneListColumn(
                 Surface(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .padding(horizontal = 12.dp, vertical = 4.dp)
                         .clickable(onClick = { onSelectScene(index) })
                         .then(
                             if (isHighlighted) Modifier.border(
                                 1.dp,
                                 Color.Red,
-                                RoundedCornerShape(0.dp)
+                                RoundedCornerShape(8.dp)
                             ) else Modifier
                         ),
                     color = when {
                         isHighlighted -> Color.Red.copy(alpha = 0.08f)
-                        isSelected -> MaterialTheme.colorScheme.primaryContainer
-                        else -> MaterialTheme.colorScheme.surface
-                    }
+                        isSelected -> MaterialTheme.colorScheme.surfaceContainerHighest
+                        else -> MaterialTheme.colorScheme.surfaceContainer
+                    },
+                    shape = RoundedCornerShape(8.dp),
+                    border = BorderStroke(
+                        1.dp,
+                        if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant
+                    )
                 ) {
                     Row(
-                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         // Scene type icon
@@ -170,7 +186,7 @@ fun SceneListColumn(
                         Column(modifier = Modifier.weight(1f)) {
                             Text(
                                 scene.name.ifBlank { "场景 ${index + 1}" },
-                                style = MaterialTheme.typography.bodySmall,
+                                style = MaterialTheme.typography.bodyMedium,
                                 fontWeight = FontWeight.Medium,
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis

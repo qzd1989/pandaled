@@ -12,20 +12,22 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.pandaled.PandaLedApp
 import com.pandaled.data.model.*
 import com.pandaled.ui.detail.components.IdleSceneRenderer
 import com.pandaled.ui.detail.components.SceneRenderer
 import com.pandaled.ui.detail.components.TransitionOverlay
+import com.pandaled.ui.theme.PandaLedTheme
 import kotlinx.coroutines.delay
 
 class FullScreenActivity : ComponentActivity() {
@@ -44,7 +46,7 @@ class FullScreenActivity : ComponentActivity() {
         }
 
         setContent {
-            MaterialTheme {
+            PandaLedTheme {
                 FullScreenPlayer(
                     projectId = projectId,
                     onExit = { finish() }
@@ -181,10 +183,13 @@ fun FullScreenContent(
         }
     }
 
+    val contentRotation = rememberLandscapeFlipRotation()
+
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)
+            .graphicsLayer { rotationZ = contentRotation }
             .pointerInput(Unit) {
                 detectTapGestures(
                     onTap = {
@@ -236,6 +241,60 @@ fun FullScreenContent(
             }
         }
     }
+}
+
+@Composable
+private fun rememberLandscapeFlipRotation(): Float {
+    val context = LocalContext.current
+    var baselineSign by remember { mutableStateOf<Int?>(null) }
+    var rotation by remember { mutableFloatStateOf(0f) }
+
+    DisposableEffect(context) {
+        val sensorManager = context.getSystemService(android.content.Context.SENSOR_SERVICE)
+                as android.hardware.SensorManager
+        val sensor = sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_GRAVITY)
+            ?: sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_ACCELEROMETER)
+
+        if (sensor == null) {
+            rotation = 0f
+            onDispose { }
+        } else {
+            val listener = object : android.hardware.SensorEventListener {
+                override fun onSensorChanged(event: android.hardware.SensorEvent) {
+                    val x = event.values[0]
+                    val y = event.values[1]
+
+                    if (kotlin.math.abs(x) < 6.5f || kotlin.math.abs(x) < kotlin.math.abs(y)) {
+                        return
+                    }
+
+                    val sign = if (x >= 0f) 1 else -1
+                    val baseline = baselineSign
+                    if (baseline == null) {
+                        baselineSign = sign
+                        rotation = 0f
+                    } else {
+                        rotation = if (sign == baseline) 0f else 180f
+                    }
+                }
+
+                override fun onAccuracyChanged(sensor: android.hardware.Sensor?, accuracy: Int) = Unit
+            }
+
+            sensorManager.registerListener(
+                listener,
+                sensor,
+                android.hardware.SensorManager.SENSOR_DELAY_UI
+            )
+            onDispose {
+                sensorManager.unregisterListener(listener)
+                rotation = 0f
+                baselineSign = null
+            }
+        }
+    }
+
+    return rotation
 }
 
 // ─── Full-screen renderers ───────────────────────────────

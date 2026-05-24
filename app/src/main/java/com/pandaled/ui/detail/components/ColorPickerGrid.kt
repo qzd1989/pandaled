@@ -4,6 +4,7 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.gestures.*
 import androidx.compose.runtime.key
 import androidx.compose.foundation.layout.*
+import kotlinx.coroutines.launch
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -82,7 +83,11 @@ fun ColorField(
         modifier = modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(label, style = MaterialTheme.typography.labelMedium)
+        Text(
+            label,
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
         Spacer(Modifier.weight(1f))
         // Color preview swatch only (no hex text outside)
         Box(
@@ -382,8 +387,20 @@ fun LabeledSlider(
             modifier = modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text("$label: $value", style = MaterialTheme.typography.labelSmall)
-            Spacer(Modifier.width(8.dp))
+            Text(
+                label,
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.widthIn(min = 68.dp)
+            )
+            Text(
+                value.toString(),
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.primary,
+                textAlign = TextAlign.End,
+                modifier = Modifier.width(28.dp)
+            )
+            Spacer(Modifier.width(10.dp))
             Slider(
                 value = value.toFloat(),
                 onValueChange = { onValueChange(it.toInt()) },
@@ -405,33 +422,46 @@ fun NumberStepper(
     max: Int = 200,
     modifier: Modifier = Modifier
 ) {
+    val scope = rememberCoroutineScope()
+
     Row(
         modifier = modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Text(label, style = MaterialTheme.typography.labelMedium)
+        Text(
+            label,
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
         Spacer(Modifier.weight(1f))
-        IconButton(
-            onClick = {
-                val v = (value.toFloatOrNull()?.toInt() ?: min)
-                onValueChange(((v - 1).coerceAtLeast(min)).toString())
-            },
-            modifier = Modifier.size(36.dp)
+        // Long-press repeatable minus button
+        val dec = remember { { onValueChange(((value.toFloatOrNull()?.toInt() ?: min) - 1).coerceAtLeast(min).toString()) } }
+        FilledTonalIconButton(
+            onClick = dec,
+            modifier = Modifier.size(34.dp).longPressRepeatable(scope, dec),
+            colors = IconButtonDefaults.filledTonalIconButtonColors(
+                containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                contentColor = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         ) {
             Text("−", style = MaterialTheme.typography.titleMedium)
         }
         Text(
             text = value,
-            style = MaterialTheme.typography.bodyLarge,
-            modifier = Modifier.widthIn(min = 36.dp),
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.onSurface,
+            modifier = Modifier.widthIn(min = 42.dp),
             textAlign = TextAlign.Center
         )
-        IconButton(
-            onClick = {
-                val v = (value.toFloatOrNull()?.toInt() ?: min)
-                onValueChange(((v + 1).coerceAtMost(max)).toString())
-            },
-            modifier = Modifier.size(36.dp)
+        // Long-press repeatable plus button
+        val inc = remember { { onValueChange(((value.toFloatOrNull()?.toInt() ?: min) + 1).coerceAtMost(max).toString()) } }
+        FilledTonalIconButton(
+            onClick = inc,
+            modifier = Modifier.size(34.dp).longPressRepeatable(scope, inc),
+            colors = IconButtonDefaults.filledTonalIconButtonColors(
+                containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+                contentColor = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         ) {
             Text("+", style = MaterialTheme.typography.titleMedium)
         }
@@ -633,4 +663,28 @@ private fun HueSlider(
         drawCircle(Color.White, r, Offset(px, py))
         drawCircle(Color.Black, r, Offset(px, py), style = Stroke(width = 2f))
     }
+}
+
+// ─── Long-press repeat modifier ──────────────────────────
+
+fun Modifier.longPressRepeatable(
+    scope: kotlinx.coroutines.CoroutineScope,
+    onClick: () -> Unit
+): Modifier = this.pointerInput(Unit) {
+    var job: kotlinx.coroutines.Job? = null
+    detectTapGestures(
+        onPress = {
+            onClick()
+            var delayMs = 400L
+            job = scope.launch {
+                while (true) {
+                    kotlinx.coroutines.delay(delayMs)
+                    onClick()
+                    delayMs = 80L // accelerate after first repeat
+                }
+            }
+            tryAwaitRelease()
+            job?.cancel()
+        }
+    )
 }

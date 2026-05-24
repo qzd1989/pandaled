@@ -15,12 +15,12 @@
   },
   "scenes": [
     {
-      "name": "Text Scene",
+      "name": "Nice to meet you!",
       "type": "text",
       "duration": 5,
       "playMode": "loop",
       "content": {
-        "source": "nice to meet you!",
+        "source": "Nice to meet you!",
         "style": {
           "size": 40,
           "fontFamily": "sans-serif"

@@ -53,14 +53,22 @@ fun DetailScreen(
     var showMenu by remember { mutableStateOf(false) }
 
     Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             TopAppBar(
                 title = {
                     Text(
                         state.project?.name ?: "加载中...",
-                        maxLines = 1
+                        maxLines = 1,
+                        fontWeight = FontWeight.Bold
                     )
                 },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    titleContentColor = MaterialTheme.colorScheme.onSurface,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    actionIconContentColor = MaterialTheme.colorScheme.onSurfaceVariant
+                ),
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "返回")
@@ -110,6 +118,7 @@ fun DetailScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
+                .background(MaterialTheme.colorScheme.background)
         ) {
             // ─── Red warning bar for missing assets ──────
             if (state.missingAssets.isNotEmpty()) {
@@ -135,14 +144,17 @@ fun DetailScreen(
                 project = project,
                 currentPreviewIndex = state.previewCurrentIndex,
                 isPlaying = state.isPreviewPlaying,
+                replayKey = state.previewReplayKey,
                 sceneName = currentSceneName,
                 selectedTarget = state.selectedTarget,
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(horizontal = 12.dp, vertical = 10.dp)
+                    .clip(RoundedCornerShape(8.dp))
                     .aspectRatio(previewAspectRatio)
             )
 
-            HorizontalDivider()
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
 
             // ─── Tab bar ─────────────────────────────────
             val tabTitles = listOf("项目信息", "场景列表", "场景编辑")
@@ -150,12 +162,26 @@ fun DetailScreen(
 
 
 
-            TabRow(selectedTabIndex = selectedTab) {
+            TabRow(
+                selectedTabIndex = selectedTab,
+                containerColor = MaterialTheme.colorScheme.surface,
+                contentColor = MaterialTheme.colorScheme.onSurface,
+                divider = { HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant) }
+            ) {
                 tabTitles.forEachIndexed { index, title ->
                     Tab(
                         selected = selectedTab == index,
                         onClick = { selectedTab = index },
-                        text = { Text(title, maxLines = 1) }
+                        text = {
+                            Text(
+                                title,
+                                maxLines = 1,
+                                style = MaterialTheme.typography.labelLarge,
+                                fontWeight = if (selectedTab == index) FontWeight.Bold else FontWeight.Medium
+                            )
+                        },
+                        selectedContentColor = MaterialTheme.colorScheme.primary,
+                        unselectedContentColor = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             }
@@ -206,7 +232,7 @@ fun DetailScreen(
                         modifier = Modifier
                             .fillMaxSize()
                             .verticalScroll(rememberScrollState())
-                            .padding(8.dp)
+                            .padding(12.dp)
                     )
                 }
             }

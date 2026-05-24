@@ -1147,6 +1147,7 @@ id uniform
 id up
 id useLogo
 id video_decoder_gl_surface_view
+id video_player_view
 id view_tree_lifecycle_owner
 id view_tree_on_back_pressed_dispatcher_owner
 id view_tree_saved_state_registry_owner
@@ -1233,6 +1234,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout view_video_player_texture
 plurals exo_controls_fastforward_by_amount_description
 plurals exo_controls_rewind_by_amount_description
 string abc_action_bar_home_description

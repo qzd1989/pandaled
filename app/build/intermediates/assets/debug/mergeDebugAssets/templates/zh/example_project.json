@@ -15,7 +15,7 @@
   },
   "scenes": [
     {
-      "name": "文字场景",
+      "name": "很高兴见到你!",
       "type": "text",
       "duration": 5,
       "playMode": "loop",

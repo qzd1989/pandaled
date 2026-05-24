@@ -5,12 +5,14 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
@@ -29,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.pandaled.R
 import com.pandaled.data.model.*
 import kotlinx.coroutines.delay
 
@@ -45,6 +48,7 @@ fun PreviewPanel(
     project: Project,
     currentPreviewIndex: Int,
     isPlaying: Boolean,
+    replayKey: Int = 0,
     sceneName: String = "",
     selectedTarget: com.pandaled.ui.detail.EditorTarget,
     modifier: Modifier = Modifier
@@ -75,7 +79,7 @@ fun PreviewPanel(
         // Render the scene/idle content
         when {
             displayIdleScene != null -> IdleSceneRenderer(displayIdleScene, project.startTime)
-            displayScene != null -> SceneRenderer(displayScene)
+            displayScene != null -> SceneRenderer(displayScene, isPreview = true)
             else -> {
                 // Black / empty
                 Box(modifier = Modifier.fillMaxSize().background(Color.Black))
@@ -124,7 +128,8 @@ fun PreviewPanel(
             TransitionOverlay(
                 type = transitionType,
                 duration = transitionDuration,
-                bgColor = transitionBgColor
+                bgColor = transitionBgColor,
+                replayKey = replayKey
             )
         }
     }
@@ -265,16 +270,16 @@ fun CountdownRenderer(format: String, startTime: String, fontKey: String? = null
 // ─── Scene Renderer ──────────────────────────────────────
 
 @Composable
-fun SceneRenderer(scene: Scene) {
+fun SceneRenderer(scene: Scene, isPreview: Boolean = false) {
     when (scene.type) {
-        SceneType.TEXT -> TextSceneRenderer(scene)
+        SceneType.TEXT -> TextSceneRenderer(scene, isPreview)
         SceneType.IMAGE -> ImageSceneRenderer(scene)
         SceneType.VIDEO -> VideoSceneRenderer(scene)
     }
 }
 
 @Composable
-fun TextSceneRenderer(scene: Scene) {
+fun TextSceneRenderer(scene: Scene, isPreview: Boolean = false) {
     val content = scene.content
     val text = content.source ?: ""
     val colorConfig = content.color
@@ -348,8 +353,8 @@ fun TextSceneRenderer(scene: Scene) {
         var fraction by remember { mutableStateOf(0f) }
         val speed = motion.speed.coerceIn(1, 10)
         val durationMs = (14000f / speed).toInt()
-        LaunchedEffect(durationMs) {
-            val step = 16L // ~60fps
+        LaunchedEffect(durationMs, isPreview) {
+            val step = if (isPreview) 33L else 16L
             val totalSteps = (durationMs / step.toInt()).coerceAtLeast(1)
             var stepCount = 0
             while (true) {
@@ -591,10 +596,16 @@ fun VideoSceneRenderer(scene: Scene) {
         else -> Color.Black
     }
 
-    // ExoPlayer — prepare asynchronously to avoid blocking UI
-    val player = remember { androidx.media3.exoplayer.ExoPlayer.Builder(context).build() }
+    // ExoPlayer — mute video
+    val player = remember {
+        androidx.media3.exoplayer.ExoPlayer.Builder(context).build().apply {
+            volume = 0f
+        }
+    }
+    var isReady by remember { mutableStateOf(false) }
 
     LaunchedEffect(source) {
+        isReady = false
         player.stop()
         if (!source.isNullOrBlank()) {
             val mediaItem = androidx.media3.common.MediaItem.fromUri(source)
@@ -605,8 +616,18 @@ fun VideoSceneRenderer(scene: Scene) {
         }
     }
 
-    DisposableEffect(Unit) {
+    // Track player readiness
+    DisposableEffect(player) {
+        val listener = object : androidx.media3.common.Player.Listener {
+            override fun onPlaybackStateChanged(state: Int) {
+                if (state == androidx.media3.common.Player.STATE_READY) {
+                    isReady = true
+                }
+            }
+        }
+        player.addListener(listener)
         onDispose {
+            player.removeListener(listener)
             player.stop()
             player.release()
         }
@@ -616,12 +637,19 @@ fun VideoSceneRenderer(scene: Scene) {
         modifier = Modifier
             .fillMaxSize()
             .background(bgColor)
-            .graphicsLayer(alpha = blinkAlpha)
     ) {
+        if (!isReady) {
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center),
+                color = Color.White.copy(alpha = 0.6f)
+            )
+        }
         if (!source.isNullOrBlank()) {
             AndroidView(
+                modifier = Modifier.fillMaxSize().graphicsLayer(alpha = blinkAlpha),
                 factory = {
-                    PlayerView(context).apply {
+                    (android.view.LayoutInflater.from(context)
+                        .inflate(R.layout.view_video_player_texture, null) as PlayerView).apply {
                         this.player = player
                         useController = false
                         resizeMode = androidx.media3.ui.AspectRatioFrameLayout.RESIZE_MODE_ZOOM
@@ -629,8 +657,7 @@ fun VideoSceneRenderer(scene: Scene) {
                 },
                 update = { view ->
                     view.scaleX = if (mirror) -1f else 1f
-                },
-                modifier = Modifier.fillMaxSize()
+                }
             )
         } else {
             Box(
@@ -655,93 +682,100 @@ fun VideoSceneRenderer(scene: Scene) {
 @Composable
 fun DotMaskOverlay(overlay: Overlay) {
     val style = overlay.style
+    val overlaySize = overlay.size.coerceIn(1, 10)
 
-    Canvas(modifier = Modifier.fillMaxSize()) {
-        val viewShort = size.width.coerceAtMost(size.height)
-        val requestedDotSize = viewShort * (overlay.size.coerceIn(1, 10).toFloat() / 80f)
-        val spacing = maxOf(
-            requestedDotSize * 1.3f,
-            size.width / 180f,
-            size.height / 100f,
-            1f
-        )
-        val dotSize = minOf(requestedDotSize, spacing * 0.75f)
-        val nativeCanvas = drawContext.canvas.nativeCanvas
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .drawWithCache {
+                val viewShort = size.width.coerceAtMost(size.height)
+                val requestedDotSize = viewShort * (overlaySize.toFloat() / 80f)
+                val spacing = maxOf(
+                    requestedDotSize * 1.3f,
+                    size.width / 180f,
+                    size.height / 100f,
+                    1f
+                )
+                val dotSize = minOf(requestedDotSize, spacing * 0.75f)
+                val holePath = android.graphics.Path()
+                val rect = android.graphics.RectF()
 
-        // Save a new layer so CLEAR only affects this layer, not content below
-        nativeCanvas.saveLayer(0f, 0f, size.width, size.height, null)
-
-        // Fill layer with opaque black
-        val maskPaint = android.graphics.Paint().apply {
-            color = android.graphics.Color.BLACK
-            isAntiAlias = true
-        }
-        nativeCanvas.drawRect(0f, 0f, size.width, size.height, maskPaint)
-
-        // Punch holes (dots) through the mask using CLEAR
-        val clearPaint = android.graphics.Paint().apply {
-            isAntiAlias = true
-            xfermode = android.graphics.PorterDuffXfermode(android.graphics.PorterDuff.Mode.CLEAR)
-        }
-        var x = 0f
-        var y = 0f
-        while (y < size.height) {
-            x = 0f
-            while (x < size.width) {
-                when (style) {
-                    "round" -> {
-                        nativeCanvas.drawCircle(
-                            x + dotSize / 2, y + dotSize / 2,
-                            dotSize / 2, clearPaint
-                        )
+                var x = 0f
+                var y = 0f
+                while (y < size.height) {
+                    x = 0f
+                    while (x < size.width) {
+                        when (style) {
+                            "round" -> {
+                                holePath.addCircle(
+                                    x + dotSize / 2,
+                                    y + dotSize / 2,
+                                    dotSize / 2,
+                                    android.graphics.Path.Direction.CW
+                                )
+                            }
+                            "square" -> {
+                                rect.set(x, y, x + dotSize, y + dotSize)
+                                holePath.addRect(rect, android.graphics.Path.Direction.CW)
+                            }
+                            "heart" -> {
+                                val cx = x + dotSize / 2
+                                val cy = y + dotSize / 2
+                                val s = dotSize * 0.48f
+                                // Fatter heart: wider lobes, rounder bottom
+                                holePath.moveTo(cx, cy + s * 1.05f)
+                                holePath.cubicTo(
+                                    cx - s * 1.2f, cy - s * 0.1f,
+                                    cx - s * 1.0f, cy - s * 1.3f,
+                                    cx, cy - s * 0.55f
+                                )
+                                holePath.cubicTo(
+                                    cx + s * 1.0f, cy - s * 1.3f,
+                                    cx + s * 1.2f, cy - s * 0.1f,
+                                    cx, cy + s * 1.05f
+                                )
+                            }
+                        }
+                        x += spacing
                     }
-                    "square" -> {
-                        nativeCanvas.drawRect(
-                            x, y, x + dotSize, y + dotSize, clearPaint
-                        )
-                    }
-                    "heart" -> {
-                        val cx = x + dotSize / 2
-                        val cy = y + dotSize / 2
-                        val s = dotSize * 0.45f
-                        val path = android.graphics.Path()
-                        // Start at bottom tip
-                        path.moveTo(cx, cy + s)
-                        // Left lobe: cubic to top-center via left
-                        path.cubicTo(
-                            cx - s, cy,
-                            cx - s, cy - s * 1.1f,
-                            cx, cy - s * 0.6f
-                        )
-                        // Right lobe: cubic back to bottom tip
-                        path.cubicTo(
-                            cx + s, cy - s * 1.1f,
-                            cx + s, cy,
-                            cx, cy + s
-                        )
-                        nativeCanvas.drawPath(path, clearPaint)
-                    }
+                    y += spacing
                 }
-                x += spacing
-            }
-            y += spacing
-        }
 
-        // Merge layer back
-        nativeCanvas.restore()
-    }
+                val maskPaint = android.graphics.Paint().apply {
+                    color = android.graphics.Color.BLACK
+                    isAntiAlias = true
+                }
+                val clearPaint = android.graphics.Paint().apply {
+                    isAntiAlias = true
+                    xfermode = android.graphics.PorterDuffXfermode(android.graphics.PorterDuff.Mode.CLEAR)
+                }
+
+                onDrawBehind {
+                    val nativeCanvas = drawContext.canvas.nativeCanvas
+                    nativeCanvas.saveLayer(0f, 0f, size.width, size.height, null)
+                    nativeCanvas.drawRect(0f, 0f, size.width, size.height, maskPaint)
+                    nativeCanvas.drawPath(holePath, clearPaint)
+                    nativeCanvas.restore()
+                }
+            }
+    )
 }
 
 // ─── Transition Overlay ──────────────────────────────────
 
 @Composable
-fun TransitionOverlay(type: TransitionType, duration: Long, bgColor: String = "#000000") {
+fun TransitionOverlay(
+    type: TransitionType,
+    duration: Long,
+    bgColor: String = "#000000",
+    replayKey: Int = 0
+) {
     val durationMs = if (duration > 0) duration.toInt().coerceAtLeast(100) else 1000
     val curtainColor = parseColor(bgColor)
 
     val offsetFraction = remember { Animatable(1f) }
 
-    LaunchedEffect(type, durationMs) {
+    LaunchedEffect(type, durationMs, replayKey) {
         offsetFraction.snapTo(1f)
         offsetFraction.animateTo(
             0f,
