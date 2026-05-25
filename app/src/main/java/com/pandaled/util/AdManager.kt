@@ -11,6 +11,11 @@ object AdManager {
 
     /** Load ad, then show it immediately. Falls through on failure. */
     fun loadAndShow(activity: Activity, onDismissed: () -> Unit) {
+        if (!DebugConfig.enableAds()) {
+            // Skip actual ad, but simulate brief loading delay
+            android.os.Handler(activity.mainLooper).postDelayed({ onDismissed() }, 1500)
+            return
+        }
         InterstitialAd.load(
             activity,
             INTERSTITIAL_UNIT_ID,
