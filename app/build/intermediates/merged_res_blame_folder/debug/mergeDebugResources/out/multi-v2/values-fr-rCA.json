@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.pandaled.app-mergeDebugResources-79:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.biexi.pandaled.app-mergeDebugResources-79:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "/Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/res/values-fr-rCA/values-fr-rCA.xml",

@@ -91,7 +91,9 @@
     <string name="color_a">Color A</string>
     <string name="color_b">Color B</string>
     <string name="editor_scroll">Scroll</string>
+    <string name="countdown_sec">%ds</string>
     <string name="editor_scroll_speed">Speed</string>
+    <string name="editor_continuous">Continuous</string>
     <string name="editor_mirror">Mirror</string>
     <string name="editor_blink">Blink</string>
     <string name="editor_frequency">Frequency</string>

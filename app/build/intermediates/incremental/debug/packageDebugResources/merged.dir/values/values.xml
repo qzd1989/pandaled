@@ -6,6 +6,7 @@
     <string name="color_a">颜色 A</string>
     <string name="color_b">颜色 B</string>
     <string name="color_picker_title">选择颜色</string>
+    <string name="countdown_sec">%d秒</string>
     <string name="detail_fullscreen">全屏</string>
     <string name="detail_missing_assets">个素材待补充</string>
     <string name="detail_project_name">项目名称</string>
@@ -29,6 +30,7 @@
     <string name="editor_color_static">静态</string>
     <string name="editor_color_toggle">交替</string>
     <string name="editor_content">内容</string>
+    <string name="editor_continuous">首尾相接</string>
     <string name="editor_dot_mask">点阵遮罩</string>
     <string name="editor_dot_size">点阵大小</string>
     <string name="editor_duration">持续时间 (秒)</string>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.pandaled.app-mergeDebugResources-79:/values-fa/values-fa.xml",
+            "outputFile": "com.biexi.pandaled.app-mergeDebugResources-79:/values-fa/values-fa.xml",
             "map": [
                 {
                     "source": "/Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/res/values-fa/values.xml",

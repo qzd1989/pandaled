@@ -1,12 +1,12 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.pandaled"
-4    android:versionCode="1"
+3    package="com.biexi.pandaled"
+4    android:versionCode="2"
 5    android:versionName="1.0.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
-9        android:targetSdkVersion="34" />
+9        android:targetSdkVersion="35" />
 10
 11    <!-- Camera for QR scanning -->
 12    <uses-permission android:name="android.permission.CAMERA" />
@@ -89,18 +89,18 @@
 50
 51    <permission
 51-->[androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-52        android:name="com.pandaled.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+52        android:name="com.biexi.pandaled.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 52-->[androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
 53        android:protectionLevel="signature" />
 53-->[androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 54
-55    <uses-permission android:name="com.pandaled.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+55    <uses-permission android:name="com.biexi.pandaled.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 55-->[androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 55-->[androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 56
 57    <application
 57-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:15:5-53:19
-58        android:name="com.pandaled.PandaLedApp"
+58        android:name="com.biexi.pandaled.PandaLedApp"
 58-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:16:9-36
 59        android:allowBackup="true"
 59-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:17:9-35
@@ -119,7 +119,7 @@
 67-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:18:9-44
 68        <activity
 68-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:23:9-33:20
-69            android:name="com.pandaled.MainActivity"
+69            android:name="com.biexi.pandaled.MainActivity"
 69-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:24:13-41
 70            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
 70-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:26:13-87
@@ -142,7 +142,7 @@
 79        </activity>
 80        <activity
 80-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:35:9-39:64
-81            android:name="com.pandaled.ui.player.FullScreenActivity"
+81            android:name="com.biexi.pandaled.ui.player.FullScreenActivity"
 81-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:36:13-57
 82            android:exported="false"
 82-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:37:13-37
@@ -154,7 +154,7 @@
 86        <provider
 87            android:name="androidx.core.content.FileProvider"
 87-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:42:13-62
-88            android:authorities="com.pandaled.fileprovider"
+88            android:authorities="com.biexi.pandaled.fileprovider"
 88-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:43:13-64
 89            android:exported="false"
 89-->/Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:44:13-37
@@ -225,7 +225,7 @@
 126-->[com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:9:9-13:38
 127            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
 127-->[com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:10:13-78
-128            android:authorities="com.pandaled.mlkitinitprovider"
+128            android:authorities="com.biexi.pandaled.mlkitinitprovider"
 128-->[com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:11:13-69
 129            android:exported="false"
 129-->[com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:12:13-37
@@ -246,7 +246,7 @@
 137-->[com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:63:9-68:43
 138            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
 138-->[com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:64:13-76
-139            android:authorities="com.pandaled.mobileadsinitprovider"
+139            android:authorities="com.biexi.pandaled.mobileadsinitprovider"
 139-->[com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:65:13-73
 140            android:exported="false"
 140-->[com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:66:13-37
@@ -319,7 +319,7 @@
 177-->[androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:31:9-39:20
 178            android:name="androidx.startup.InitializationProvider"
 178-->[androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:32:13-67
-179            android:authorities="com.pandaled.androidx-startup"
+179            android:authorities="com.biexi.pandaled.androidx-startup"
 179-->[androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:33:13-68
 180            android:exported="false" >
 180-->[androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:34:13-37

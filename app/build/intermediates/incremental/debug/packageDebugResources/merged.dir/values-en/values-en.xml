@@ -6,6 +6,7 @@
     <string name="color_a">Color A</string>
     <string name="color_b">Color B</string>
     <string name="color_picker_title">Pick a Color</string>
+    <string name="countdown_sec">%ds</string>
     <string name="detail_fullscreen">Fullscreen</string>
     <string name="detail_missing_assets">asset(s) needed</string>
     <string name="detail_project_name">Project Name</string>
@@ -29,6 +30,7 @@
     <string name="editor_color_static">Static</string>
     <string name="editor_color_toggle">Toggle</string>
     <string name="editor_content">Content</string>
+    <string name="editor_continuous">Continuous</string>
     <string name="editor_dot_mask">Dot Mask</string>
     <string name="editor_dot_size">Dot Size</string>
     <string name="editor_duration">Duration (s)</string>

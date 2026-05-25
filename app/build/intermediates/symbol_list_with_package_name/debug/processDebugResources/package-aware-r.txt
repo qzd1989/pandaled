@@ -1,4 +1,4 @@
-com.pandaled
+com.biexi.pandaled
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1330,6 +1330,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
+string countdown_sec
 string default_error_message
 string default_popup_window_title
 string detail_fullscreen
@@ -1356,6 +1357,7 @@ string editor_color_mode
 string editor_color_static
 string editor_color_toggle
 string editor_content
+string editor_continuous
 string editor_dot_mask
 string editor_dot_size
 string editor_duration

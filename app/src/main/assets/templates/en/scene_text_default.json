@@ -3,7 +3,7 @@
   "duration": 5,
   "playMode": "loop",
   "content": {
-    "source": "nice to meet you!",
+    "source": "Welcome to PandaLED\uD83D\uDC97!",
     "style": {
       "size": 40,
       "fontFamily": "sans-serif"
@@ -16,7 +16,8 @@
     "motion": {
       "scroll": {
         "direction": "leftToRight",
-        "speed": 5
+        "speed": 5,
+        "continuous": false
       }
     },
     "animation": {

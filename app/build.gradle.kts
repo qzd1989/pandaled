@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    namespace = "com.pandaled"
-    compileSdk = 34
+    namespace = "com.biexi.pandaled"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.pandaled"
+        applicationId = "com.biexi.pandaled"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 1
+        targetSdk = 35
+        versionCode = 2
         versionName = "1.0.0"
     }
 

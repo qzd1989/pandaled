@@ -91,7 +91,9 @@
     <string name="color_a">颜色 A</string>
     <string name="color_b">颜色 B</string>
     <string name="editor_scroll">滚动</string>
+    <string name="countdown_sec">%d秒</string>
     <string name="editor_scroll_speed">速度</string>
+    <string name="editor_continuous">首尾相接</string>
     <string name="editor_mirror">镜像</string>
     <string name="editor_blink">闪烁</string>
     <string name="editor_frequency">频率</string>

@@ -1,10 +1,10 @@
 [
     {
-        "merged": "com.pandaled.app-debug-81:/layout_view_video_player_texture.xml.flat",
-        "source": "com.pandaled.app-main-83:/layout/view_video_player_texture.xml"
+        "merged": "com.biexi.pandaled.app-debug-81:/layout_view_video_player_texture.xml.flat",
+        "source": "com.biexi.pandaled.app-main-83:/layout/view_video_player_texture.xml"
     },
     {
-        "merged": "com.pandaled.app-debug-81:/xml_file_paths.xml.flat",
-        "source": "com.pandaled.app-main-83:/xml/file_paths.xml"
+        "merged": "com.biexi.pandaled.app-debug-81:/xml_file_paths.xml.flat",
+        "source": "com.biexi.pandaled.app-main-83:/xml/file_paths.xml"
     }
 ]

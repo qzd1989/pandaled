@@ -3,7 +3,7 @@
   "duration": 5,
   "playMode": "loop",
   "content": {
-    "source": "很高兴见到你~",
+    "source": "欢迎使用PandaLED\uD83D\uDC97!",
     "style": {
       "size": 40,
       "fontFamily": "sans-serif"
@@ -15,8 +15,9 @@
     "transform": { "mirror": false },
     "motion": {
       "scroll": {
-        "direction": "leftToRight",
-        "speed": 5
+        "direction": "rightToLeft",
+        "speed": 5,
+        "continuous": false
       }
     },
     "animation": {

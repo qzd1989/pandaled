@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.pandaled.app-mergeDebugResources-79:/values-tl/values-tl.xml",
+            "outputFile": "com.biexi.pandaled.app-mergeDebugResources-79:/values-tl/values-tl.xml",
             "map": [
                 {
                     "source": "/Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/res/values-tl/values-tl.xml",
