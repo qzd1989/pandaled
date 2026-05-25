@@ -202,13 +202,13 @@ fun FullScreenContent(
         }
     }
 
-    val contentRotation = rememberLandscapeFlipRotation()
+    val (contentRotation, contentAlpha) = rememberLandscapeFlipRotation()
 
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)
-            .graphicsLayer { rotationZ = contentRotation }
+            .graphicsLayer { rotationZ = contentRotation; alpha = contentAlpha }
             .pointerInput(Unit) {
                 detectTapGestures(
                     onTap = {
@@ -263,57 +263,48 @@ fun FullScreenContent(
 }
 
 @Composable
-private fun rememberLandscapeFlipRotation(): Float {
+private fun rememberLandscapeFlipRotation(): Pair<Float, Float> {
     val context = LocalContext.current
-    var baselineSign by remember { mutableStateOf<Int?>(null) }
     var rotation by remember { mutableFloatStateOf(0f) }
+    var rotationInitialized by remember { mutableStateOf(false) }
 
     DisposableEffect(context) {
-        val sensorManager = context.getSystemService(android.content.Context.SENSOR_SERVICE)
-                as android.hardware.SensorManager
+        val display = (context as android.app.Activity).windowManager.defaultDisplay
+        val sensorManager = context.getSystemService(android.content.Context.SENSOR_SERVICE) as android.hardware.SensorManager
         val sensor = sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_GRAVITY)
             ?: sensorManager.getDefaultSensor(android.hardware.Sensor.TYPE_ACCELEROMETER)
 
         if (sensor == null) {
             rotation = 0f
+            rotationInitialized = true
             onDispose { }
         } else {
             val listener = object : android.hardware.SensorEventListener {
                 override fun onSensorChanged(event: android.hardware.SensorEvent) {
-                    val x = event.values[0]
-                    val y = event.values[1]
-
-                    if (kotlin.math.abs(x) < 6.5f || kotlin.math.abs(x) < kotlin.math.abs(y)) {
-                        return
+                    val x = event.values[0] // device right axis
+                    val displayRot = display.rotation
+                    // ROTATION_90: display top = left edge. Content upright when right edge (x>0) faces down.
+                    // ROTATION_270: display top = right edge. Content upright when left edge (x<0) faces down.
+                    rotation = when (displayRot) {
+                        android.view.Surface.ROTATION_90 -> if (x > 0f) 0f else 180f
+                        android.view.Surface.ROTATION_270 -> if (x < 0f) 0f else 180f
+                        else -> 0f
                     }
-
-                    val sign = if (x >= 0f) 1 else -1
-                    val baseline = baselineSign
-                    if (baseline == null) {
-                        baselineSign = sign
-                        rotation = 0f
-                    } else {
-                        rotation = if (sign == baseline) 0f else 180f
-                    }
+                    rotationInitialized = true
                 }
 
                 override fun onAccuracyChanged(sensor: android.hardware.Sensor?, accuracy: Int) = Unit
             }
-
-            sensorManager.registerListener(
-                listener,
-                sensor,
-                android.hardware.SensorManager.SENSOR_DELAY_UI
-            )
+            sensorManager.registerListener(listener, sensor, android.hardware.SensorManager.SENSOR_DELAY_UI)
             onDispose {
                 sensorManager.unregisterListener(listener)
                 rotation = 0f
-                baselineSign = null
             }
         }
     }
 
-    return rotation
+    val alpha = if (rotationInitialized) 1f else 0f
+    return rotation to alpha
 }
 
 // ─── Full-screen renderers ───────────────────────────────
