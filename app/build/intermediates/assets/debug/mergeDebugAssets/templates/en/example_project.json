@@ -15,12 +15,12 @@
   },
   "scenes": [
     {
-      "name": "Nice to meet you!",
+      "name": "Welcome Scene",
       "type": "text",
       "duration": 5,
       "playMode": "loop",
       "content": {
-        "source": "Nice to meet you!",
+        "source": "Welcome to PandaLED\uD83D\uDC97!",
         "style": {
           "size": 40,
           "fontFamily": "sans-serif"
@@ -34,7 +34,7 @@
         },
         "motion": {
           "scroll": {
-            "direction": "leftToRight",
+            "direction": "rightToLeft",
             "speed": 5
           }
         },

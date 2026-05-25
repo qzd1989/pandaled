@@ -140,9 +140,7 @@ fun ProjectInfoColumn(
                 onValueChange = {},
                 readOnly = true,
                 label = { Text(stringResource(R.string.detail_start_time)) },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { showDatePicker = true },
+                modifier = Modifier.fillMaxWidth(),
                 singleLine = true,
                 trailingIcon = {
                     IconButton(onClick = { showDatePicker = true }) {

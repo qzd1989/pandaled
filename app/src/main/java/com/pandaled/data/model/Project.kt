@@ -206,11 +206,11 @@ data class Project(
     fun findMissingAssets(): List<MissingAsset> {
         val result = mutableListOf<MissingAsset>()
         if (idleScene.hasMissingAsset()) {
-            result.add(MissingAsset(isIdle = true, sceneIndex = null, label = "等待场景 (idleScene)"))
+            result.add(MissingAsset(isIdle = true, sceneIndex = null, label = "idle"))
         }
         scenes.forEachIndexed { i, s ->
             if (s.hasMissingAsset()) {
-                result.add(MissingAsset(isIdle = false, sceneIndex = i, label = s.name.ifBlank { "场景 ${i + 1}" }))
+                result.add(MissingAsset(isIdle = false, sceneIndex = i, label = s.name.ifBlank { "Scene ${i + 1}" }))
             }
         }
         return result

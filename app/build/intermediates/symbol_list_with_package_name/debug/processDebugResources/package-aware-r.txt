@@ -68,6 +68,9 @@ attr actionOverflowMenuStyle
 attr actionProviderClass
 attr actionViewClass
 attr activityChooserViewStyle
+attr adSize
+attr adSizes
+attr adUnitId
 attr ad_marker_color
 attr ad_marker_width
 attr alertDialogButtonGroupStyle
@@ -401,6 +404,10 @@ attr windowMinWidthMinor
 attr windowNoTitle
 bool abc_action_bar_embed_tabs
 bool abc_config_actionMenuItemAllCaps
+bool enable_system_alarm_service_default
+bool enable_system_foreground_service_default
+bool enable_system_job_service_default
+bool workmanager_test_configuration
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
 color abc_btn_colored_borderless_text_material
@@ -440,6 +447,10 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color browser_actions_bg_grey
+color browser_actions_divider_color
+color browser_actions_text_color
+color browser_actions_title_color
 color button_material_dark
 color button_material_light
 color call_notification_answer_color
@@ -593,6 +604,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen browser_actions_context_menu_max_width
+dimen browser_actions_context_menu_min_padding
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -752,6 +765,9 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable admob_close_button_black_circle_white_cross
+drawable admob_close_button_white_circle_black_cross
+drawable admob_close_button_white_cross
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -879,6 +895,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable offline_dialog_background
+drawable offline_dialog_default_icon_42dp
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -954,6 +972,11 @@ id auto
 id beginning
 id blocking
 id bottom
+id browser_actions_header_text
+id browser_actions_menu_item_icon
+id browser_actions_menu_item_text
+id browser_actions_menu_items
+id browser_actions_menu_view
 id buttonPanel
 id cancel_action
 id center
@@ -1057,6 +1080,7 @@ id inspection_slot_table_set
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id layout
 id light
 id line1
 id line3
@@ -1075,6 +1099,9 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id off
+id offline_dialog_advertiser_name
+id offline_dialog_image
+id offline_dialog_text
 id on
 id one
 id parentPanel
@@ -1202,6 +1229,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout admob_empty_layout
+layout browser_actions_context_menu_page
+layout browser_actions_context_menu_row
 layout custom_dialog
 layout exo_legacy_player_control_view
 layout exo_list_divider
@@ -1230,6 +1260,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout offline_ads_dialog
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1274,6 +1305,7 @@ string call_notification_hang_up_action
 string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
+string close
 string close_drawer
 string close_sheet
 string color_a
@@ -1297,6 +1329,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string copy_toast_msg
 string default_error_message
 string default_popup_window_title
 string detail_fullscreen
@@ -1347,9 +1380,11 @@ string editor_replace_video
 string editor_scene_name
 string editor_scene_not_found
 string editor_scroll
+string editor_scroll_speed
 string editor_select_image
 string editor_select_scene
 string editor_select_video
+string editor_show_mode
 string editor_start_color
 string editor_text_content
 string editor_transition
@@ -1408,6 +1443,9 @@ string exo_track_surround
 string exo_track_surround_5_point_1
 string exo_track_surround_7_point_1
 string exo_track_unknown
+string fallback_menu_item_copy_link
+string fallback_menu_item_open_in_browser
+string fallback_menu_item_share_link
 string font_bold
 string font_casual
 string font_chinese_classical
@@ -1443,9 +1481,12 @@ string idle_clock
 string idle_countdown
 string idle_image
 string idle_none
+string idle_view_start_time
+string idle_waiting_hint
 string in_progress
 string indeterminate
 string invalid_hex
+string loading_ads
 string m3c_bottom_sheet_collapse_description
 string m3c_bottom_sheet_dismiss_description
 string m3c_bottom_sheet_drag_handle_description
@@ -1502,16 +1543,41 @@ string m3c_time_picker_period_toggle_description
 string m3c_time_picker_pm
 string m3c_tooltip_long_press_label
 string m3c_tooltip_pane_description
+string missing_assets
+string missing_image
+string native_body
+string native_headline
+string native_media_view
 string navigation_menu
 string not_selected
+string notifications_permission_confirm
+string notifications_permission_decline
+string notifications_permission_title
 string off
+string offline_dialog_image_description
+string offline_dialog_text
+string offline_notification_title
+string offline_opt_in_confirm
+string offline_opt_in_decline
+string offline_opt_in_message
+string offline_opt_in_title
 string on
 string pick_time
+string qr_code_desc
 string qr_export
 string qr_import_error
 string qr_import_success
+string qr_scan_hint
 string range_end
 string range_start
+string s1
+string s2
+string s3
+string s4
+string s5
+string s6
+string s7
+string save
 string scene_add
 string scene_delete
 string scene_image
@@ -1540,10 +1606,18 @@ string settings_theme_dark
 string settings_theme_light
 string settings_theme_system
 string settings_title
+string share
+string share_hint
+string share_title
+string start_directly
 string status_bar_notification_info_overflow
+string subscribe_cta
+string subscribe_hint
+string subscribe_title
 string switch_role
 string tab
 string template_percent
+string toast_missing
 string tooltip_description
 string tooltip_label
 string transition_fade_in
@@ -1553,6 +1627,7 @@ string transition_slide_left
 string transition_slide_right
 string transition_slide_top
 string untitled_project
+string watermark_label_prefix
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -1859,6 +1934,7 @@ style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
 style Theme_AppCompat_NoActionBar
+style Theme_IAPTheme
 style Theme_PandaLed
 style Theme_PandaLed_FullScreen
 style ThemeOverlay_AppCompat
@@ -1952,6 +2028,7 @@ styleable ActionMenuView
 styleable ActionMode background backgroundSplit closeItemLayout height subtitleTextStyle titleTextStyle
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
 styleable ActivityNavigator android_name action data dataPattern targetPackage
+styleable AdsAttrs adSize adSizes adUnitId
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
 styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable AnimatedStateListDrawableItem android_id android_drawable
@@ -2009,3 +2086,6 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_paths
+xml gma_ad_services_config
+xml image_share_filepaths

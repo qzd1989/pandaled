@@ -1,12 +1,11 @@
 package com.pandaled.ui.player
 
 import android.os.Bundle
-import android.os.LocaleList
 import android.view.OrientationEventListener
 import android.view.View
 import android.view.WindowManager
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.compose.foundation.background
@@ -26,6 +25,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import com.pandaled.PandaLedApp
 import com.pandaled.data.model.*
 import com.pandaled.ui.detail.components.IdleSceneRenderer
 import com.pandaled.ui.detail.components.SceneRenderer
@@ -35,7 +35,7 @@ import com.pandaled.R
 import com.pandaled.ui.theme.PandaLedTheme
 import kotlinx.coroutines.delay
 
-class FullScreenActivity : ComponentActivity() {
+class FullScreenActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_PROJECT_ID = "project_id"
@@ -55,7 +55,7 @@ class FullScreenActivity : ComponentActivity() {
                 if (sys.language.startsWith("zh")) java.util.Locale("zh") else java.util.Locale("en")
             }
         }
-        AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(LocaleList(locale)))
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(locale))
 
         hideSystemUi()
 

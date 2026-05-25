@@ -4,7 +4,7 @@
     "style": {
       "format": "{hours}:{minutes}:{seconds}",
       "fontFamily": "sans-serif",
-      "size": 25,
+      "size": 40,
       "color": "#FFFFFF"
     }
   }

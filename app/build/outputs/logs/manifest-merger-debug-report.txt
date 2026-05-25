@@ -1,22 +1,56 @@
 -- Merging decision tree log ---
+provider#androidx.core.content.FileProvider
+INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:41:9-49:20
+	android:grantUriPermissions
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:45:13-47
+	android:authorities
+		INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:43:13-64
+	android:exported
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:44:13-37
+	android:name
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:42:13-62
 manifest
-ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-43:12
-INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-43:12
+ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:2:1-55:12
+MERGED from [androidx.camera:camera-video:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/2c5a7490e1e2a1b9702831e1e57988d4/transformed/camera-video-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/94c78847626fcf106477da720d007449/transformed/camera-lifecycle-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-view:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/0011d6a9548638636986b49cdccc24aa/transformed/camera-view-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/c569d3f0d9392a12a25c29ec9a45bde0/transformed/coil-compose-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/88d611412ac62afd59f87966f9719a5d/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/4d0105150ba20561843f41675d21a49b/transformed/coil-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt:coil-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/467fced8e4f44e722508c5227a52c940/transformed/coil-base-2.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/aa8e0a209d8b84a03e75096d550bbc68/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/55b2be24d75b4f3a6924852886b0e9f1/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/823d9231f4e80036458c444dc5031497/transformed/navigation-common-2.7.6/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/df1a5954ed146a53740105e6e539ba26/transformed/navigation-runtime-2.7.6/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/3d1545dd9bf38901c52a30e12b421a4f/transformed/navigation-common-ktx-2.7.6/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/3ba6accadefa2956625a0f0a216dd28e/transformed/navigation-runtime-ktx-2.7.6/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-compose:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/86544a66983e0e8c1e4c8aa1de73e773/transformed/navigation-compose-2.7.6/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.camera:camera-video:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/2c5a7490e1e2a1b9702831e1e57988d4/transformed/camera-video-1.3.1/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:17:1-36:12
-MERGED from [androidx.camera:camera-view:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/0011d6a9548638636986b49cdccc24aa/transformed/camera-view-1.3.1/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:17:1-36:12
-MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/94c78847626fcf106477da720d007449/transformed/camera-lifecycle-1.3.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/kiwi/.gradle/caches/transforms-4/39018bb50b92192d8ad375df46558071/transformed/barcode-scanning-17.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-ads:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/e24f3db087220df49de9005304463c0b/transformed/play-services-ads-23.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/kiwi/.gradle/caches/transforms-4/bcc1b3641b50f492082fab66bc036743/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:2:1-18:12
+MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:17:1-95:12
+MERGED from [com.google.android.gms:play-services-ads-base:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/d19aad004193c51c2f0b9241055dfe6c/transformed/play-services-ads-base-23.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/kiwi/.gradle/caches/transforms-4/8a118ee638fba334017ef02058fb1a05/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/kiwi/.gradle/caches/transforms-4/42462f6cb28eb61754d9ee4f48460801/transformed/play-services-appset-16.0.1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/kiwi/.gradle/caches/transforms-4/894ccb0dd5d7eb6fd206edab8c97a07a/transformed/vision-interfaces-16.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.ump:user-messaging-platform:2.2.0] /Users/kiwi/.gradle/caches/transforms-4/defd215da8c4871284fd7a54f8b3747e/transformed/user-messaging-platform-2.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/21a097c20873408b0b83e3a68637ccba/transformed/play-services-measurement-base-20.1.2/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/cb70cf75115af88be08615348562145d/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/ae18b933a1635bec31959a6d5b750a35/transformed/activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/78601f9e3bb0dc62ac3be4f33f9e7d84/transformed/material3-release/AndroidManifest.xml:17:1-22:12
-MERGED from [io.coil-kt:coil-compose:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/c569d3f0d9392a12a25c29ec9a45bde0/transformed/coil-compose-2.5.0/AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt:coil-compose-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/88d611412ac62afd59f87966f9719a5d/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/d9584fe7a7639da77ec8dfb2680c1795/transformed/material-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/2cbbd43cab6b7b865fbd33c87cc061c2/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-extended-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/a917d5275201c5ef774a0e0b84132b6d/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
@@ -32,29 +66,22 @@ MERGED from [androidx.compose.ui:ui-util-android:1.6.5] /Users/kiwi/.gradle/cach
 MERGED from [androidx.compose.ui:ui-text-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/6109f45b42eeeaa1515cea1f859116e2/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/e164c6291bab8c1867e1e3c578b216ab/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/6e568acb4de7c63960ebf56535feb8bd/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
-MERGED from [io.coil-kt:coil:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/4d0105150ba20561843f41675d21a49b/transformed/coil-2.5.0/AndroidManifest.xml:2:1-7:12
-MERGED from [io.coil-kt:coil-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/467fced8e4f44e722508c5227a52c940/transformed/coil-base-2.5.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/aa8e0a209d8b84a03e75096d550bbc68/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/55b2be24d75b4f3a6924852886b0e9f1/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/kiwi/.gradle/caches/transforms-4/39018bb50b92192d8ad375df46558071/transformed/barcode-scanning-17.2.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:2:1-18:12
-MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/kiwi/.gradle/caches/transforms-4/bcc1b3641b50f492082fab66bc036743/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:2:1-18:12
-MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:2:1-26:12
-MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:16:1-24:12
-MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/kiwi/.gradle/caches/transforms-4/894ccb0dd5d7eb6fd206edab8c97a07a/transformed/vision-interfaces-16.2.0/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:16:1-26:12
-MERGED from [androidx.fragment:fragment:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/cb70cf75115af88be08615348562145d/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/8b07832ff4bae268a65c788d18876b17/transformed/activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/98dbd686158d477c6d93f21a3247a9f3/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:17:1-145:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/6e9caac18a7bad650406872b48da4462/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/efa9c741a6582eacdbe51ae4eb55a38c/transformed/lifecycle-service-2.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/2b2b76b3f706b859557efa315fa4360e/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.loader:loader:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/98dbd686158d477c6d93f21a3247a9f3/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fada1d512826fdd835319723f08fd2f9/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/b86697a1a1c12cdff0dd73a8fc8c0a50/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/67b6b45b6c7cb334fec83cf62f443a08/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/9ebcb721929760963f6e715ec632269c/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/a351893576ebb88fe8eca3fbf2808996/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/401e33f2db1f80d98990b92f46cd8e83/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/bfb0e9a76263bd26ec9e6e462d3b3319/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/4f465d65e4077ca38483cecbf559e1d2/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-ui:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/6f25e9b1954f561f4877037f80fb6f9e/transformed/media3-ui-1.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-extractor:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/144f82daff97fd5fc38f80840635b3b2/transformed/media3-extractor-1.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-container:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/585fe9303e14b71818412c08da788526/transformed/media3-container-1.2.0/AndroidManifest.xml:17:1-22:12
@@ -63,30 +90,27 @@ MERGED from [androidx.media3:media3-decoder:1.2.0] /Users/kiwi/.gradle/caches/tr
 MERGED from [androidx.media3:media3-database:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/6c504e158481c429a3216009ed990023/transformed/media3-database-1.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-common:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/a9e90ed48ada171d222d8ecbc3b0bf60/transformed/media3-common-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media3:media3-exoplayer:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/7d74335612dde90c5c335f6bf687222f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media:media:1.6.0] /Users/kiwi/.gradle/caches/transforms-4/8a52d4f85a6bd23e770a43480c4f1dcc/transformed/media-1.6.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/52963209233cb332f3b2add1ab92d743/transformed/recyclerview-1.3.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/7d74335612dde90c5c335f6bf687222f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.browser:browser:1.4.0] /Users/kiwi/.gradle/caches/transforms-4/b8e212f12923f7e3174a1379e2005f30/transformed/browser-1.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/5212394167ce72438871f78ceca98601/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/696d655d28cadd5b525b6968a2222467/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/439d2cfffd4871bd722757935fa604dc/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/37ab741d16839318428b380abf4b02c8/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/c35a21416f83f7137ef1e84dd7925f2c/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/bd5e930c59b7dac0317e8257daf2c17b/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/55771fcf65ce8229ac7d832f67f2c32b/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/5d60a93c0f7227a7313166c93fff0f99/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/5212394167ce72438871f78ceca98601/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/696d655d28cadd5b525b6968a2222467/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/82b361ae66ef50d0ded3faa96a063ea9/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/b86697a1a1c12cdff0dd73a8fc8c0a50/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/67b6b45b6c7cb334fec83cf62f443a08/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/9ebcb721929760963f6e715ec632269c/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/a351893576ebb88fe8eca3fbf2808996/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/401e33f2db1f80d98990b92f46cd8e83/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/bfb0e9a76263bd26ec9e6e462d3b3319/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/4f465d65e4077ca38483cecbf559e1d2/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/10ef2b30c21a2c5c31c105ea288df92c/transformed/lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/46f152995794134afec32a967f9495f7/transformed/lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /Users/kiwi/.gradle/caches/transforms-4/df38ee91964dc878b72b170475c09dc1/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.compose.ui:ui-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/91148d5cddd3d2c554d1ec607f61718e/transformed/ui-release/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/ae18b933a1635bec31959a6d5b750a35/transformed/activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.activity:activity:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/8b07832ff4bae268a65c788d18876b17/transformed/activity-1.8.2/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity-compose:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/b927be07d5488548f84a36ac8b5311ec/transformed/activity-compose-1.8.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/e37f0d43d77a885b395af67ea8958511/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.room:room-ktx:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/f0c23543f98ca42025e43b40127a08c6/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
@@ -96,18 +120,18 @@ MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.5] /Users/kiw
 MERGED from [androidx.compose.runtime:runtime-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/ee8b087f556e4cee1f17d92925a49bcf/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/kiwi/.gradle/caches/transforms-4/71caa62b3ba5b08cf2bcae427968ec6f/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/4ed41750bc3b73e8a6758f7b1baa1b69/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/0abd04e5360618112915de398026d21f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/kiwi/.gradle/caches/transforms-4/361e41015798edcefaa4e67d3d08cfbe/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/8090191a708d1f946cbe4c88eae9078f/transformed/exifinterface-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9da826dbed4c510b44d2b9e0bb2ef6a/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:15:1-41:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.1] /Users/kiwi/.gradle/caches/transforms-4/c00d404f3cec99058dca87459f62cecc/transformed/transport-api-2.2.1/AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/kiwi/.gradle/caches/transforms-4/c3ecc11371c9d496c76f56014519e1d1/transformed/firebase-components-16.1.0/AndroidManifest.xml:15:1-23:12
 MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/kiwi/.gradle/caches/transforms-4/1a004ffb0ae201f49f07e92db669dc2e/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:15:1-23:12
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
-MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
-MERGED from [androidx.tracing:tracing:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9da826dbed4c510b44d2b9e0bb2ef6a/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/a6dc1fe047f33bccf91373efa17d6e1b/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/0abd04e5360618112915de398026d21f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/kiwi/.gradle/caches/transforms-4/121667f64efc17b4d1d8c0fb79ac2056/transformed/image-1.0.0-beta1/AndroidManifest.xml:2:1-9:12
 	package
 		INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
@@ -123,6 +147,10 @@ ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
 		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:5:22-62
 uses-permission#android.permission.INTERNET
 ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:6:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:26:5-67
 	android:name
@@ -148,46 +176,60 @@ ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
 	android:name
 		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:13:19-57
 application
-ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:15:5-41:19
-INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:15:5-41:19
+ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:15:5-53:19
+INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:15:5-53:19
 MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:23:5-34:19
 MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:23:5-34:19
-MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
-MERGED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:8:5-24:19
 MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:8:5-24:19
+MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:53:5-93:19
+MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:53:5-93:19
+MERGED from [com.google.android.gms:play-services-ads-base:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/d19aad004193c51c2f0b9241055dfe6c/transformed/play-services-ads-base-23.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-base:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/d19aad004193c51c2f0b9241055dfe6c/transformed/play-services-ads-base-23.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/kiwi/.gradle/caches/transforms-4/8a118ee638fba334017ef02058fb1a05/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/kiwi/.gradle/caches/transforms-4/8a118ee638fba334017ef02058fb1a05/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/kiwi/.gradle/caches/transforms-4/42462f6cb28eb61754d9ee4f48460801/transformed/play-services-appset-16.0.1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/kiwi/.gradle/caches/transforms-4/42462f6cb28eb61754d9ee4f48460801/transformed/play-services-appset-16.0.1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/21a097c20873408b0b83e3a68637ccba/transformed/play-services-measurement-base-20.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/21a097c20873408b0b83e3a68637ccba/transformed/play-services-measurement-base-20.1.2/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:30:5-143:19
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:30:5-143:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/e37f0d43d77a885b395af67ea8958511/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/e37f0d43d77a885b395af67ea8958511/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/4ed41750bc3b73e8a6758f7b1baa1b69/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/4ed41750bc3b73e8a6758f7b1baa1b69/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:28:5-36:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:25:5-39:19
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/kiwi/.gradle/caches/transforms-4/121667f64efc17b4d1d8c0fb79ac2056/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/kiwi/.gradle/caches/transforms-4/121667f64efc17b4d1d8c0fb79ac2056/transformed/image-1.0.0-beta1/AndroidManifest.xml:7:5-20
 	android:extractNativeLibs
@@ -238,10 +280,44 @@ ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
 		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:39:13-61
 	android:name
 		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:36:13-57
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:50:9-52:73
+	android:value
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:52:17-71
+	android:name
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:51:17-73
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:46:13-48:54
+	android:resource
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:48:17-51
+	android:name
+		ADDED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml:47:17-67
 uses-sdk
 INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
 INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
+MERGED from [androidx.camera:camera-video:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/2c5a7490e1e2a1b9702831e1e57988d4/transformed/camera-video-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/2c5a7490e1e2a1b9702831e1e57988d4/transformed/camera-video-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/94c78847626fcf106477da720d007449/transformed/camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/94c78847626fcf106477da720d007449/transformed/camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-view:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/0011d6a9548638636986b49cdccc24aa/transformed/camera-view-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/0011d6a9548638636986b49cdccc24aa/transformed/camera-view-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/c569d3f0d9392a12a25c29ec9a45bde0/transformed/coil-compose-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/c569d3f0d9392a12a25c29ec9a45bde0/transformed/coil-compose-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/88d611412ac62afd59f87966f9719a5d/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-compose-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/88d611412ac62afd59f87966f9719a5d/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/4d0105150ba20561843f41675d21a49b/transformed/coil-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/4d0105150ba20561843f41675d21a49b/transformed/coil-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/467fced8e4f44e722508c5227a52c940/transformed/coil-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt:coil-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/467fced8e4f44e722508c5227a52c940/transformed/coil-base-2.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/aa8e0a209d8b84a03e75096d550bbc68/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/aa8e0a209d8b84a03e75096d550bbc68/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/55b2be24d75b4f3a6924852886b0e9f1/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/55b2be24d75b4f3a6924852886b0e9f1/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/823d9231f4e80036458c444dc5031497/transformed/navigation-common-2.7.6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/823d9231f4e80036458c444dc5031497/transformed/navigation-common-2.7.6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-runtime:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/df1a5954ed146a53740105e6e539ba26/transformed/navigation-runtime-2.7.6/AndroidManifest.xml:20:5-44
@@ -252,22 +328,46 @@ MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.6] /Users/kiwi/.grad
 MERGED from [androidx.navigation:navigation-runtime-ktx:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/3ba6accadefa2956625a0f0a216dd28e/transformed/navigation-runtime-ktx-2.7.6/AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-compose:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/86544a66983e0e8c1e4c8aa1de73e773/transformed/navigation-compose-2.7.6/AndroidManifest.xml:5:5-44
 MERGED from [androidx.navigation:navigation-compose:2.7.6] /Users/kiwi/.gradle/caches/transforms-4/86544a66983e0e8c1e4c8aa1de73e773/transformed/navigation-compose-2.7.6/AndroidManifest.xml:5:5-44
-MERGED from [androidx.camera:camera-video:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/2c5a7490e1e2a1b9702831e1e57988d4/transformed/camera-video-1.3.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.camera:camera-video:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/2c5a7490e1e2a1b9702831e1e57988d4/transformed/camera-video-1.3.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.camera:camera-core:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/cde26b433ab064b301370670c90daf19/transformed/camera-core-1.3.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.camera:camera-view:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/0011d6a9548638636986b49cdccc24aa/transformed/camera-view-1.3.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.camera:camera-view:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/0011d6a9548638636986b49cdccc24aa/transformed/camera-view-1.3.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/94c78847626fcf106477da720d007449/transformed/camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
-MERGED from [androidx.camera:camera-lifecycle:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/94c78847626fcf106477da720d007449/transformed/camera-lifecycle-1.3.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/kiwi/.gradle/caches/transforms-4/39018bb50b92192d8ad375df46558071/transformed/barcode-scanning-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/kiwi/.gradle/caches/transforms-4/39018bb50b92192d8ad375df46558071/transformed/barcode-scanning-17.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/e24f3db087220df49de9005304463c0b/transformed/play-services-ads-23.0.0/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-ads:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/e24f3db087220df49de9005304463c0b/transformed/play-services-ads-23.0.0/AndroidManifest.xml:21:5-23:52
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/kiwi/.gradle/caches/transforms-4/bcc1b3641b50f492082fab66bc036743/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/kiwi/.gradle/caches/transforms-4/bcc1b3641b50f492082fab66bc036743/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/d19aad004193c51c2f0b9241055dfe6c/transformed/play-services-ads-base-23.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-base:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/d19aad004193c51c2f0b9241055dfe6c/transformed/play-services-ads-base-23.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/kiwi/.gradle/caches/transforms-4/8a118ee638fba334017ef02058fb1a05/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/kiwi/.gradle/caches/transforms-4/8a118ee638fba334017ef02058fb1a05/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/kiwi/.gradle/caches/transforms-4/42462f6cb28eb61754d9ee4f48460801/transformed/play-services-appset-16.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-appset:16.0.1] /Users/kiwi/.gradle/caches/transforms-4/42462f6cb28eb61754d9ee4f48460801/transformed/play-services-appset-16.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/kiwi/.gradle/caches/transforms-4/894ccb0dd5d7eb6fd206edab8c97a07a/transformed/vision-interfaces-16.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/kiwi/.gradle/caches/transforms-4/894ccb0dd5d7eb6fd206edab8c97a07a/transformed/vision-interfaces-16.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.ump:user-messaging-platform:2.2.0] /Users/kiwi/.gradle/caches/transforms-4/defd215da8c4871284fd7a54f8b3747e/transformed/user-messaging-platform-2.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.ump:user-messaging-platform:2.2.0] /Users/kiwi/.gradle/caches/transforms-4/defd215da8c4871284fd7a54f8b3747e/transformed/user-messaging-platform-2.2.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/21a097c20873408b0b83e3a68637ccba/transformed/play-services-measurement-base-20.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/21a097c20873408b0b83e3a68637ccba/transformed/play-services-measurement-base-20.1.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/cb70cf75115af88be08615348562145d/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/cb70cf75115af88be08615348562145d/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/ae18b933a1635bec31959a6d5b750a35/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/ae18b933a1635bec31959a6d5b750a35/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/78601f9e3bb0dc62ac3be4f33f9e7d84/transformed/material3-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/78601f9e3bb0dc62ac3be4f33f9e7d84/transformed/material3-release/AndroidManifest.xml:20:5-44
-MERGED from [io.coil-kt:coil-compose:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/c569d3f0d9392a12a25c29ec9a45bde0/transformed/coil-compose-2.5.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-compose:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/c569d3f0d9392a12a25c29ec9a45bde0/transformed/coil-compose-2.5.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-compose-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/88d611412ac62afd59f87966f9719a5d/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-compose-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/88d611412ac62afd59f87966f9719a5d/transformed/coil-compose-base-2.5.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/d9584fe7a7639da77ec8dfb2680c1795/transformed/material-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/d9584fe7a7639da77ec8dfb2680c1795/transformed/material-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/2cbbd43cab6b7b865fbd33c87cc061c2/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
@@ -298,52 +398,38 @@ MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.5] /Users/kiwi/.
 MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/e164c6291bab8c1867e1e3c578b216ab/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/6e568acb4de7c63960ebf56535feb8bd/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-graphics-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/6e568acb4de7c63960ebf56535feb8bd/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:20:5-44
-MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
-MERGED from [io.coil-kt:coil:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/4d0105150ba20561843f41675d21a49b/transformed/coil-2.5.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/4d0105150ba20561843f41675d21a49b/transformed/coil-2.5.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/467fced8e4f44e722508c5227a52c940/transformed/coil-base-2.5.0/AndroidManifest.xml:5:5-44
-MERGED from [io.coil-kt:coil-base:2.5.0] /Users/kiwi/.gradle/caches/transforms-4/467fced8e4f44e722508c5227a52c940/transformed/coil-base-2.5.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/aa8e0a209d8b84a03e75096d550bbc68/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/aa8e0a209d8b84a03e75096d550bbc68/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/55b2be24d75b4f3a6924852886b0e9f1/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/kiwi/.gradle/caches/transforms-4/55b2be24d75b4f3a6924852886b0e9f1/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
-MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/kiwi/.gradle/caches/transforms-4/39018bb50b92192d8ad375df46558071/transformed/barcode-scanning-17.2.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.mlkit:barcode-scanning:17.2.0] /Users/kiwi/.gradle/caches/transforms-4/39018bb50b92192d8ad375df46558071/transformed/barcode-scanning-17.2.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/kiwi/.gradle/caches/transforms-4/bcc1b3641b50f492082fab66bc036743/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.mlkit:barcode-scanning-common:17.0.0] /Users/kiwi/.gradle/caches/transforms-4/bcc1b3641b50f492082fab66bc036743/transformed/barcode-scanning-common-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:6:5-44
-MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:18:5-43
-MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/kiwi/.gradle/caches/transforms-4/894ccb0dd5d7eb6fd206edab8c97a07a/transformed/vision-interfaces-16.2.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.mlkit:vision-interfaces:16.2.0] /Users/kiwi/.gradle/caches/transforms-4/894ccb0dd5d7eb6fd206edab8c97a07a/transformed/vision-interfaces-16.2.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks:18.0.2] /Users/kiwi/.gradle/caches/transforms-4/89a0311ef243731a406c2c7f20d6514a/transformed/play-services-tasks-18.0.2/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:18:5-43
-MERGED from [androidx.fragment:fragment:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/cb70cf75115af88be08615348562145d/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/cb70cf75115af88be08615348562145d/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/8b07832ff4bae268a65c788d18876b17/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/8b07832ff4bae268a65c788d18876b17/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/98dbd686158d477c6d93f21a3247a9f3/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/98dbd686158d477c6d93f21a3247a9f3/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/6e9caac18a7bad650406872b48da4462/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/6e9caac18a7bad650406872b48da4462/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/efa9c741a6582eacdbe51ae4eb55a38c/transformed/lifecycle-service-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/efa9c741a6582eacdbe51ae4eb55a38c/transformed/lifecycle-service-2.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/2b2b76b3f706b859557efa315fa4360e/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/2b2b76b3f706b859557efa315fa4360e/transformed/lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/98dbd686158d477c6d93f21a3247a9f3/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/98dbd686158d477c6d93f21a3247a9f3/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fada1d512826fdd835319723f08fd2f9/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fada1d512826fdd835319723f08fd2f9/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/b86697a1a1c12cdff0dd73a8fc8c0a50/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/b86697a1a1c12cdff0dd73a8fc8c0a50/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/67b6b45b6c7cb334fec83cf62f443a08/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/67b6b45b6c7cb334fec83cf62f443a08/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/9ebcb721929760963f6e715ec632269c/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/9ebcb721929760963f6e715ec632269c/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/a351893576ebb88fe8eca3fbf2808996/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/a351893576ebb88fe8eca3fbf2808996/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/401e33f2db1f80d98990b92f46cd8e83/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/401e33f2db1f80d98990b92f46cd8e83/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/bfb0e9a76263bd26ec9e6e462d3b3319/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/bfb0e9a76263bd26ec9e6e462d3b3319/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/4f465d65e4077ca38483cecbf559e1d2/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/4f465d65e4077ca38483cecbf559e1d2/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media3:media3-ui:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/6f25e9b1954f561f4877037f80fb6f9e/transformed/media3-ui-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media3:media3-ui:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/6f25e9b1954f561f4877037f80fb6f9e/transformed/media3-ui-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media3:media3-extractor:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/144f82daff97fd5fc38f80840635b3b2/transformed/media3-extractor-1.2.0/AndroidManifest.xml:20:5-44
@@ -360,44 +446,36 @@ MERGED from [androidx.media3:media3-common:1.2.0] /Users/kiwi/.gradle/caches/tra
 MERGED from [androidx.media3:media3-common:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/a9e90ed48ada171d222d8ecbc3b0bf60/transformed/media3-common-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media3:media3-exoplayer:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media3:media3-exoplayer:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/7d74335612dde90c5c335f6bf687222f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/7d74335612dde90c5c335f6bf687222f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.6.0] /Users/kiwi/.gradle/caches/transforms-4/8a52d4f85a6bd23e770a43480c4f1dcc/transformed/media-1.6.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.6.0] /Users/kiwi/.gradle/caches/transforms-4/8a52d4f85a6bd23e770a43480c4f1dcc/transformed/media-1.6.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/52963209233cb332f3b2add1ab92d743/transformed/recyclerview-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/52963209233cb332f3b2add1ab92d743/transformed/recyclerview-1.3.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/7d74335612dde90c5c335f6bf687222f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/7d74335612dde90c5c335f6bf687222f/transformed/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.4.0] /Users/kiwi/.gradle/caches/transforms-4/b8e212f12923f7e3174a1379e2005f30/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] /Users/kiwi/.gradle/caches/transforms-4/b8e212f12923f7e3174a1379e2005f30/transformed/browser-1.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/5212394167ce72438871f78ceca98601/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/5212394167ce72438871f78ceca98601/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/696d655d28cadd5b525b6968a2222467/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/696d655d28cadd5b525b6968a2222467/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/439d2cfffd4871bd722757935fa604dc/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/439d2cfffd4871bd722757935fa604dc/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/37ab741d16839318428b380abf4b02c8/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/37ab741d16839318428b380abf4b02c8/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/c35a21416f83f7137ef1e84dd7925f2c/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices-java:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/c35a21416f83f7137ef1e84dd7925f2c/transformed/ads-adservices-java-1.0.0-beta05/AndroidManifest.xml:5:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
+MERGED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/bd5e930c59b7dac0317e8257daf2c17b/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/bd5e930c59b7dac0317e8257daf2c17b/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/55771fcf65ce8229ac7d832f67f2c32b/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/55771fcf65ce8229ac7d832f67f2c32b/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/5d60a93c0f7227a7313166c93fff0f99/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.autofill:autofill:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/5d60a93c0f7227a7313166c93fff0f99/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/5212394167ce72438871f78ceca98601/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/5212394167ce72438871f78ceca98601/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/696d655d28cadd5b525b6968a2222467/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/kiwi/.gradle/caches/transforms-4/696d655d28cadd5b525b6968a2222467/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/82b361ae66ef50d0ded3faa96a063ea9/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/82b361ae66ef50d0ded3faa96a063ea9/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/b86697a1a1c12cdff0dd73a8fc8c0a50/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/b86697a1a1c12cdff0dd73a8fc8c0a50/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/67b6b45b6c7cb334fec83cf62f443a08/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/67b6b45b6c7cb334fec83cf62f443a08/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/9ebcb721929760963f6e715ec632269c/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/kiwi/.gradle/caches/transforms-4/9ebcb721929760963f6e715ec632269c/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/a351893576ebb88fe8eca3fbf2808996/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/a351893576ebb88fe8eca3fbf2808996/transformed/lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/401e33f2db1f80d98990b92f46cd8e83/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/401e33f2db1f80d98990b92f46cd8e83/transformed/lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/bfb0e9a76263bd26ec9e6e462d3b3319/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/bfb0e9a76263bd26ec9e6e462d3b3319/transformed/lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/4f465d65e4077ca38483cecbf559e1d2/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/4f465d65e4077ca38483cecbf559e1d2/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/10ef2b30c21a2c5c31c105ea288df92c/transformed/lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime-compose:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/10ef2b30c21a2c5c31c105ea288df92c/transformed/lifecycle-runtime-compose-2.7.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/46f152995794134afec32a967f9495f7/transformed/lifecycle-viewmodel-compose-2.7.0/AndroidManifest.xml:5:5-44
@@ -406,8 +484,10 @@ MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /Users/k
 MERGED from [com.google.accompanist:accompanist-drawablepainter:0.32.0] /Users/kiwi/.gradle/caches/transforms-4/df38ee91964dc878b72b170475c09dc1/transformed/accompanist-drawablepainter-0.32.0/AndroidManifest.xml:21:5-44
 MERGED from [androidx.compose.ui:ui-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/91148d5cddd3d2c554d1ec607f61718e/transformed/ui-release/AndroidManifest.xml:5:5-44
 MERGED from [androidx.compose.ui:ui-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/91148d5cddd3d2c554d1ec607f61718e/transformed/ui-release/AndroidManifest.xml:5:5-44
-MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/ae18b933a1635bec31959a6d5b750a35/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
-MERGED from [androidx.activity:activity-ktx:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/ae18b933a1635bec31959a6d5b750a35/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/8b07832ff4bae268a65c788d18876b17/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/8b07832ff4bae268a65c788d18876b17/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity-compose:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/b927be07d5488548f84a36ac8b5311ec/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity-compose:1.8.2] /Users/kiwi/.gradle/caches/transforms-4/b927be07d5488548f84a36ac8b5311ec/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/e37f0d43d77a885b395af67ea8958511/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
@@ -426,10 +506,18 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/kiwi/.gra
 MERGED from [androidx.annotation:annotation-experimental:1.4.0] /Users/kiwi/.gradle/caches/transforms-4/71caa62b3ba5b08cf2bcae427968ec6f/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/4ed41750bc3b73e8a6758f7b1baa1b69/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/4ed41750bc3b73e8a6758f7b1baa1b69/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/0abd04e5360618112915de398026d21f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/0abd04e5360618112915de398026d21f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/kiwi/.gradle/caches/transforms-4/361e41015798edcefaa4e67d3d08cfbe/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/kiwi/.gradle/caches/transforms-4/361e41015798edcefaa4e67d3d08cfbe/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/8090191a708d1f946cbe4c88eae9078f/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.6] /Users/kiwi/.gradle/caches/transforms-4/8090191a708d1f946cbe4c88eae9078f/transformed/exifinterface-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9da826dbed4c510b44d2b9e0bb2ef6a/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9da826dbed4c510b44d2b9e0bb2ef6a/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:18:5-20:41
@@ -440,18 +528,12 @@ MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/kiwi/.gradle
 MERGED from [com.google.firebase:firebase-components:16.1.0] /Users/kiwi/.gradle/caches/transforms-4/c3ecc11371c9d496c76f56014519e1d1/transformed/firebase-components-16.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/kiwi/.gradle/caches/transforms-4/1a004ffb0ae201f49f07e92db669dc2e/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-encoders-json:17.1.0] /Users/kiwi/.gradle/caches/transforms-4/1a004ffb0ae201f49f07e92db669dc2e/transformed/firebase-encoders-json-17.1.0/AndroidManifest.xml:19:5-21:41
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
-MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
-MERGED from [androidx.tracing:tracing:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9da826dbed4c510b44d2b9e0bb2ef6a/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9da826dbed4c510b44d2b9e0bb2ef6a/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/a6dc1fe047f33bccf91373efa17d6e1b/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/a6dc1fe047f33bccf91373efa17d6e1b/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/0abd04e5360618112915de398026d21f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/kiwi/.gradle/caches/transforms-4/0abd04e5360618112915de398026d21f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/kiwi/.gradle/caches/transforms-4/121667f64efc17b4d1d8c0fb79ac2056/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.odml:image:1.0.0-beta1] /Users/kiwi/.gradle/caches/transforms-4/121667f64efc17b4d1d8c0fb79ac2056/transformed/image-1.0.0-beta1/AndroidManifest.xml:5:5-44
+	tools:overrideLibrary
+		ADDED from [com.google.android.gms:play-services-ads:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/e24f3db087220df49de9005304463c0b/transformed/play-services-ads-23.0.0/AndroidManifest.xml:23:9-49
 	android:targetSdkVersion
 		INJECTED from /Users/kiwi/Documents/Code/panda-led/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
@@ -474,18 +556,6 @@ ADDED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/tra
 		ADDED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:32:17-86
 	android:name
 		ADDED from [androidx.camera:camera-camera2:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/7d692d6b19f834a775b34c3a8f2203c3/transformed/camera-camera2-1.3.1/AndroidManifest.xml:31:17-103
-activity#androidx.activity.ComponentActivity
-ADDED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:23:9-25:39
-	android:exported
-		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:25:13-36
-	android:name
-		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:24:13-63
-activity#androidx.compose.ui.tooling.PreviewActivity
-ADDED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
-	android:exported
-		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
-	android:name
-		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
 service#com.google.mlkit.common.internal.MlKitComponentDiscoveryService
 ADDED from [com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0] /Users/kiwi/.gradle/caches/transforms-4/c0ac58f8a2a1715172390a69d9df7ae8/transformed/play-services-mlkit-barcode-scanning-18.3.0/AndroidManifest.xml:9:9-15:19
 MERGED from [com.google.mlkit:vision-common:17.3.0] /Users/kiwi/.gradle/caches/transforms-4/d02f5facefe047a7b26b820cd4ec788d/transformed/vision-common-17.3.0/AndroidManifest.xml:9:9-15:19
@@ -528,6 +598,137 @@ ADDED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transform
 		ADDED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:22:17-82
 	android:name
 		ADDED from [com.google.mlkit:common:18.9.0] /Users/kiwi/.gradle/caches/transforms-4/89739e6886d1d408cc86456f37802005/transformed/common-18.9.0/AndroidManifest.xml:21:17-120
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:24:5-79
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:26:5-79
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:26:5-79
+MERGED from [androidx.media3:media3-common:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/a9e90ed48ada171d222d8ecbc3b0bf60/transformed/media3-common-1.2.0/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-common:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/a9e90ed48ada171d222d8ecbc3b0bf60/transformed/media3-common-1.2.0/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/AndroidManifest.xml:22:5-79
+MERGED from [androidx.media3:media3-exoplayer:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:25:22-76
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/kiwi/.gradle/caches/transforms-4/8a118ee638fba334017ef02058fb1a05/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] /Users/kiwi/.gradle/caches/transforms-4/8a118ee638fba334017ef02058fb1a05/transformed/play-services-ads-identifier-18.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:26:22-76
+uses-permission#android.permission.ACCESS_ADSERVICES_AD_ID
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:27:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:27:22-79
+uses-permission#android.permission.ACCESS_ADSERVICES_ATTRIBUTION
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:28:5-88
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:28:22-85
+uses-permission#android.permission.ACCESS_ADSERVICES_TOPICS
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:29:5-83
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:29:22-80
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:30:5-32:31
+REJECTED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:27:5-81
+	tools:node
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:32:9-28
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:31:9-65
+queries
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:35:5-51:15
+intent#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+data:scheme:https
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:38:9-44:18
+action#android.intent.action.VIEW
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:39:13-65
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:39:21-62
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:41:13-74
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:41:23-71
+data
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:43:13-44
+	android:scheme
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:43:19-41
+intent#action:name:android.support.customtabs.action.CustomTabsService
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:47:9-49:18
+action#android.support.customtabs.action.CustomTabsService
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:48:13-90
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:48:21-87
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:56:9-61:43
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:59:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:61:13-40
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:58:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:60:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:57:13-65
+provider#com.google.android.gms.ads.MobileAdsInitProvider
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:63:9-68:43
+	android:authorities
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:65:13-73
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:66:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:68:13-40
+	android:initOrder
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:67:13-36
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:64:13-76
+service#com.google.android.gms.ads.AdService
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:70:9-74:43
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:72:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:73:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:74:13-40
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:71:13-64
+activity#com.google.android.gms.ads.OutOfContextTestingActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:76:9-80:43
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:79:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:80:13-40
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:78:13-122
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:77:13-82
+activity#com.google.android.gms.ads.NotificationHandlerActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:81:9-88:43
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:83:13-46
+	android:launchMode
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:85:13-44
+	android:exported
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:84:13-37
+	tools:ignore
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:88:13-40
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:87:13-72
+	android:taskAffinity
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:86:13-36
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:82:13-82
+property#android.adservices.AD_SERVICES_CONFIG
+ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:90:9-92:62
+	android:resource
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:92:13-59
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:23.0.0] /Users/kiwi/.gradle/caches/transforms-4/f9734cabdb4698f3d4a7a497d3364901/transformed/play-services-ads-lite-23.0.0/AndroidManifest.xml:91:13-65
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
 	android:exported
@@ -536,14 +737,32 @@ ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradl
 		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:21:19-78
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/f9a635934775058a740165d33246735c/transformed/play-services-base-18.1.0/AndroidManifest.xml:20:19-85
-meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-	android:value
-		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:25:5-68
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:25:5-68
+MERGED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:25:5-68
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:18.1.0] /Users/kiwi/.gradle/caches/transforms-4/0800b08a4662ecf3ff92896508ee08dd/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+		ADDED from [com.google.android.gms:play-services-measurement-sdk-api:20.1.2] /Users/kiwi/.gradle/caches/transforms-4/aff8de3ce63d9e995fba33687fa5ee31/transformed/play-services-measurement-sdk-api-20.1.2/AndroidManifest.xml:25:22-65
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.2.0] /Users/kiwi/.gradle/caches/transforms-4/45f72b3f0a1ad7356c4292b5f55d5e92/transformed/play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/b6ab230db15f00a03b1bc42672d7016e/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:5-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:28:22-74
 provider#androidx.startup.InitializationProvider
-ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:31:9-39:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
@@ -551,13 +770,217 @@ MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.grad
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/kiwi/.gradle/caches/transforms-4/18b1e0a61f355ff3181a3adece096a70/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
 	tools:node
-		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:35:13-31
 	android:authorities
-		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:33:13-68
 	android:exported
-		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:32:13-67
+meta-data#androidx.work.WorkManagerInitializer
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:36:13-38:52
+	android:value
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:38:17-49
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:37:17-68
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:41:9-46:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:44:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:45:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:46:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:43:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:42:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:47:9-53:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:50:13-70
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:51:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:52:13-69
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:53:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:49:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:48:13-84
+service#androidx.work.impl.foreground.SystemForegroundService
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:54:9-59:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:57:13-77
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:58:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:59:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:56:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:55:13-81
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:61:9-66:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:64:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:65:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:66:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:63:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:62:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:67:9-77:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:70:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:71:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:72:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:69:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:68:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:73:13-76:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:17-87
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:74:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:17-90
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:75:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:78:9-88:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:81:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:82:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:83:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:80:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:79:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:84:13-87:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:17-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:85:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:17-76
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:86:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:89:9-99:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:92:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:93:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:94:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:91:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:90:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:95:13-98:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:17-83
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:96:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:17-82
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:97:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:100:9-109:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:103:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:104:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:105:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:102:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:101:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:106:13-108:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:107:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:110:9-121:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:113:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:114:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:115:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:112:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:111:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:116:13-120:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:117:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:117:25-76
+action#android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:17-73
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:118:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:17-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:119:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:122:9-131:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:125:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:126:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:127:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:124:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:123:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:128:13-130:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:17-98
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:129:25-95
+receiver#androidx.work.impl.diagnostics.DiagnosticsReceiver
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:132:9-142:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:135:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:136:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:137:13-57
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:138:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:134:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:133:13-78
+intent-filter#action:name:androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:139:13-141:29
+action#androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:17-88
+	android:name
+		ADDED from [androidx.work:work-runtime:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/fc18bd7d5ad982e19ba4a895a38f2f94/transformed/work-runtime-2.7.0/AndroidManifest.xml:140:25-85
 meta-data#androidx.emoji2.text.EmojiCompatInitializer
 ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/kiwi/.gradle/caches/transforms-4/8e328afa83ecd43817fc9f1104d32f06/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
 	android:value
@@ -570,16 +993,12 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/cach
 		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /Users/kiwi/.gradle/caches/transforms-4/68b066c7d167b459a95af36dcf5fee16/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [androidx.media3:media3-common:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/a9e90ed48ada171d222d8ecbc3b0bf60/transformed/media3-common-1.2.0/AndroidManifest.xml:22:5-79
-MERGED from [androidx.media3:media3-exoplayer:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/AndroidManifest.xml:22:5-79
-MERGED from [androidx.media3:media3-exoplayer:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/7b9401a69bd87abbe73d325648bc5cc0/transformed/media3-exoplayer-1.2.0/AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:25:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:22:5-79
+uses-library#android.ext.adservices
+ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+	android:required
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
 	android:name
-		ADDED from [androidx.media3:media3-common:1.2.0] /Users/kiwi/.gradle/caches/transforms-4/a9e90ed48ada171d222d8ecbc3b0bf60/transformed/media3-common-1.2.0/AndroidManifest.xml:22:22-76
+		ADDED from [androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/kiwi/.gradle/caches/transforms-4/2b265f45e5eaca74cd83388a64aa62d2/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
 permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
@@ -600,6 +1019,12 @@ uses-permission#com.pandaled.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /Users/kiwi/.gradle/caches/transforms-4/42701a8c6c0f3321b9e244f3d0512098/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.6.5] /Users/kiwi/.gradle/caches/transforms-4/545ad36c28f22805231e984c83b23b09/transformed/ui-test-manifest-1.6.5/AndroidManifest.xml:24:13-63
 service#androidx.room.MultiInstanceInvalidationService
 ADDED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/e37f0d43d77a885b395af67ea8958511/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
 	android:exported
@@ -610,34 +1035,6 @@ ADDED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transfo
 		ADDED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/e37f0d43d77a885b395af67ea8958511/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
 	android:name
 		ADDED from [androidx.room:room-runtime:2.6.1] /Users/kiwi/.gradle/caches/transforms-4/e37f0d43d77a885b395af67ea8958511/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
-service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
-ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
-MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
-	android:exported
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
-	android:name
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
-meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
-ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
-	android:value
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
-	android:name
-		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
-service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
-ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
-	android:exported
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
-	android:permission
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
-	android:name
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
-receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
-ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
-	android:exported
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
-	android:name
-		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
 	android:value
@@ -680,3 +1077,31 @@ action#androidx.profileinstaller.action.BENCHMARK_OPERATION
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
 	android:name
 		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /Users/kiwi/.gradle/caches/transforms-4/56e0ec01ae8d110fcb3f363c4673c229/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+service#com.google.android.datatransport.runtime.backends.TransportBackendDiscovery
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:29:9-35:19
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+MERGED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:36:9-38:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:30:13-103
+meta-data#backend:com.google.android.datatransport.cct.CctBackendFactory
+ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:32:13-34:39
+	android:value
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:34:17-36
+	android:name
+		ADDED from [com.google.android.datatransport:transport-backend-cct:2.3.3] /Users/kiwi/.gradle/caches/transforms-4/48f0189a4b15b7ec4971365cdcbe083f/transformed/transport-backend-cct-2.3.3/AndroidManifest.xml:33:17-94
+service#com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:26:9-30:19
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:28:13-37
+	android:permission
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:27:13-117
+receiver#com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver
+ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from [com.google.android.datatransport:transport-runtime:2.2.6] /Users/kiwi/.gradle/caches/transforms-4/aaea4b3312cbe90ba39907321ca6ed00/transformed/transport-runtime-2.2.6/AndroidManifest.xml:33:13-132

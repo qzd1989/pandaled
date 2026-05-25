@@ -37,7 +37,8 @@ data class DetailUiState(
     val qrCodeBitmap: android.graphics.Bitmap? = null,
     val showQrDialog: Boolean = false,
     val missingAssets: List<MissingAsset> = emptyList(),
-    val highlightedSceneIndex: Int? = null  // for "待补充完整" click highlight
+    val highlightedSceneIndex: Int? = null, // for "待补充完整" click highlight
+    val tabToSwitch: Int? = null  // trigger tab switch from outside
 )
 
 class DetailViewModel : ViewModel() {
@@ -146,15 +147,16 @@ class DetailViewModel : ViewModel() {
 
     fun addScene(type: SceneType = SceneType.TEXT) {
         val project = currentProject ?: return
-        val typeLabel = when (type) {
-            SceneType.TEXT -> "文字"
-            SceneType.IMAGE -> "图片"
-            SceneType.VIDEO -> "视频"
-        }
         val prefs = PandaLedApp.instance.getSharedPreferences("pandaled_prefs", android.content.Context.MODE_PRIVATE)
         val lang = prefs.getString("language", "") ?: ""
         val resolved = lang.ifEmpty {
             if (java.util.Locale.getDefault().language.startsWith("zh")) "zh" else "en"
+        }
+        val isZh = resolved == "zh"
+        val typeLabel = when (type) {
+            SceneType.TEXT -> if (isZh) "文字" else "Text"
+            SceneType.IMAGE -> if (isZh) "图片" else "Image"
+            SceneType.VIDEO -> if (isZh) "视频" else "Video"
         }
         val sceneFile = when (type) {
             SceneType.TEXT -> "scene_text_default.json"
@@ -289,15 +291,23 @@ class DetailViewModel : ViewModel() {
 
     // ─── QR share ────────────────────────────────────────
 
-    fun generateShareQr() {
+    fun generateShareQr(label: String) {
         val project = currentProject ?: return
         val json = repository.projectToJson(project)
         val base64 = Base64.encodeToString(json.toByteArray(Charsets.UTF_8), Base64.NO_WRAP)
-        val bitmap = com.pandaled.util.QrCodeHelper.generateQrCode(base64, 512)
+        val bitmap = com.pandaled.util.QrCodeHelper.generateQrCodeWithLabel(base64, 512, label)
         _uiState.value = _uiState.value.copy(
             qrCodeBitmap = bitmap,
             showQrDialog = true
         )
+    }
+
+    fun selectTab(index: Int) {
+        _uiState.value = _uiState.value.copy(tabToSwitch = index)
+    }
+
+    fun clearTabSwitch() {
+        _uiState.value = _uiState.value.copy(tabToSwitch = null)
     }
 
     fun dismissQrDialog() {

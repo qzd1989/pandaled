@@ -1,6 +1,7 @@
 package com.pandaled.ui.detail.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -29,6 +30,7 @@ fun SceneEditorColumn(
     highlightedSceneIndex: Int?,
     onUpdateIdleScene: (IdleScene) -> Unit,
     onUpdateScene: (Int, Scene) -> Unit,
+    onNavigateToInfo: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -48,7 +50,8 @@ fun SceneEditorColumn(
             is EditorTarget.IdleScene -> {
                 IdleSceneEditor(
                     idleScene = project.idleScene,
-                    onUpdate = onUpdateIdleScene
+                    onUpdate = onUpdateIdleScene,
+                    onNavigateToInfo = onNavigateToInfo
                 )
             }
             is EditorTarget.Scene -> {
@@ -109,15 +112,37 @@ private fun FieldLabel(text: String) {
 
 // ─── Idle Scene Editor ───────────────────────────────────
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun IdleSceneEditor(
     idleScene: IdleScene,
-    onUpdate: (IdleScene) -> Unit
+    onUpdate: (IdleScene) -> Unit,
+    onNavigateToInfo: () -> Unit = {}
 ) {
     var type by remember(idleScene) { mutableStateOf(idleScene.type) }
 
     EditorSection(stringResource(R.string.scene_waiting)) {
-        FieldLabel(stringResource(R.string.editor_color_mode))
+        // Hint box: "This scene is shown before the project starts."
+        Card(
+            shape = RoundedCornerShape(8.dp),
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+        ) {
+            FlowRow(modifier = Modifier.padding(10.dp)) {
+                Text(
+                    stringResource(R.string.idle_waiting_hint),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    stringResource(R.string.idle_view_start_time),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.primary,
+                    modifier = Modifier.clickable { onNavigateToInfo() }
+                )
+            }
+        }
+        FieldLabel(stringResource(R.string.editor_show_mode))
         TypeSelector(
             options = IdleSceneType.entries.map { it.name to idleSceneTypeLabel(it) },
             selected = type.name,
@@ -167,11 +192,13 @@ fun IdleClockCountdownEditor(
     onUpdate: (IdleSceneContent) -> Unit
 ) {
     val current = content ?: IdleSceneContent()
-    val defaultColor = if (isClock) "#FFFFFF" else "#FF8800"
-    var format by remember(current) { mutableStateOf(current.style?.format ?: "{hours}:{minutes}:{seconds}") }
-    var fontFamily by remember(current) { mutableStateOf(current.style?.fontFamily ?: "sans-serif") }
-    var size by remember(current) { mutableStateOf((current.style?.size ?: 40).toString()) }
-    var color by remember(current, defaultColor) { mutableStateOf(current.style?.color ?: defaultColor) }
+    // Force white for both clock and countdown — override any legacy orange
+    val defaultColor = "#FFFFFF"
+    val contentKey = System.identityHashCode(content)
+    var format by remember(contentKey) { mutableStateOf(current.style?.format ?: "{hours}:{minutes}:{seconds}") }
+    var fontFamily by remember(contentKey) { mutableStateOf(current.style?.fontFamily ?: "sans-serif") }
+    var size by remember(contentKey) { mutableStateOf((current.style?.size ?: 40).toString()) }
+    var color by remember(contentKey) { mutableStateOf(current.style?.color?.takeIf { it != "#FFFFFF" } ?: defaultColor) }
 
     fun emit() {
         onUpdate(
@@ -194,19 +221,19 @@ fun IdleClockCountdownEditor(
         modifier = Modifier.fillMaxWidth(),
         singleLine = true
     )
-    FieldLabel("字体")
+    FieldLabel(stringResource(R.string.editor_font))
     FontFamilySelector(
         selectedKey = fontFamily,
         onSelect = { fontFamily = it; emit() },
         modifier = Modifier.fillMaxWidth()
     )
     NumberStepper(
-        label = "字号",
+        label = stringResource(R.string.editor_font_size),
         value = size,
         onValueChange = { size = it; emit() }
     )
     ColorField(
-        label = "颜色",
+        label = stringResource(R.string.editor_color),
         selectedHex = color,
         onSelect = { color = it; emit() }
     )
@@ -434,7 +461,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
     var fontFamily by remember(content) { mutableStateOf(content.style?.fontFamily ?: "sans-serif") }
 
     NumberStepper(
-        label = "字号",
+        label = stringResource(R.string.editor_font_size),
         value = fontSize,
         min = 6,
         max = 200,
@@ -443,7 +470,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
             onUpdate(content.copy(style = (content.style ?: ContentStyle()).copy(size = it.toIntOrNull() ?: 40)))
         }
     )
-    FieldLabel("字体")
+    FieldLabel(stringResource(R.string.editor_font))
     FontFamilySelector(
         selectedKey = fontFamily,
         onSelect = {
@@ -490,7 +517,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
             }
         )
         LabeledSlider(
-            label = "速度",
+            label = stringResource(R.string.editor_scroll_speed),
             sliderKey = "scrollSpeed",
             value = speed,
             range = 1..10,
@@ -519,7 +546,7 @@ fun TextContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) {
     val blink = content.animation?.blink ?: BlinkConfig(frequency = 0)
     var blinkFreq by remember(blink) { mutableStateOf(blink.frequency.coerceIn(0, 10)) }
     LabeledSlider(
-        label = "闪烁",
+        label = stringResource(R.string.editor_blink),
         sliderKey = "textBlinkFreq",
         value = blinkFreq,
         range = 0..10,
@@ -562,7 +589,7 @@ fun ImageContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) 
     val blink = content.animation?.blink ?: BlinkConfig(frequency = 0)
     var blinkFreq by remember(blink) { mutableStateOf(blink.frequency.coerceIn(0, 10)) }
     LabeledSlider(
-        label = "闪烁",
+        label = stringResource(R.string.editor_blink),
         sliderKey = "imgBlinkFreq",
         value = blinkFreq,
         range = 0..10,
@@ -627,7 +654,7 @@ fun VideoContentEditor(content: SceneContent, onUpdate: (SceneContent) -> Unit) 
     val blink = content.animation?.blink ?: BlinkConfig(frequency = 0)
     var blinkFreq by remember(blink) { mutableStateOf(blink.frequency.coerceIn(0, 10)) }
     LabeledSlider(
-        label = "闪烁",
+        label = stringResource(R.string.editor_blink),
         sliderKey = "videoBlinkFreq",
         value = blinkFreq,
         range = 0..10,
@@ -653,7 +680,7 @@ fun ColorConfigEditor(
     val current = colorConfig ?: ColorConfig()
     var mode by remember(current) { mutableStateOf(current.type) }
 
-    FieldLabel("颜色模式")
+    FieldLabel(stringResource(R.string.editor_color_mode))
     TypeSelector(
         options = listOf(
             "STATIC" to stringResource(R.string.editor_color_static),
@@ -671,7 +698,7 @@ fun ColorConfigEditor(
         ColorType.STATIC -> {
             var value by remember(current) { mutableStateOf(current.value ?: "#FFFFFF") }
             ColorField(
-                label = "颜色",
+                label = stringResource(R.string.editor_color),
                 selectedHex = value,
                 onSelect = {
                     value = it
@@ -775,7 +802,7 @@ fun BackgroundColorEditor(
     var bgMode by remember(bg) { mutableStateOf(if (bg.type in modes) bg.type else modes.first()) }
 
     if (!singleMode) {
-        FieldLabel("背景颜色模式")
+        FieldLabel(stringResource(R.string.editor_bg_color_mode))
         TypeSelector(
             options = modes.map { it.name to when (it) {
                 ColorType.STATIC -> stringResource(R.string.editor_color_static)
@@ -855,7 +882,7 @@ fun BackgroundColorEditor(
             ) }
 
             ColorField(
-                label = "起始颜色",
+                label = stringResource(R.string.editor_start_color),
                 selectedHex = from,
                 onSelect = {
                     from = it
@@ -864,7 +891,7 @@ fun BackgroundColorEditor(
             )
             Spacer(Modifier.height(8.dp))
             ColorField(
-                label = "结束颜色",
+                label = stringResource(R.string.editor_end_color),
                 selectedHex = to,
                 onSelect = {
                     to = it

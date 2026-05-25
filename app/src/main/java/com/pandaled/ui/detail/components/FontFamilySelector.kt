@@ -8,6 +8,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import com.pandaled.PandaLedApp
@@ -53,7 +54,7 @@ val enFonts = listOf(
 /** Active font list based on app locale. */
 @Composable
 fun localeFonts(): List<FontOption> {
-    val locale = java.util.Locale.getDefault()
+    val locale = LocalContext.current.resources.configuration.locales[0]
     return if (locale.language.startsWith("zh")) zhFonts else enFonts
 }
 
@@ -98,6 +99,8 @@ fun FontFamilySelector(
         "font_mono" to stringResource(R.string.font_mono),
         "font_casual" to stringResource(R.string.font_casual),
         "font_cursive" to stringResource(R.string.font_cursive),
+        "font_zcool" to stringResource(R.string.font_zcool),
+        "font_mashan" to stringResource(R.string.font_mashan),
     )
     val previewText = stringResource(R.string.font_preview)
 
@@ -133,11 +136,6 @@ fun FontFamilySelector(
                             else -> FontWeight.Normal
                         },
                         fontSize = 16.sp
-                    )
-                    Text(
-                        text = labelMap[font.label] ?: font.label,
-                        style = MaterialTheme.typography.labelSmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
             }

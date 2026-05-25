@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PandaLED</string>
-    <string name="app_subtitle">LED 项目控制台</string>
+    <string name="app_subtitle">把心亮出来，让世界看见。</string>
+    <string name="close">关闭</string>
     <string name="color_a">颜色 A</string>
     <string name="color_b">颜色 B</string>
     <string name="color_picker_title">选择颜色</string>
@@ -52,9 +53,11 @@
     <string name="editor_scene_name">场景名称</string>
     <string name="editor_scene_not_found">场景不存在</string>
     <string name="editor_scroll">滚动</string>
+    <string name="editor_scroll_speed">速度</string>
     <string name="editor_select_image">选择图片</string>
     <string name="editor_select_scene">从场景列表选择一个场景</string>
     <string name="editor_select_video">选择视频</string>
+    <string name="editor_show_mode">显示模式</string>
     <string name="editor_start_color">起始颜色</string>
     <string name="editor_text_content">文字内容</string>
     <string name="editor_transition">转场动画</string>
@@ -86,7 +89,7 @@
     <string name="home_delete_confirm">确定删除「%1$s」?</string>
     <string name="home_new_project">新建</string>
     <string name="home_no_projects">暂无项目</string>
-    <string name="home_scan_hint">点击右下角扫码导入项目</string>
+    <string name="home_scan_hint">点击右下角 + 创建</string>
     <string name="home_scan_import">扫码导入</string>
     <string name="home_scan_title">扫描二维码</string>
     <string name="home_settings">设置</string>
@@ -95,18 +98,26 @@
     <string name="idle_countdown">倒计时</string>
     <string name="idle_image">图片</string>
     <string name="idle_none">黑屏</string>
+    <string name="idle_view_start_time">查看开始时间</string>
+    <string name="idle_waiting_hint">项目开始前，将持续展示此场景。</string>
     <string name="invalid_hex">无效</string>
+    <string name="loading_ads">正在加载广告…</string>
+    <string name="missing_assets">待补充完整 — %s</string>
+    <string name="missing_image">待补充</string>
     <string name="pick_time">选择时间</string>
+    <string name="qr_code_desc">项目二维码</string>
     <string name="qr_export">导出二维码</string>
     <string name="qr_import_error">导入失败，二维码内容无效</string>
     <string name="qr_import_success">导入成功</string>
+    <string name="qr_scan_hint">打开 PandaLED\n扫描二维码导入此项目</string>
+    <string name="save">保存</string>
     <string name="scene_add">添加场景</string>
     <string name="scene_delete">删除</string>
-    <string name="scene_image">图片</string>
+    <string name="scene_image">图片场景</string>
     <string name="scene_move_down">下移</string>
     <string name="scene_move_up">上移</string>
-    <string name="scene_text">文字</string>
-    <string name="scene_video">视频</string>
+    <string name="scene_text">文字场景</string>
+    <string name="scene_video">视频场景</string>
     <string name="scene_waiting">等待场景</string>
     <string name="scroll_btt">下→上</string>
     <string name="scroll_ltr">左→右</string>
@@ -126,6 +137,14 @@
     <string name="settings_theme_light">浅色模式</string>
     <string name="settings_theme_system">随系统</string>
     <string name="settings_title">设置</string>
+    <string name="share">分享</string>
+    <string name="share_hint">扫描这个二维码导入本项目</string>
+    <string name="share_title">分享项目</string>
+    <string name="start_directly">直接开始</string>
+    <string name="subscribe_cta">订阅会员免广告</string>
+    <string name="subscribe_hint">仅需0.99美元/月即可免广告无限制使用全部功能。</string>
+    <string name="subscribe_title">订阅会员免广告</string>
+    <string name="toast_missing">请补充完整内容</string>
     <string name="transition_fade_in">淡入</string>
     <string name="transition_none">无</string>
     <string name="transition_slide_bottom">从下滑入</string>
@@ -133,6 +152,6 @@
     <string name="transition_slide_right">从右滑入</string>
     <string name="transition_slide_top">从上滑入</string>
     <string name="untitled_project">未命名项目</string>
-    <style name="Theme.PandaLed" parent="android:Theme.Material.NoActionBar"/>
-    <style name="Theme.PandaLed.FullScreen" parent="android:Theme.Material.NoActionBar.Fullscreen"/>
+    <style name="Theme.PandaLed" parent="Theme.AppCompat.Light.NoActionBar"/>
+    <style name="Theme.PandaLed.FullScreen" parent="Theme.AppCompat.Light.NoActionBar"/>
 </resources>

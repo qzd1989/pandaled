@@ -96,4 +96,7 @@ dependencies {
     // Debug
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    // Google ads
+    implementation("com.google.android.gms:play-services-ads:23.0.0")
 }

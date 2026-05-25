@@ -125,52 +125,13 @@ fun HomeScreen(
             )
         },
         floatingActionButton = {
-            Column(horizontalAlignment = Alignment.End) {
-                AnimatedVisibility(
-                    visible = fabExpanded,
-                    enter = fadeIn() + slideInVertically(initialOffsetY = { it }),
-                    exit = fadeOut() + slideOutVertically(targetOffsetY = { it })
-                ) {
-                    Column(horizontalAlignment = Alignment.End) {
-                        // New project button
-                        SmallFloatingActionButton(
-                            onClick = {
-                                fabExpanded = false
-                                viewModel.createNewProject { id -> onProjectClick(id) }
-                            },
-                            containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
-                            contentColor = MaterialTheme.colorScheme.primary
-                        ) {
-                            Icon(Icons.Default.Add, contentDescription = stringResource(R.string.home_new_project))
-                        }
-                        Spacer(Modifier.height(12.dp))
-                        // Scan QR button
-                        SmallFloatingActionButton(
-                            onClick = {
-                                fabExpanded = false
-                                if (hasCameraPermission) viewModel.startScanning()
-                                else permissionLauncher.launch(Manifest.permission.CAMERA)
-                            },
-                            containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
-                            contentColor = MaterialTheme.colorScheme.secondary
-                        ) {
-                            Icon(Icons.Default.QrCodeScanner, contentDescription = stringResource(R.string.home_scan_import))
-                        }
-                    }
-                }
-                Spacer(Modifier.height(12.dp))
-                // Main FAB
-                FloatingActionButton(
-                    onClick = { fabExpanded = !fabExpanded },
-                    shape = CircleShape,
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.onPrimary
-                ) {
-                    Icon(
-                        if (fabExpanded) Icons.Default.Close else Icons.Default.Add,
-                        contentDescription = if (fabExpanded) "收起" else "添加项目"
-                    )
-                }
+            FloatingActionButton(
+                onClick = { viewModel.createNewProject { id -> onProjectClick(id) } },
+                shape = CircleShape,
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary
+            ) {
+                Icon(Icons.Default.Add, contentDescription = stringResource(R.string.home_new_project))
             }
         }
     ) { padding ->

@@ -2,11 +2,11 @@
 <resources>
     <string name="app_name">PandaLED</string>
     <string name="untitled_project">未命名项目</string>
-    <string name="app_subtitle">LED 项目控制台</string>
+    <string name="app_subtitle">把心亮出来，让世界看见。</string>
 
     <!-- Home -->
     <string name="home_no_projects">暂无项目</string>
-    <string name="home_scan_hint">点击右下角扫码导入项目</string>
+    <string name="home_scan_hint">点击右下角 + 创建</string>
     <string name="home_new_project">新建</string>
     <string name="home_scan_import">扫码导入</string>
     <string name="home_settings">设置</string>
@@ -30,9 +30,9 @@
     <!-- Scene List -->
     <string name="scene_waiting">等待场景</string>
     <string name="scene_add">添加场景</string>
-    <string name="scene_text">文字</string>
-    <string name="scene_image">图片</string>
-    <string name="scene_video">视频</string>
+    <string name="scene_text">文字场景</string>
+    <string name="scene_image">图片场景</string>
+    <string name="scene_video">视频场景</string>
     <string name="scene_move_up">上移</string>
     <string name="scene_move_down">下移</string>
     <string name="scene_delete">删除</string>
@@ -42,6 +42,8 @@
     <string name="idle_clock">时钟</string>
     <string name="idle_countdown">倒计时</string>
     <string name="idle_image">图片</string>
+    <string name="idle_waiting_hint">项目开始前，将持续展示此场景。</string>
+    <string name="idle_view_start_time">查看开始时间</string>
     <string name="idle_black_hint">黑屏模式 - 无额外配置</string>
 
     <!-- Scene Editor -->
@@ -55,6 +57,7 @@
     <string name="editor_duration">持续时间 (秒)</string>
     <string name="duration_unit">秒</string>
     <string name="editor_play_mode">播放模式</string>
+    <string name="editor_show_mode">显示模式</string>
     <string name="editor_loop">循环</string>
     <string name="editor_once">单次</string>
     <string name="editor_enter_anim">进入动画</string>
@@ -88,6 +91,7 @@
     <string name="color_a">颜色 A</string>
     <string name="color_b">颜色 B</string>
     <string name="editor_scroll">滚动</string>
+    <string name="editor_scroll_speed">速度</string>
     <string name="editor_mirror">镜像</string>
     <string name="editor_blink">闪烁</string>
     <string name="editor_frequency">频率</string>
@@ -95,6 +99,7 @@
     <string name="editor_replace_image">更换图片</string>
     <string name="editor_select_video">选择视频</string>
     <string name="editor_replace_video">更换视频</string>
+    <string name="missing_image">待补充</string>
     <string name="editor_missing_image">⚠ 待补充图片</string>
     <string name="editor_missing_video">⚠ 待补充视频</string>
     <string name="editor_video_duration">视频时长</string>
@@ -152,7 +157,21 @@
     <string name="settings_cache_calculating">计算中…</string>
 
     <!-- QR -->
+    <string name="share">分享</string>
+    <string name="share_title">分享项目</string>
+    <string name="share_hint">扫描这个二维码导入本项目</string>
+    <string name="save">保存</string>
+    <string name="qr_scan_hint">打开 PandaLED\n扫描二维码导入此项目</string>
+    <string name="close">关闭</string>
+    <string name="qr_code_desc">项目二维码</string>
     <string name="qr_export">导出二维码</string>
     <string name="qr_import_error">导入失败，二维码内容无效</string>
     <string name="qr_import_success">导入成功</string>
+    <string name="subscribe_title">订阅会员免广告</string>
+    <string name="subscribe_cta">订阅会员免广告</string>
+    <string name="subscribe_hint">仅需0.99美元/月即可免广告无限制使用全部功能。</string>
+    <string name="start_directly">直接开始</string>
+    <string name="loading_ads">正在加载广告…</string>
+    <string name="toast_missing">请补充完整内容</string>
+    <string name="missing_assets">待补充完整 — %s</string>
 </resources>

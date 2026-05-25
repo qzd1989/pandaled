@@ -91,7 +91,7 @@ fun SceneListColumn(
                 if (idleScene.hasMissingAsset()) {
                     Icon(
                         Icons.Default.Warning,
-                        contentDescription = "待补充",
+                        contentDescription = stringResource(com.pandaled.R.string.missing_image),
                         tint = Color.Red,
                         modifier = Modifier.size(16.dp)
                     )
@@ -105,18 +105,24 @@ fun SceneListColumn(
                         expanded = addMenuExpanded,
                         onDismissRequest = { addMenuExpanded = false }
                     ) {
-                        DropdownMenuItem(
-                            text = { Text(stringResource(com.pandaled.R.string.scene_text)) },
-                            onClick = { addMenuExpanded = false; onAddScene(SceneType.TEXT) }
-                        )
-                        DropdownMenuItem(
-                            text = { Text(stringResource(com.pandaled.R.string.scene_image)) },
-                            onClick = { addMenuExpanded = false; onAddScene(SceneType.IMAGE) }
-                        )
-                        DropdownMenuItem(
-                            text = { Text(stringResource(com.pandaled.R.string.scene_video)) },
-                            onClick = { addMenuExpanded = false; onAddScene(SceneType.VIDEO) }
-                        )
+                        listOf(
+                            com.pandaled.R.string.scene_text to SceneType.TEXT,
+                            com.pandaled.R.string.scene_image to SceneType.IMAGE,
+                            com.pandaled.R.string.scene_video to SceneType.VIDEO
+                        ).forEach { (resId, type) ->
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .clickable { addMenuExpanded = false; onAddScene(type) }
+                                    .padding(horizontal = 16.dp, vertical = 12.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    stringResource(resId),
+                                    style = MaterialTheme.typography.bodyLarge
+                                )
+                            }
+                        }
                     }
                 }
             }
@@ -203,7 +209,7 @@ fun SceneListColumn(
                         if (scene.hasMissingAsset()) {
                             Icon(
                                 Icons.Default.Warning,
-                                contentDescription = "待补充",
+                                contentDescription = stringResource(com.pandaled.R.string.missing_image),
                                 tint = Color.Red,
                                 modifier = Modifier.size(16.dp)
                             )

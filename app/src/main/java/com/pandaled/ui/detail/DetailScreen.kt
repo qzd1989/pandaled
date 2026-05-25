@@ -53,6 +53,8 @@ fun DetailScreen(
     }
 
     var showMenu by remember { mutableStateOf(false) }
+    var showSubscribeDialog by remember { mutableStateOf(false) }
+    var showLoading by remember { mutableStateOf(false) }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,
@@ -77,29 +79,20 @@ fun DetailScreen(
                     }
                 },
                 actions = {
-                    // Play button → fullscreen
-                    IconButton(onClick = { viewModel.launchFullScreen(context) }) {
-                        Icon(Icons.Default.PlayArrow, contentDescription = stringResource(R.string.detail_fullscreen))
+                    // Play button → subscribe dialog → fullscreen
+                    val toastMissingText = stringResource(R.string.toast_missing)
+                    IconButton(onClick = {
+                        if (state.missingAssets.isNotEmpty()) {
+                            android.widget.Toast.makeText(context, toastMissingText, android.widget.Toast.LENGTH_SHORT).show()
+                            viewModel.selectTab(1) // switch to scenes tab
+                        } else {
+                            showSubscribeDialog = true
+                        }
+                    }) {
+                        Icon(Icons.Filled.PlayCircle, contentDescription = stringResource(R.string.detail_fullscreen), modifier = Modifier.size(32.dp))
                     }
                     // Three-dot menu
-                    Box {
-                        IconButton(onClick = { showMenu = true }) {
-                            Icon(Icons.Default.MoreVert, contentDescription = "更多")
-                        }
-                        DropdownMenu(
-                            expanded = showMenu,
-                            onDismissRequest = { showMenu = false }
-                        ) {
-                            DropdownMenuItem(
-                                text = { Text("分享") },
-                                leadingIcon = { Icon(Icons.Default.Share, null) },
-                                onClick = {
-                                    showMenu = false
-                                    viewModel.generateShareQr()
-                                }
-                            )
-                        }
-                    }
+
                 }
             )
         }
@@ -133,7 +126,7 @@ fun DetailScreen(
             // ─── Preview panel ───────────────────────────
             val currentSceneName = when (val t = state.selectedTarget) {
                 is EditorTarget.None -> ""
-                is EditorTarget.IdleScene -> "等待场景"
+                is EditorTarget.IdleScene -> stringResource(R.string.scene_waiting)
                 is EditorTarget.Scene -> project.scenes.getOrNull(t.index)?.name ?: "场景 ${t.index + 1}"
             }
             val configuration = LocalConfiguration.current
@@ -162,7 +155,10 @@ fun DetailScreen(
             val tabTitles = listOf(stringResource(R.string.detail_tab_info), stringResource(R.string.detail_tab_scenes), stringResource(R.string.detail_tab_editor))
             var selectedTab by remember { mutableIntStateOf(2) }
 
-
+            // React to tab switch request from ViewModel
+            LaunchedEffect(state.tabToSwitch) {
+                state.tabToSwitch?.let { selectedTab = it; viewModel.clearTabSwitch() }
+            }
 
             TabRow(
                 selectedTabIndex = selectedTab,
@@ -231,6 +227,7 @@ fun DetailScreen(
                         highlightedSceneIndex = state.highlightedSceneIndex,
                         onUpdateIdleScene = { viewModel.updateIdleScene(it) },
                         onUpdateScene = { idx, scene -> viewModel.updateScene(idx, scene) },
+                        onNavigateToInfo = { viewModel.selectTab(0) },
                         modifier = Modifier
                             .fillMaxSize()
                             .verticalScroll(rememberScrollState())
@@ -243,7 +240,10 @@ fun DetailScreen(
 
     // ─── QR Share Dialog ─────────────────────────────────
     if (state.showQrDialog && state.qrCodeBitmap != null) {
-        Dialog(onDismissRequest = { viewModel.dismissQrDialog() }) {
+        Dialog(
+            onDismissRequest = {}, // only close button dismisses
+            properties = androidx.compose.ui.window.DialogProperties(dismissOnClickOutside = false)
+        ) {
             Card(
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier.padding(16.dp)
@@ -253,32 +253,125 @@ fun DetailScreen(
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        "分享项目",
+                        stringResource(R.string.share_title),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold
                     )
                     Spacer(Modifier.height(16.dp))
+                    // QR image (label baked into bitmap)
                     Image(
                         bitmap = state.qrCodeBitmap!!.asImageBitmap(),
-                        contentDescription = "项目二维码",
+                        contentDescription = stringResource(R.string.qr_code_desc),
                         modifier = Modifier
-                            .size(260.dp)
+                            .size(260.dp, 280.dp) // taller for label
                             .clip(RoundedCornerShape(8.dp)),
                         contentScale = ContentScale.Fit
                     )
-                    Spacer(Modifier.height(8.dp))
-                    Text(
-                        "扫描此二维码以导入项目",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
                     Spacer(Modifier.height(16.dp))
-                    TextButton(onClick = { viewModel.dismissQrDialog() }) {
-                        Text("关闭")
+                    // ─── Action buttons ──────────────────
+                    val chooserTitle = stringResource(R.string.share_title)
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        // Share via system
+                        TextButton(onClick = {
+                            val bmp = state.qrCodeBitmap!!
+                            val file = java.io.File(context.cacheDir, "shared/qr_share.png")
+                            file.parentFile?.mkdirs()
+                            file.outputStream().use { bmp.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, it) }
+                            val uri = androidx.core.content.FileProvider.getUriForFile(context, "${context.packageName}.fileprovider", file)
+                            val intent = android.content.Intent(android.content.Intent.ACTION_SEND).apply {
+                                type = "image/png"
+                                putExtra(android.content.Intent.EXTRA_STREAM, uri)
+                                addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                            }
+                            context.startActivity(android.content.Intent.createChooser(intent, chooserTitle))
+                        }) {
+                            Text(stringResource(R.string.share))
+                        }
+                        // Close
+                        TextButton(onClick = { viewModel.dismissQrDialog() }) {
+                            Text(stringResource(R.string.close))
+                        }
                     }
                 }
             }
         }
+    }
+
+    // ─── Loading overlay during ad load ───────────────
+    if (showLoading) {
+        Dialog(
+            onDismissRequest = { /* no-op: user must wait */ },
+            properties = androidx.compose.ui.window.DialogProperties(
+                dismissOnClickOutside = false,
+                dismissOnBackPress = false
+            )
+        ) {
+            Card(
+                shape = RoundedCornerShape(12.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+            ) {
+                Column(
+                    modifier = Modifier.padding(32.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    CircularProgressIndicator()
+                    Text(
+                        stringResource(R.string.loading_ads),
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                }
+            }
+        }
+    }
+
+    // ─── Subscribe / Start dialog ──────────────────────
+    if (showSubscribeDialog) {
+        AlertDialog(
+            onDismissRequest = { showSubscribeDialog = false },
+            title = {
+                Text(
+                    stringResource(R.string.subscribe_title),
+                    fontWeight = FontWeight.Bold
+                )
+            },
+            text = {
+                Text(stringResource(R.string.subscribe_hint))
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showSubscribeDialog = false
+                        viewModel.launchFullScreen(context)
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    )
+                ) {
+                    Text(
+                        stringResource(R.string.subscribe_cta),
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = {
+                    showSubscribeDialog = false
+                    showLoading = true
+                    com.pandaled.util.AdManager.loadAndShow(
+                        context as android.app.Activity
+                    ) {
+                        showLoading = false
+                        viewModel.launchFullScreen(context)
+                    }
+                }) {
+                    Text(stringResource(R.string.start_directly))
+                }
+            }
+        )
     }
 }
 
@@ -309,12 +402,17 @@ fun MissingAssetBar(
                 modifier = Modifier.size(20.dp)
             )
             Spacer(Modifier.width(8.dp))
+            val waitingLabel = stringResource(R.string.scene_waiting)
+            val labels = missingAssets.joinToString(", ") { ma ->
+                if (ma.label == "idle") waitingLabel else ma.label
+            }
             Text(
-                "待补充完整 — ${missingAssets.joinToString(", ") { it.label }}",
+                stringResource(R.string.missing_assets, labels),
                 color = Color.White,
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.Medium
             )
         }
     }
+
 }

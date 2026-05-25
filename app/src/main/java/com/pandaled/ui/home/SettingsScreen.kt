@@ -11,7 +11,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
-import android.os.LocaleList
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.pandaled.R
@@ -24,16 +23,14 @@ fun SettingsScreen(onBack: () -> Unit) {
 
     val systemLang = java.util.Locale.getDefault().language
     var selectedLang by remember { mutableStateOf(prefs.getString("language", "") ?: "") }
-    val resolvedLang = selectedLang.ifEmpty {
-        if (systemLang.startsWith("zh")) "zh" else "en"
-    }
+    // Default to en if not set
+    if (selectedLang.isEmpty()) selectedLang = "en"
     var selectedColorMode by remember { mutableStateOf(prefs.getString("color_mode", "system") ?: "system") }
 
     var langExpanded by remember { mutableStateOf(false) }
     var colorExpanded by remember { mutableStateOf(false) }
 
     val langOptions = mapOf(
-        "system" to stringResource(R.string.settings_lang_system),
         "zh" to stringResource(R.string.settings_lang_zh),
         "en" to stringResource(R.string.settings_lang_en)
     )
@@ -68,7 +65,7 @@ fun SettingsScreen(onBack: () -> Unit) {
                 onExpandedChange = { langExpanded = it }
             ) {
                 OutlinedTextField(
-                    value = langOptions[selectedLang.ifEmpty { "system" }] ?: stringResource(R.string.settings_lang_system),
+                    value = langOptions[selectedLang] ?: stringResource(R.string.settings_lang_en),
                     onValueChange = {},
                     readOnly = true,
                     trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = langExpanded) },
@@ -84,19 +81,15 @@ fun SettingsScreen(onBack: () -> Unit) {
                             text = { Text(label) },
                             onClick = {
                                 langExpanded = false
-                                val value = if (key == "system") "" else key
-                                selectedLang = value
-                                prefs.edit().putString("language", value).apply()
+                                selectedLang = key
+                                prefs.edit().putString("language", key).apply()
                                 // Apply locale via AppCompatDelegate then recreate
-                                val locale = when (value) {
+                                val locale = when (key) {
                                     "zh" -> java.util.Locale("zh")
                                     "en" -> java.util.Locale("en")
-                                    else -> {
-                                        val sys = java.util.Locale.getDefault()
-                                        if (sys.language.startsWith("zh")) java.util.Locale("zh") else java.util.Locale("en")
-                                    }
+                                    else -> java.util.Locale("en")
                                 }
-                                AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(LocaleList(locale)))
+                                AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(locale))
                                 (context as? android.app.Activity)?.recreate()
                             }
                         )

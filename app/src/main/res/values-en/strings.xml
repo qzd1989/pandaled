@@ -2,11 +2,11 @@
 <resources>
     <string name="app_name">PandaLED</string>
     <string name="untitled_project">Untitled Project</string>
-    <string name="app_subtitle">LED Project Console</string>
+    <string name="app_subtitle">Shine bright, stand out.</string>
 
     <!-- Home -->
     <string name="home_no_projects">No Projects</string>
-    <string name="home_scan_hint">Tap + to scan &amp; import</string>
+    <string name="home_scan_hint">Tap + to create</string>
     <string name="home_new_project">New</string>
     <string name="home_scan_import">Scan Import</string>
     <string name="home_settings">Settings</string>
@@ -30,9 +30,9 @@
     <!-- Scene List -->
     <string name="scene_waiting">Waiting Scene</string>
     <string name="scene_add">Add Scene</string>
-    <string name="scene_text">Text</string>
-    <string name="scene_image">Image</string>
-    <string name="scene_video">Video</string>
+    <string name="scene_text">Text Scene</string>
+    <string name="scene_image">Image Scene</string>
+    <string name="scene_video">Video Scene</string>
     <string name="scene_move_up">Move Up</string>
     <string name="scene_move_down">Move Down</string>
     <string name="scene_delete">Delete</string>
@@ -42,6 +42,8 @@
     <string name="idle_clock">Clock</string>
     <string name="idle_countdown">Countdown</string>
     <string name="idle_image">Image</string>
+    <string name="idle_waiting_hint">This scene will be displayed before the project starts.</string>
+    <string name="idle_view_start_time">View start time</string>
     <string name="idle_black_hint">Black screen — no extra config</string>
 
     <!-- Scene Editor -->
@@ -53,7 +55,9 @@
     <string name="editor_appearance">Appearance</string>
     <string name="editor_scene_name">Scene Name</string>
     <string name="editor_duration">Duration (s)</string>
+    <string name="duration_unit">s</string>
     <string name="editor_play_mode">Play Mode</string>
+    <string name="editor_show_mode">Show Mode</string>
     <string name="editor_loop">Loop</string>
     <string name="editor_once">Once</string>
     <string name="editor_enter_anim">Enter Animation</string>
@@ -62,6 +66,23 @@
     <string name="editor_text_content">Text Content</string>
     <string name="editor_font_size">Font Size</string>
     <string name="editor_font">Font</string>
+    <string name="font_preview">Abc</string>
+    <string name="font_default">Default</string>
+    <string name="font_bold">Bold</string>
+    <string name="font_light">Light</string>
+    <string name="font_condensed">Condensed</string>
+    <string name="font_serif">Serif</string>
+    <string name="font_mono">Monospace</string>
+    <string name="font_casual">Casual</string>
+    <string name="font_cursive">Cursive</string>
+    <string name="font_noto_sans">Noto Sans</string>
+    <string name="font_noto_serif">Noto Serif</string>
+    <string name="font_noto_sans_bold">Noto Bold</string>
+    <string name="font_noto_sans_light">Noto Light</string>
+    <string name="font_chinese_simple">Simplified</string>
+    <string name="font_chinese_classical">Classical</string>
+    <string name="font_zcool">ZCOOL Butter</string>
+    <string name="font_mashan">Ma Shan</string>
     <string name="editor_color">Color</string>
     <string name="editor_color_mode">Color Mode</string>
     <string name="editor_color_static">Static</string>
@@ -70,6 +91,7 @@
     <string name="color_a">Color A</string>
     <string name="color_b">Color B</string>
     <string name="editor_scroll">Scroll</string>
+    <string name="editor_scroll_speed">Speed</string>
     <string name="editor_mirror">Mirror</string>
     <string name="editor_blink">Blink</string>
     <string name="editor_frequency">Frequency</string>
@@ -103,10 +125,10 @@
     <string name="transition_slide_bottom">Slide from Bottom</string>
 
     <!-- Scroll Directions -->
-    <string name="scroll_ltr">L→R</string>
-    <string name="scroll_rtl">R→L</string>
-    <string name="scroll_ttb">T→B</string>
-    <string name="scroll_btt">B→T</string>
+    <string name="scroll_ltr">Left → Right</string>
+    <string name="scroll_rtl">Right → Left</string>
+    <string name="scroll_ttb">Top → Bottom</string>
+    <string name="scroll_btt">Bottom → Top</string>
 
     <!-- Color Picker -->
     <string name="invalid_hex">Invalid</string>
@@ -134,7 +156,22 @@
     <string name="settings_cache_calculating">Calculating…</string>
 
     <!-- QR -->
+    <string name="share">Share</string>
+    <string name="share_title">Share Project</string>
+    <string name="share_hint">Scan this QR code to import this project</string>
+    <string name="save">Save</string>
+    <string name="qr_scan_hint">Open PandaLED\nscan QR to import this project</string>
+    <string name="close">Close</string>
+    <string name="qr_code_desc">Project QR Code</string>
     <string name="qr_export">Export QR</string>
     <string name="qr_import_error">Import failed: invalid QR content</string>
     <string name="qr_import_success">Import successful</string>
+    <string name="missing_image">Missing Asset</string>
+    <string name="subscribe_title">Subscribe to Remove Ads</string>
+    <string name="subscribe_cta">Subscribe to Remove Ads</string>
+    <string name="subscribe_hint">Only $0.99/month for ad-free unlimited access.</string>
+    <string name="start_directly">Start Directly</string>
+    <string name="loading_ads">Loading ad…</string>
+    <string name="toast_missing">Please complete all content</string>
+    <string name="missing_assets">Missing — %s</string>
 </resources>

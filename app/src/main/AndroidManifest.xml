@@ -16,7 +16,7 @@
         android:name=".PandaLedApp"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
-        android:label="PandaLed"
+        android:label="PandaLED"
         android:supportsRtl="true"
         android:theme="@style/Theme.PandaLed">
 
@@ -38,6 +38,18 @@
             android:screenOrientation="landscape"
             android:theme="@style/Theme.PandaLed.FullScreen" />
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <meta-data
+                android:name="com.google.android.gms.ads.APPLICATION_ID"
+                android:value="ca-app-pub-7768614948828316~3745311065"/>
     </application>
 
 </manifest>

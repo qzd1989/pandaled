@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.pandaled.app-mergeDebugResources-72:/values-v24/values-v24.xml",
+            "outputFile": "com.pandaled.app-mergeDebugResources-79:/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/Users/kiwi/.gradle/caches/transforms-4/8a52d4f85a6bd23e770a43480c4f1dcc/transformed/media-1.6.0/res/values-v24/values-v24.xml",

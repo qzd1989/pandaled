@@ -1,7 +1,6 @@
 package com.pandaled
 
 import android.os.Bundle
-import android.os.LocaleList
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,15 +21,11 @@ class MainActivity : AppCompatActivity() {
         // Apply saved locale
         val prefs = getSharedPreferences("pandaled_prefs", MODE_PRIVATE)
         val language = prefs.getString("language", "") ?: ""
-        val locale = when {
-            language == "zh" -> Locale("zh")
-            language == "en" -> Locale("en")
-            else -> {
-                val sys = Locale.getDefault()
-                if (sys.language.startsWith("zh")) Locale("zh") else Locale("en")
-            }
+        val locale = when (language) {
+            "zh" -> Locale("zh")
+            else -> Locale("en")
         }
-        AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(LocaleList(locale)))
+        AppCompatDelegate.setApplicationLocales(LocaleListCompat.create(locale))
 
         enableEdgeToEdge()
         setContent {

@@ -158,7 +158,7 @@ fun IdleSceneRenderer(idleScene: IdleScene, startTime: String) {
                 startTime = startTime,
                 fontKey = style?.fontFamily,
                 configuredSize = style?.size ?: 40,
-                colorHex = style?.color ?: "#FF8800"
+                colorHex = style?.color ?: "#FFFFFF"
             )
         }
         IdleSceneType.IMAGE -> {

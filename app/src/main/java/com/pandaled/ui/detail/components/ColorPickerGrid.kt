@@ -424,8 +424,6 @@ fun NumberStepper(
     max: Int = 200,
     modifier: Modifier = Modifier
 ) {
-    val scope = rememberCoroutineScope()
-
     Row(
         modifier = modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically
@@ -436,11 +434,9 @@ fun NumberStepper(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         Spacer(Modifier.weight(1f))
-        // Long-press repeatable minus button
-        val dec = remember { { onValueChange(((value.toFloatOrNull()?.toInt() ?: min) - 1).coerceAtLeast(min).toString()) } }
         FilledTonalIconButton(
-            onClick = dec,
-            modifier = Modifier.size(34.dp).longPressRepeatable(scope, dec),
+            onClick = { onValueChange(((value.toFloatOrNull()?.toInt() ?: min) - 1).coerceAtLeast(min).toString()) },
+            modifier = Modifier.size(34.dp),
             colors = IconButtonDefaults.filledTonalIconButtonColors(
                 containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
                 contentColor = MaterialTheme.colorScheme.onSurfaceVariant
@@ -455,11 +451,9 @@ fun NumberStepper(
             modifier = Modifier.widthIn(min = 42.dp),
             textAlign = TextAlign.Center
         )
-        // Long-press repeatable plus button
-        val inc = remember { { onValueChange(((value.toFloatOrNull()?.toInt() ?: min) + 1).coerceAtMost(max).toString()) } }
         FilledTonalIconButton(
-            onClick = inc,
-            modifier = Modifier.size(34.dp).longPressRepeatable(scope, inc),
+            onClick = { onValueChange(((value.toFloatOrNull()?.toInt() ?: min) + 1).coerceAtMost(max).toString()) },
+            modifier = Modifier.size(34.dp),
             colors = IconButtonDefaults.filledTonalIconButtonColors(
                 containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
                 contentColor = MaterialTheme.colorScheme.onSurfaceVariant
